@@ -1,0 +1,18 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+
+class DatabaseSeeder extends Seeder
+{
+    public function run(): void
+    {
+        $this->call([
+            BadgeSeeder::class,
+            ResourceSeeder::class,
+            LearningPathSeeder::class,
+            QuizSeeder::class,
+        ]);
+    }
+}

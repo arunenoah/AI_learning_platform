@@ -1,0 +1,4606 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\LearningPath;
+use App\Models\Quiz;
+use App\Models\QuizQuestion;
+use Illuminate\Database\Seeder;
+
+class QuizSeeder extends Seeder
+{
+    public function run(): void
+    {
+        $quizzes = [
+            [
+                'title' => 'Claude Code Fundamentals',
+                'description' => 'Test your knowledge of Claude Code basics and best practices.',
+                'learning_path' => 'claude-code-mastery',
+                'passing_score' => 70,
+                'max_attempts' => 5,
+                'questions' => [
+                    [
+                        'question' => 'What is CLAUDE.md used for?',
+                        'options' => [
+                            'Storing code snippets',
+                            'Setting project-specific context and coding standards',
+                            'Running tests',
+                            'Deploying code'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'CLAUDE.md files help set project-specific context, coding standards, and workflow rules.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What does MCP stand for?',
+                        'options' => [
+                            'Model Code Protocol',
+                            'Model Context Protocol',
+                            'Multi-Cloud Platform',
+                            'Managed Code Processing'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'MCP stands for Model Context Protocol, enabling Claude to connect with external tools and data sources.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Which command starts Claude Code?',
+                        'options' => [
+                            'claude start',
+                            'claude',
+                            'start claude',
+                            'run claude'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'The claude command in terminal starts Claude Code.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What are sub-agents used for in Claude Code?',
+                        'options' => [
+                            'Writing documentation',
+                            'Parallel task execution',
+                            'Code deployment',
+                            'Database management'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Sub-agents enable parallel task execution for handling multiple tasks simultaneously.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Which of these is NOT a Claude Code feature?',
+                        'options' => [
+                            'Git operations',
+                            'File editing',
+                            'Database design',
+                            'Web browsing'
+                        ],
+                        'correct_option' => 2,
+                        'explanation' => 'Claude Code can edit files, run git, and browse the web, but does not design databases directly.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'How do you exit Claude Code?',
+                        'options' => [
+                            '/exit or Ctrl+C',
+                            '/quit',
+                            'exit',
+                            'All of the above'
+                        ],
+                        'correct_option' => 3,
+                        'explanation' => 'You can use /exit, /quit, or type exit to leave Claude Code.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What does the /claude command do?',
+                        'options' => [
+                            'Shows current configuration',
+                            'Starts a new Claude session',
+                            'Clears conversation history',
+                            'Changes Claude\'s personality'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => '/claude starts a new Claude session within the current conversation.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is the purpose of /compact command?',
+                        'options' => [
+                            'Compresses files',
+                            'Summarizes conversation to fit context window',
+                            'Optimizes code',
+                            'Creates backups'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => '/compact summarizes the conversation to free up context space.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Can Claude Code execute shell commands?',
+                        'options' => [
+                            'No, only file editing',
+                            'Yes, with permission',
+                            'Only on macOS',
+                            'Only with special plugins'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Claude Code can execute shell commands but asks for permission first.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is the recommended way to share code context with Claude?',
+                        'options' => [
+                            'Paste entire files',
+                            'Use /read command or share specific sections',
+                            'Upload zip files',
+                            'Describe code verbally'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Use /read or share specific sections rather than pasting entire files.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'How does Claude handle large codebases?',
+                        'options' => [
+                            'Reads all files at once',
+                            'Uses CLAUDE.md and context to understand structure',
+                            'Requires manual file selection',
+                            'Cannot handle large codebases'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'CLAUDE.md and context help Claude understand the codebase structure.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is the best practice for specifying task requirements?',
+                        'options' => [
+                            'Be vague and let Claude figure it out',
+                            'Be specific with clear requirements and constraints',
+                            'Provide minimal information',
+                            'Only describe the end goal'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Specific and clear requirements help Claude deliver better results.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Can Claude help with git operations?',
+                        'options' => [
+                            'No, git is separate',
+                            'Yes, can commit, branch, diff, and more',
+                            'Only on GitHub',
+                            'Only read-only operations'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Claude Code has built-in git capabilities for version control operations.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is the --dangerous-allow-multiple-of parameter for?',
+                        'options' => [
+                            'Allow multiple Claude sessions',
+                            'Allow multiple file edits at once',
+                            'Allow multiple commits',
+                            'Disable safety checks'
+                        ],
+                        'correct_option' => 3,
+                        'explanation' => 'This flag disables certain safety checks - use with caution.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'How should you handle Claude\'s suggestions?',
+                        'options' => [
+                            'Always accept them',
+                            'Review and validate before applying',
+                            'Ignore them',
+                            'Only accept from senior Claude'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Always review suggestions - you are responsible for all code changes.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is the role of CLAUDE.md in a project?',
+                        'options' => [
+                            'Required file for all projects',
+                            'Optional context file for project-specific instructions',
+                            'Backup of project documentation',
+                            'Git configuration file'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'CLAUDE.md is optional but highly recommended for project-specific context.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Can Claude Code search the web?',
+                        'options' => [
+                            'No',
+                            'Yes, using built-in web search',
+                            'Only with MCP servers',
+                            'Only on Pro plans'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Claude Code can search the web to find documentation or information.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What happens when Claude hits the context limit?',
+                        'options' => [
+                            'Conversation ends',
+                            'Must start over',
+                            'Use /compact to summarize',
+                            'Pay for more'
+                        ],
+                        'correct_option' => 2,
+                        'explanation' => 'Use /compact to summarize conversation and free up context space.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'How do you provide feedback to Claude mid-task?',
+                        'options' => [
+                            'Must wait until complete',
+                            'Can interrupt and provide guidance',
+                            'Cannot modify tasks',
+                            'Only via CLAUDE.md'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'You can interrupt and redirect Claude at any time during a task.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is the best way to handle sensitive information?',
+                        'options' => [
+                            'Share with Claude for better help',
+                            'Use placeholders and never share actual secrets',
+                            'Store in comments',
+                            'Share only on first use'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Never share actual secrets - use placeholders like sk_test_xxx.',
+                        'points' => 1,
+                    ],
+                ],
+            ],
+            [
+                'title' => 'Prompt Engineering Basics',
+                'description' => 'Master the art of effective prompting for AI models.',
+                'learning_path' => 'ai-engineer',
+                'passing_score' => 70,
+                'max_attempts' => 5,
+                'questions' => [
+                    [
+                        'question' => 'What is few-shot prompting?',
+                        'options' => [
+                            'Writing prompts with minimal words',
+                            'Providing examples in the prompt',
+                            'Using multiple AI models at once',
+                            'Prompting with limited context'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Few-shot prompting provides examples within the prompt to guide the AI\'s response.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Chain-of-thought prompting helps AI by:',
+                        'options' => [
+                            'Being shorter and faster',
+                            'Breaking down reasoning steps',
+                            'Using more tokens',
+                            'Avoiding technical terms'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Chain-of-thought prompting breaks down complex reasoning into steps.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What does temperature control in LLM outputs?',
+                        'options' => [
+                            'Response speed',
+                            'Creativity vs determinism',
+                            'Token limit',
+                            'Context window size'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Lower temperature = more deterministic, higher = more creative.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is a system prompt?',
+                        'options' => [
+                            'A prompt for system files',
+                            'Instructions defining AI behavior',
+                            'A programming prompt',
+                            'A security prompt'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'System prompts define the AI\'s role, behavior, and constraints.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Which technique helps when AI ignores part of your request?',
+                        'options' => [
+                            'Using more emojis',
+                            'Numbered lists for tasks',
+                            'Shorter prompts',
+                            'Higher temperature'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Numbered lists help AI address each task separately and avoid overlooking items.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is zero-shot prompting?',
+                        'options' => [
+                            'Prompts with no words',
+                            'Asking model to perform without examples',
+                            'Using only system prompts',
+                            'Prompting with zero context'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Zero-shot prompting asks the model to perform without any examples.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is the ideal prompt length?',
+                        'options' => [
+                            'As short as possible',
+                            'Concise but includes all necessary context',
+                            'Always maximum length',
+                            'One sentence only'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Include enough context for the task without being overly verbose.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'How does top-p (nucleus) sampling affect outputs?',
+                        'options' => [
+                            'Limits total tokens',
+                            'Controls diversity of token selection',
+                            'Increases response speed',
+                            'Changes context window'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Top-p controls which tokens are considered based on cumulative probability.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What role does delimiters play in prompts?',
+                        'options' => [
+                            'Make prompts look pretty',
+                            'Clearly separate content sections',
+                            'Increase token count',
+                            'Enable faster processing'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Delimiters like ###help separate instructions from content clearly.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is prompt chaining?',
+                        'options' => [
+                            'Multiple prompts in one message',
+                            'Breaking complex tasks into sequential prompts',
+                            'Sending prompts to multiple models',
+                            'Repeating the same prompt'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Prompt chaining breaks complex tasks into manageable sequential steps.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Why is specifying output format important?',
+                        'options' => [
+                            'It reduces token usage',
+                            'It ensures consistent, usable responses',
+                            'It speeds up processing',
+                            'It\'s required by all models'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Specifying format like JSON or bullet points ensures usable output.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is a persona in prompting?',
+                        'options' => [
+                            'A user account',
+                            'A role or character the AI should adopt',
+                            'A security feature',
+                            'A text formatting style'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Persona assigns the AI a specific role like "You are a senior developer...".',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'How does "act as" framing help?',
+                        'options' => [
+                            'Makes responses faster',
+                            'Sets context and expertise level',
+                            'Enables multi-modal inputs',
+                            'Reduces costs'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => '"Act as a Python expert" helps model provide appropriate expertise.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is negative prompting?',
+                        'options' => [
+                            'Prompting without text',
+                            'Specifying what NOT to do',
+                            'Asking model to refuse',
+                            'Reverse psychology'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Telling the model what to avoid helps refine its responses.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Why should you include constraints in prompts?',
+                        'options' => [
+                            'To make prompts longer',
+                            'To guide the model toward desired output',
+                            'To confuse the model',
+                            'To use more tokens'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Constraints like "must be under 100 words" help control output.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is the benefit of iterative prompting?',
+                        'options' => [
+                            'Uses more tokens',
+                            'Refines results through multiple rounds',
+                            'Faster responses',
+                            'Works only with images'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Iterative prompting builds on responses to get better results.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'How does context window affect prompting?',
+                        'options' => [
+                            'No effect',
+                            'Limits how much information you can provide',
+                            'Only affects images',
+                            'Increases cost linearly'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Context window limits total tokens for instructions + examples + output.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is self-consistency in prompting?',
+                        'options' => [
+                            'Model always agrees with itself',
+                            'Generating multiple responses and picking best',
+                            'Consistent formatting',
+                            'Fixed temperature'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Self-consistency samples multiple paths and selects most common answer.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Why avoid leading questions?',
+                        'options' => [
+                            'They\'re too long',
+                            'They bias the model toward expected answer',
+                            'They cause errors',
+                            'They waste tokens'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => '"Don\'t you think X is bad?" biases the response toward agreeing.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is the purpose of priming in prompts?',
+                        'options' => [
+                            'Warming up the model',
+                            'Setting up context before main request',
+                            'Testing API connection',
+                            'Reducing latency'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Priming provides background context before the main task.',
+                        'points' => 1,
+                    ],
+                ],
+            ],
+            [
+                'title' => 'AI Agent Concepts',
+                'description' => 'Understand the fundamentals of autonomous AI agents.',
+                'learning_path' => 'ai-engineer',
+                'passing_score' => 70,
+                'max_attempts' => 5,
+                'questions' => [
+                    [
+                        'question' => 'What distinguishes an agent from a simple API call?',
+                        'options' => [
+                            'Agents use more tokens',
+                            'Agents can plan and use tools autonomously',
+                            'Agents are faster',
+                            'Agents are free'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Agents can plan, reason, and use tools autonomously without human intervention.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'RAG stands for:',
+                        'options' => [
+                            'Rapid Application Growth',
+                            'Retrieval-Augmented Generation',
+                            'Resource Allocation Guide',
+                            'Runtime Agent Gateway'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'RAG combines retrieval systems with LLM generation for grounded responses.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Which is NOT a typical agent capability?',
+                        'options' => [
+                            'Tool use',
+                            'Memory persistence',
+                            'Writing emails',
+                            'Planning multi-step tasks'
+                        ],
+                        'correct_option' => 2,
+                        'explanation' => 'Writing emails is not a core agent capability; agents typically focus on reasoning and tool use.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is ReAct in AI agents?',
+                        'options' => [
+                            'React framework for UI',
+                            'Reasoning + Acting approach',
+                            'API authentication method',
+                            'Code refactoring pattern'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'ReAct combines reasoning traces with action planning for better agent performance.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Which framework is known for stateful agent orchestration?',
+                        'options' => [
+                            'LangChain',
+                            'LangGraph',
+                            'CrewAI',
+                            'AutoGen'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'LangGraph specializes in stateful orchestration with cycles and persistence.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is tool use in AI agents?',
+                        'options' => [
+                            'Using hardware tools',
+                            'Calling external functions and APIs',
+                            'Training models',
+                            'Creating software'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Tool use allows agents to call external functions, APIs, or services.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is memory in agent systems?',
+                        'options' => [
+                            'RAM allocation',
+                            'Persisting information across interactions',
+                            'Training data storage',
+                            'Cache management'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Agent memory enables persisting context across multiple interactions.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is planning in agent systems?',
+                        'options' => [
+                            'Creating project plans',
+                            'Breaking tasks into executable steps',
+                            'Scheduling training jobs',
+                            'Resource allocation'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Planning allows agents to break complex tasks into manageable steps.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is reflection in agents?',
+                        'options' => [
+                            'Mirror image processing',
+                            'Agent evaluating its own outputs',
+                            'Training technique',
+                            'Data augmentation'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Reflection enables agents to evaluate and improve their own outputs.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is the main benefit of multi-agent systems?',
+                        'options' => [
+                            'Lower cost',
+                            'Specialized agents working together',
+                            'Faster processing',
+                            'Simpler code'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Multi-agent systems leverage specialized agents for different subtasks.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is an agent\'s observation space?',
+                        'options' => [
+                            'Visual display size',
+                            'Data the agent perceives from environment',
+                            'Memory capacity',
+                            'Network bandwidth'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Observation space defines what data the agent can perceive.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is an agent\'s action space?',
+                        'options' => [
+                            'Physical movement area',
+                            'All possible actions the agent can take',
+                            'Memory size',
+                            'Processing speed'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Action space defines all possible actions the agent can execute.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is autonomous reasoning in agents?',
+                        'options' => [
+                            'Following pre-programmed instructions only',
+                            'Making decisions without human intervention',
+                            'Random action selection',
+                            'API-only interactions'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Autonomous reasoning allows agents to make decisions independently.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is loop detection in agent systems?',
+                        'options' => [
+                            'Detecting hardware loops',
+                            'Preventing infinite agent cycles',
+                            'Network loop prevention',
+                            'Memory leak detection'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Loop detection prevents agents from getting stuck in repetitive cycles.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is task decomposition?',
+                        'options' => [
+                            'Breaking code into files',
+                            'Splitting complex tasks into subtasks',
+                            'Database partitioning',
+                            'Image segmentation'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Task decomposition breaks complex goals into manageable subtasks.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is agent orchestration?',
+                        'options' => [
+                            'Music composition',
+                            'Coordinating multiple agents',
+                            'Database management',
+                            'Network routing'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Agent orchestration coordinates multiple agents working together.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is short-term memory in agents?',
+                        'options' => [
+                            'RAM storage',
+                            'Current conversation context',
+                            'Permanent storage',
+                            'Backup system'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Short-term memory holds the current conversation context.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is long-term memory in agents?',
+                        'options' => [
+                            'Cache storage',
+                            'Persistent knowledge across sessions',
+                            'Temporary buffers',
+                            'Session data only'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Long-term memory persists knowledge across different sessions.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is tool definition in agent systems?',
+                        'options' => [
+                            'Hardware specifications',
+                            'Schema describing how to call a function',
+                            'Code documentation',
+                            'Test definitions'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Tool definitions describe the interface for agent tool usage.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is chain-of-thought in agents?',
+                        'options' => [
+                            'Sequential function calls',
+                            'Explicit reasoning steps',
+                            'Linked list implementation',
+                            'API chaining'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Chain-of-thought makes the agent\'s reasoning process explicit.',
+                        'points' => 1,
+                    ],
+                ],
+            ],
+            [
+                'title' => 'Machine Learning Fundamentals',
+                'description' => 'Test your understanding of core ML concepts.',
+                'learning_path' => 'ml-foundations',
+                'passing_score' => 70,
+                'max_attempts' => 5,
+                'questions' => [
+                    [
+                        'question' => 'Supervised learning uses:',
+                        'options' => [
+                            'Random unlabeled data',
+                            'Labeled training data',
+                            'Only test data',
+                            'No data'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Supervised learning trains on labeled data with known outputs.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Overfitting means:',
+                        'options' => [
+                            'Model is too simple',
+                            'Model memorized training data',
+                            'Training is too fast',
+                            'Using wrong language'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Overfitting occurs when a model memorizes training data instead of learning patterns.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Gradient descent is used to:',
+                        'options' => [
+                            'Increase loss',
+                            'Optimize model parameters',
+                            'Generate data',
+                            'Visualize results'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Gradient descent iteratively optimizes parameters to minimize the loss function.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is the purpose of a validation set?',
+                        'options' => [
+                            'Final testing only',
+                            'Hyperparameter tuning',
+                            'Training the model',
+                            'Data augmentation'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Validation sets are used for hyperparameter tuning and model selection.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Which activation function is commonly used in output layers for classification?',
+                        'options' => [
+                            'ReLU',
+                            'Sigmoid or Softmax',
+                            'Tanh',
+                            'Leaky ReLU'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Sigmoid (binary) and Softmax (multi-class) are used for classification outputs.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is underfitting?',
+                        'options' => [
+                            'Model is too complex',
+                            'Model is too simple to capture patterns',
+                            'Too much training data',
+                            'Model is over-optimized'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Underfitting occurs when a model is too simple to capture data patterns.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is regularization?',
+                        'options' => [
+                            'Increasing model complexity',
+                            'Techniques to prevent overfitting',
+                            'Data preprocessing',
+                            'Feature selection only'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Regularization adds penalties to prevent overfitting.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What does the learning rate control?',
+                        'options' => [
+                            'Model size',
+                            'Step size in gradient descent',
+                            'Number of layers',
+                            'Data batch size'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Learning rate controls how much parameters change during optimization.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is a loss function?',
+                        'options' => [
+                            'Data that is lost',
+                            'Metric to measure model error',
+                            'Hardware component',
+                            'Training time'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Loss function measures how wrong the model predictions are.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is cross-validation?',
+                        'options' => [
+                            'Testing on new data only',
+                            'Using multiple train/test splits for robust evaluation',
+                            'Training multiple models',
+                            'Data augmentation technique'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Cross-validation uses multiple splits to evaluate model performance.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is the bias-variance tradeoff?',
+                        'options' => [
+                            'Balancing model complexity and generalization',
+                            'Equal importance of features',
+                            'Training speed vs accuracy',
+                            'Data quality vs quantity'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Bias-variance tradeoff balances underfitting and overfitting.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is feature scaling?',
+                        'options' => [
+                            'Reducing number of features',
+                            'Normalizing feature ranges',
+                            'Creating new features',
+                            'Selecting best features'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Feature scaling normalizes feature values for better model performance.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is a confusion matrix?',
+                        'options' => [
+                            'Random data table',
+                            'Visualization of classification results',
+                            'Feature importance chart',
+                            'Training progress graph'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Confusion matrix shows true/false positives/negatives for classification.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is precision in ML?',
+                        'options' => [
+                            'Speed of training',
+                            'True positives / (True positives + False positives)',
+                            'Total correct predictions',
+                            'Model complexity'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Precision measures accuracy of positive predictions.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is recall in ML?',
+                        'options' => [
+                            'Memory usage',
+                            'True positives / (True positives + False negatives)',
+                            'Training iterations',
+                            'Feature count'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Recall measures how many actual positives were captured.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is F1 score?',
+                        'options' => [
+                            'First iteration score',
+                            'Harmonic mean of precision and recall',
+                            'Final model accuracy',
+                            'Feature importance'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'F1 score balances precision and recall using harmonic mean.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is ensemble learning?',
+                        'options' => [
+                            'Training on single model',
+                            'Combining multiple models for better predictions',
+                            'Selecting best features',
+                            'Data preprocessing'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Ensemble learning combines multiple models for improved predictions.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is random forest?',
+                        'options' => [
+                            'Single decision tree',
+                            'Ensemble of decision trees',
+                            'Neural network type',
+                            'Data preprocessing'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Random forest is an ensemble of multiple decision trees.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is a hyperparameter?',
+                        'options' => [
+                            'Parameter learned from data',
+                            'Setting configured before training',
+                            'Output of the model',
+                            'Type of data'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Hyperparameters are settings configured before training begins.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is batch normalization?',
+                        'options' => [
+                            'Normalizing input data only',
+                            'Normalizing layer inputs within a network',
+                            'Using large batches',
+                            'Batch processing data'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Batch normalization normalizes inputs within network layers.',
+                        'points' => 1,
+                    ],
+                ],
+            ],
+            [
+                'title' => 'Deep Learning Essentials',
+                'description' => 'Test your knowledge of neural networks and deep learning.',
+                'learning_path' => 'deep-learning-expert',
+                'passing_score' => 70,
+                'max_attempts' => 5,
+                'questions' => [
+                    [
+                        'question' => 'What does a Transformer architecture use instead of RNNs?',
+                        'options' => [
+                            'Convolutions',
+                            'Self-attention mechanism',
+                            'Recurrent gates',
+                            'Pooling layers'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Transformers use self-attention to process sequences in parallel.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is the purpose of Layer Normalization?',
+                        'options' => [
+                            'Increase model size',
+                            'Stabilize training',
+                            'Add more layers',
+                            'Reduce overfitting'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Layer normalization stabilizes training by normalizing inputs across features.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is transfer learning?',
+                        'options' => [
+                            'Moving code between projects',
+                            'Using pre-trained model weights',
+                            'Training from scratch',
+                            'Transferring data between databases'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Transfer learning uses knowledge from pre-trained models on new tasks.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What does attention mechanism in transformers compute?',
+                        'options' => [
+                            'Gradient magnitudes',
+                            'Weighted relationships between tokens',
+                            'Model parameters',
+                            'Loss values'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Attention computes weighted relationships showing how tokens relate to each other.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Which optimizer is commonly used with transformers?',
+                        'options' => [
+                            'SGD',
+                            'Adam',
+                            'K-means',
+                            'PCA'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Adam is the standard optimizer for transformer models.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is the purpose of dropout?',
+                        'options' => [
+                            'Increase model size',
+                            'Prevent overfitting by randomly dropping neurons',
+                            'Speed up training',
+                            'Add more layers'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Dropout randomly deactivates neurons during training to prevent overfitting.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is a convolutional neural network (CNN) best suited for?',
+                        'options' => [
+                            'Text generation',
+                            'Image and spatial data processing',
+                            'Time series forecasting',
+                            'Recommendation systems'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'CNNs excel at processing images and spatial data with convolutional filters.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is a residual connection?',
+                        'options' => [
+                            'Connecting to external APIs',
+                            'Skip connection that adds input to output',
+                            'Final output layer',
+                            'Loss function connection'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Residual connections (skip connections) add input to output to enable deeper networks.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is gradient clipping?',
+                        'options' => [
+                            'Removing gradients from model',
+                            'Limiting gradient values to prevent exploding gradients',
+                            'Choosing best gradients',
+                            'Freezing gradient computation'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Gradient clipping prevents exploding gradients by limiting their maximum value.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is a pooling layer?',
+                        'options' => [
+                            'Layer for data storage',
+                            'Reduces spatial dimensions and computations',
+                            'Increases feature maps',
+                            'Normalizes inputs'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Pooling reduces spatial dimensions through max or average operations.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is fine-tuning?',
+                        'options' => [
+                            'Training from scratch',
+                            'Continuing training pre-trained model on specific data',
+                            'Adjusting model colors',
+                            'Changing model size'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Fine-tuning continues training pre-trained models on specific datasets.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is a embedding layer?',
+                        'options' => [
+                            'Visual representation layer',
+                            'Converts discrete tokens to dense vectors',
+                            'Output prediction layer',
+                            'Normalization layer'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Embedding layers convert discrete tokens into dense vector representations.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is the vanishing gradient problem?',
+                        'options' => [
+                            'Gradients become too large',
+                            'Gradients become too small for effective learning',
+                            'Gradients disappear completely',
+                            'Loss becomes zero'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Vanishing gradients occur when gradients become too small for learning.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What does ReLU activation function do?',
+                        'options' => [
+                            'Squares all values',
+                            'Sets negative values to zero',
+                            'Normalizes all values',
+                            'Generates random values'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'ReLU (Rectified Linear Unit) outputs max(0, x) - zeroes negatives.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is batch size in deep learning?',
+                        'options' => [
+                            'Total dataset size',
+                            'Number of samples processed together',
+                            'Model output size',
+                            'Feature count'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Batch size is the number of samples processed before updating weights.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is model capacity?',
+                        'options' => [
+                            'Physical model storage',
+                            'Complexity and learning ability of model',
+                            'Training speed',
+                            'Dataset size'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Model capacity refers to the complexity and expressive power of a model.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is weight initialization?',
+                        'options' => [
+                            'Setting all weights to zero',
+                            'Starting weight values before training',
+                            'Loading pre-trained weights only',
+                            'Final model state'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Weight initialization sets starting values before training begins.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is the difference between epoch and iteration?',
+                        'options' => [
+                            'Same thing',
+                            'Epoch = full dataset pass, iteration = batch pass',
+                            'Iteration is longer',
+                            'Epoch is for images only'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Epoch processes full dataset once; iteration processes one batch.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is early stopping?',
+                        'options' => [
+                            'Stopping training immediately',
+                            'Stopping when validation performance stops improving',
+                            'Stopping at first error',
+                            'Skipping first batch'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Early stopping halts training when validation performance plateaus.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is a decoder in transformers?',
+                        'options' => [
+                            'Compresses data',
+                            'Generates output from encoded representations',
+                            'Encrypts data',
+                            'Deletes features'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Decoder generates output sequence from encoded representations.',
+                        'points' => 1,
+                    ],
+                ],
+            ],
+            [
+                'title' => 'RAG & Vector Search',
+                'description' => 'Test your understanding of retrieval-augmented generation.',
+                'learning_path' => 'rag-vector-search',
+                'passing_score' => 70,
+                'max_attempts' => 5,
+                'questions' => [
+                    [
+                        'question' => 'What is the main purpose of a vector database in RAG?',
+                        'options' => [
+                            'Store raw text',
+                            'Store embeddings for similarity search',
+                            'Run SQL queries',
+                            'Manage user authentication'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Vector databases store embeddings enabling fast similarity search.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is cosine similarity used for in RAG?',
+                        'options' => [
+                            'Counting words',
+                            'Measuring embedding similarity',
+                            'Encrypting data',
+                            'Compressing text'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Cosine similarity measures how similar two embeddings are.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What does chunking achieve in RAG?',
+                        'options' => [
+                            'Compressing the model',
+                            'Breaking documents into searchable pieces',
+                            'Encrypting data',
+                            'Training faster'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Chunking breaks documents into manageable pieces for embedding and retrieval.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Which embedding model is commonly used for text?',
+                        'options' => [
+                            'YOLO',
+                            'BERT or similar',
+                            'ResNet',
+                            'U-Net'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'BERT-based models are commonly used for generating text embeddings.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is hybrid search in RAG?',
+                        'options' => [
+                            'Using two LLMs',
+                            'Combining keyword and vector search',
+                            'Training on two datasets',
+                            'Using two GPUs'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Hybrid search combines traditional keyword search with semantic vector search.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is an embedding vector?',
+                        'options' => [
+                            'Text file format',
+                            'Dense numerical representation of data',
+                            'Encrypted data format',
+                            'Compressed image format'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Embedding vectors are dense numerical representations that capture semantic meaning.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is Approximate Nearest Neighbor (ANN)?',
+                        'options' => [
+                            'Exact matching algorithm',
+                            'Fast similarity search with trade-offs',
+                            'Neural network architecture',
+                            'Data compression method'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'ANN provides fast similarity search by trading some accuracy for speed.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What indexing method does Qdrant use?',
+                        'options' => [
+                            'B-tree only',
+                            'HNSW graph-based indexing',
+                            'Linear scanning',
+                            'Hash-based indexing'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Qdrant uses HNSW (Hierarchical Navigable Small World) for efficient vector indexing.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is semantic search?',
+                        'options' => [
+                            'Keyword matching',
+                            'Meaning-based search using embeddings',
+                            'Exact phrase matching',
+                            'Alphabetical sorting'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Semantic search finds results based on meaning rather than exact keyword matches.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is re-ranking in RAG?',
+                        'options' => [
+                            'Training the retriever',
+                            'Refining search results with a more accurate model',
+                            'Removing duplicate results',
+                            'Sorting by date'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Re-ranking uses a more powerful model to refine initial search results.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is metadata filtering in vector databases?',
+                        'options' => [
+                            'Removing all metadata',
+                            'Filtering results based on document attributes',
+                            'Encrypting metadata',
+                            'Compressing metadata'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Metadata filtering allows filtering by document attributes like date, category, etc.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is the ideal chunk size for RAG?',
+                        'options' => [
+                            'Always maximum size',
+                            'Depends on use case, typically 512-1024 tokens',
+                            'Always 256 tokens',
+                            'Size does not matter'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Chunk size depends on the use case; 512-1024 tokens is a common range.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is overlap in RAG chunking?',
+                        'options' => [
+                            'Copying chunks multiple times',
+                            'Having adjacent chunks share some context',
+                            'Stacking chunks',
+                            'Compressing chunks'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Overlap ensures context continuity by sharing tokens between chunks.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is retrieval-augmented generation?',
+                        'options' => [
+                            'Training with retrieved data',
+                            'Combining retrieval systems with LLM generation',
+                            'Generating retrieval queries',
+                            'Storing generated outputs'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'RAG combines retrieval systems with LLM generation for grounded responses.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is the benefit of RAG over fine-tuning?',
+                        'options' => [
+                            'RAG is always cheaper',
+                            'RAG allows updating knowledge without retraining',
+                            'RAG requires less data',
+                            'RAG is faster to deploy'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'RAG allows updating knowledge by changing documents without retraining.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is a retriever in RAG?',
+                        'options' => [
+                            'Device that retrieves files',
+                            'Component that finds relevant documents',
+                            'Database backup system',
+                            'Search engine crawler'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Retriever finds relevant documents from the knowledge base.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is BM25?',
+                        'options' => [
+                            'Neural network architecture',
+                            'Traditional keyword-based retrieval algorithm',
+                            'Vector similarity measure',
+                            'Chunking strategy'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'BM25 is a classic sparse retrieval algorithm used in hybrid search.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is parent document retrieval?',
+                        'options' => [
+                            'Getting root documents only',
+                            'Retrieving larger context that contains chunk',
+                            'Finding parent nodes in tree',
+                            'Loading parent class'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Parent document retrieval fetches larger context containing the matched chunk.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is dense retrieval?',
+                        'options' => [
+                            'Retrieving compressed data',
+                            'Using neural embeddings for retrieval',
+                            'Fetching database records',
+                            'Getting dense files'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Dense retrieval uses neural embeddings to find semantically similar content.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is sparse retrieval?',
+                        'options' => [
+                            'Getting small files',
+                            'Using keyword-based matching like TF-IDF',
+                            'Compressed data retrieval',
+                            'Memory-efficient search'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Sparse retrieval uses traditional keyword matching like BM25 or TF-IDF.',
+                        'points' => 1,
+                    ],
+                ],
+            ],
+            [
+                'title' => 'Fine-Tuning Concepts',
+                'description' => 'Test your knowledge of model customization techniques.',
+                'learning_path' => 'llm-fine-tuning',
+                'passing_score' => 70,
+                'max_attempts' => 5,
+                'questions' => [
+                    [
+                        'question' => 'What does LoRA stand for?',
+                        'options' => [
+                            'Low-rank Adaptation',
+                            'Large Output Response Analysis',
+                            'Linear Output Regularization Algorithm',
+                            'Learning Rate Optimization Approach'
+                        ],
+                        'correct_option' => 0,
+                        'explanation' => 'LoRA (Low-rank Adaptation) updates only a small subset of parameters.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Why is QLoRA particularly memory-efficient?',
+                        'options' => [
+                            'Uses more RAM',
+                            'Quantizes model weights to 4-bit',
+                            'Removes all layers',
+                            'Uses smaller batch sizes'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'QLoRA quantizes weights to 4-bit while maintaining training quality.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is RLHF used for?',
+                        'options' => [
+                            'Random lightweight file hosting',
+                            'Aligning models with human preferences',
+                            'Running language model inference',
+                            'Reducing model latency'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'RLHF (Reinforcement Learning from Human Feedback) aligns model outputs with human preferences.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is PEFT?',
+                        'options' => [
+                            'Python Enhanced File Transfer',
+                            'Parameter-Efficient Fine-Tuning',
+                            'Parallel Execution Framework Technology',
+                            'Precision Error Fix Toolkit'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'PEFT enables fine-tuning with minimal parameter updates.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What does DPO stand for in fine-tuning?',
+                        'options' => [
+                            'Direct Parameter Optimization',
+                            'Direct Preference Optimization',
+                            'Distributed Processing Operation',
+                            'Deep Preference Output'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'DPO (Direct Preference Optimization) simplifies RLHF without reward modeling.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is adapter in LoRA?',
+                        'options' => [
+                            'Network connector',
+                            'Trainable low-rank matrices added to layers',
+                            'Output formatter',
+                            'Data loader'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'LoRA adapters are trainable low-rank matrices injected into model layers.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is the rank in LoRA?',
+                        'options' => [
+                            'Model ranking position',
+                            'Dimension of low-rank matrices',
+                            'Number of adapters',
+                            'Training epoch count'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Rank determines the dimension size of LoRA\'s low-rank matrices.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is full fine-tuning?',
+                        'options' => [
+                            'Using all available data',
+                            'Updating all model parameters',
+                            'Training entire network',
+                            'Using all training epochs'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Full fine-tuning updates all model parameters, not just adapters.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is instruction fine-tuning?',
+                        'options' => [
+                            'Fine-tuning on instructions',
+                            'Training model to follow instructions',
+                            'Using instruction-level parallelism',
+                            'Debugging instructions'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Instruction fine-tuning trains models to better follow user instructions.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is domain adaptation?',
+                        'options' => [
+                            'Changing model architecture',
+                            'Fine-tuning on domain-specific data',
+                            'Adapting to new hardware',
+                            'Changing model size'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Domain adaptation fine-tunes models for specific industries or topics.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is a reward model in RLHF?',
+                        'options' => [
+                            'Compensation model',
+                            'Model that scores outputs based on human preferences',
+                            'Cost function',
+                            'Pricing model'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Reward model learns to score outputs based on human preference data.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is SFT in LLM training?',
+                        'options' => [
+                            'Simple Fine-Tuning',
+                            'Supervised Fine-Tuning',
+                            'Stochastic Function Training',
+                            'Standard Format Transfer'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'SFT (Supervised Fine-Tuning) is the first phase of RLHF training.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is prefix tuning?',
+                        'options' => [
+                            'Adding prefixes to prompts',
+                            'Tuning continuous prompt embeddings',
+                            'Prefixing all outputs',
+                            'Adding header tokens'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Prefix tuning tunes continuous embeddings added to model layers.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is prompt tuning?',
+                        'options' => [
+                            'Manually crafting prompts',
+                            'Learning soft prompt embeddings',
+                            'Testing different prompts',
+                            'Optimizing prompt length'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Prompt tuning learns soft prompt embeddings without fine-tuning model.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is Catastrophic Forgetting?',
+                        'options' => [
+                            'Unexpected model crash',
+                            'Model loses previous knowledge when learning new',
+                            'Training instability',
+                            'Memory overflow'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Catastrophic forgetting occurs when new training erases previous knowledge.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is the benefit of LoRA over full fine-tuning?',
+                        'options' => [
+                            'Better accuracy',
+                            'Less compute and storage required',
+                            'Faster inference',
+                            'Smaller model size'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'LoRA requires less compute, storage, and is more memory-efficient.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is weight merging in LoRA?',
+                        'options' => [
+                            'Combining model weights',
+                            'Merging adapter weights into base model',
+                            'Joining weight files',
+                            'Averaging weights'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Weight merging combines adapter weights into base model for deployment.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is a preference dataset?',
+                        'options' => [
+                            'Dataset users prefer',
+                            'Pairs of responses ranked by humans',
+                            'Preferred model settings',
+                            'User demographic data'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Preference dataset contains response pairs ranked by human annotators.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is PPO in RLHF?',
+                        'options' => [
+                            'Preferred Parameter Optimization',
+                            'Proximal Policy Optimization',
+                            'Probabilistic Parameter Operation',
+                            'Parallel Preference Optimization'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'PPO (Proximal Policy Optimization) is used to optimize the policy model.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is continuous pre-training?',
+                        'options' => [
+                            'Endless training',
+                            'Further training base model on domain data',
+                            'Ongoing model updates',
+                            'Iterative fine-tuning'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Continuous pre-training continues training base model on domain-specific data.',
+                        'points' => 1,
+                    ],
+                ],
+            ],
+            [
+                'title' => 'General AI Knowledge',
+                'description' => 'Test your overall understanding of AI concepts.',
+                'learning_path' => null,
+                'passing_score' => 60,
+                'max_attempts' => 5,
+                'questions' => [
+                    [
+                        'question' => 'What does LLM stand for?',
+                        'options' => [
+                            'Linear Learning Machine',
+                            'Large Language Model',
+                            'Local Learning Module',
+                            'Logarithmic Loss Method'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'LLM stands for Large Language Model.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is tokenization?',
+                        'options' => [
+                            'Encrypting text',
+                            'Breaking text into tokens for models',
+                            'Translating languages',
+                            'Compressing files'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Tokenization breaks text into tokens (words/subwords) that models can process.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is hallucination in LLMs?',
+                        'options' => [
+                            'Image generation errors',
+                            'Confident but incorrect responses',
+                            'Training failures',
+                            'Memory overflow'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Hallucination is when models generate plausible-sounding but incorrect information.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is context window?',
+                        'options' => [
+                            'A debugging tool',
+                            'Maximum tokens model can process at once',
+                            'Training batch size',
+                            'Model file size'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Context window is the maximum input/output token limit for a model.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What does API stand for?',
+                        'options' => [
+                            'Application Programming Interface',
+                            'Advanced Program Integration',
+                            'Automated Protocol Interface',
+                            'Application Process Integration'
+                        ],
+                        'correct_option' => 0,
+                        'explanation' => 'API stands for Application Programming Interface.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is a transformer in AI?',
+                        'options' => [
+                            'Robotic component',
+                            'Neural network architecture using attention',
+                            'Data conversion tool',
+                            'Hardware device'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Transformer is a neural network architecture that uses self-attention mechanisms.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is inference in ML?',
+                        'options' => [
+                            'Training the model',
+                            'Using trained model to make predictions',
+                            'Measuring model accuracy',
+                            'Data preprocessing'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Inference is using a trained model to generate predictions.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is a prompt?',
+                        'options' => [
+                            'Technical error message',
+                            'Input text to AI model',
+                            'Model configuration file',
+                            'Training dataset'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Prompt is the input text given to an AI model to generate response.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is model quantization?',
+                        'options' => [
+                            'Increasing model size',
+                            'Reducing model precision to smaller numbers',
+                            'Quantifying model outputs',
+                            'Adding more parameters'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Quantization reduces model precision (e.g., 32-bit to 8-bit) to reduce size.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is a foundation model?',
+                        'options' => [
+                            'Basic model structure',
+                            'Large pre-trained model for transfer learning',
+                            'Simple linear model',
+                            'Base hardware configuration'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Foundation models are large pre-trained models adaptable to many tasks.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is multimodal AI?',
+                        'options' => [
+                            'AI using one data type',
+                            'AI processing multiple data types (text, image, audio)',
+                            'AI with multiple outputs',
+                            'Multiple AI models'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Multimodal AI can process and generate multiple data types.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is temperature in LLM generation?',
+                        'options' => [
+                            'Hardware temperature',
+                            'Controls randomness of output',
+                            'Training temperature',
+                            'Model complexity'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Temperature controls randomness: lower = more focused, higher = more creative.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is zero-shot learning?',
+                        'options' => [
+                            'Training without data',
+                            'Model performing tasks without examples',
+                            'Zero-parameter models',
+                            'Learning nothing'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Zero-shot learning is model performing tasks it wasn\'t explicitly trained on.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is few-shot learning?',
+                        'options' => [
+                            'Training with minimal data',
+                            'Using few examples in prompt',
+                            'Models with few parameters',
+                            'Low-resource learning'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Few-shot learning uses examples in prompt to guide model behavior.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is grounding in AI?',
+                        'options' => [
+                            'Physical anchoring',
+                            'Connecting AI responses to real-world knowledge',
+                            'Training stability',
+                            'Error fixing'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Grounding connects AI outputs to factual, verifiable information.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is涌现 (emergence) in AI?',
+                        'options' => [
+                            'Model failure',
+                            'Unexpected complex capabilities from simpler components',
+                            'Gradual learning',
+                            'Error emergence'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Emergence is complex behaviors arising from simpler model interactions.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is model alignment?',
+                        'options' => [
+                            'Weight balancing',
+                            'Ensuring AI behaves according to human values',
+                            'Architecture symmetry',
+                            'Layer alignment'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Model alignment ensures AI behavior matches human intentions and values.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is涌现性 (scaling)?',
+                        'options' => [
+                            'Compressing models',
+                            'Larger models often have better capabilities',
+                            'Reducing parameters',
+                            'Faster inference'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Scaling shows larger models tend to have improved capabilities.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is a system prompt?',
+                        'options' => [
+                            'Hardware instruction',
+                            'High-level instructions defining AI behavior',
+                            'Error message',
+                            'User input'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'System prompt sets overall context and behavior rules for the AI.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is chain-of-thought prompting?',
+                        'options' => [
+                            'Sequential API calls',
+                            'Asking model to explain reasoning steps',
+                            'Linked prompts',
+                            'Step-by-step processing'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Chain-of-thought prompts encourage model to show its reasoning process.',
+                        'points' => 1,
+                    ],
+                ],
+            ],
+
+            // === NEW QUIZZES ===
+
+            [
+                'title' => 'NLP Fundamentals',
+                'description' => 'Test your understanding of natural language processing concepts.',
+                'learning_path' => 'nlp-specialist',
+                'passing_score' => 70,
+                'max_attempts' => 5,
+                'questions' => [
+                    [
+                        'question' => 'What is tokenization in NLP?',
+                        'options' => [
+                            'Translating between languages',
+                            'Splitting text into words/subwords',
+                            'Generating new text',
+                            'Summarizing documents'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Tokenization splits text into smaller units (words, subwords, or characters) that models can process.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is word embedding?',
+                        'options' => [
+                            'Encrypting words',
+                            'Dense numerical representation of words',
+                            'Word counting',
+                            'Language detection'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Word embeddings represent words as dense vectors capturing semantic meaning.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What task does BERT excel at?',
+                        'options' => [
+                            'Text generation',
+                            'Bidirectional context understanding',
+                            'Image recognition',
+                            'Audio processing'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'BERT processes text bidirectionally, understanding context from both directions.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is named entity recognition (NER)?',
+                        'options' => [
+                            'Generating new entity names',
+                            'Identifying persons, organizations, locations',
+                            'Translating entities',
+                            'Counting entities'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'NER identifies and classifies named entities like people, organizations, and locations.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is sentiment analysis?',
+                        'options' => [
+                            'Generating emotional text',
+                            'Determining emotional tone of text',
+                            'Translating emotions',
+                            'Counting emotions'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Sentiment analysis determines whether text expresses positive, negative, or neutral opinions.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is part-of-speech tagging?',
+                        'options' => [
+                            'Tagging music parts',
+                            'Labeling words with grammar categories',
+                            'Removing parts of speech',
+                            'Categorizing speakers'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'POS tagging labels each word with its grammatical category (noun, verb, etc.).',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is text summarization?',
+                        'options' => [
+                            'Adding text to documents',
+                            'Creating shorter versions of text',
+                            'Encrypting text',
+                            'Translating text'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Text summarization creates concise summaries of longer documents.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is machine translation?',
+                        'options' => [
+                            'Physical machine moving',
+                            'Automatic translation between languages',
+                            'Machine repair',
+                            'Text classification'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Machine translation automatically converts text from one language to another.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is language modeling?',
+                        'options' => [
+                            'Creating new languages',
+                            'Predicting probability of word sequences',
+                            'Modeling language teachers',
+                            'Building language apps'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Language modeling predicts the probability of word sequences.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is text classification?',
+                        'options' => [
+                            'Organizing physical text',
+                            'Assigning categories to text',
+                            'Classifying fonts',
+                            'Sorting documents'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Text classification assigns predefined categories to text documents.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is sequence-to-sequence model?',
+                        'options' => [
+                            'DNA sequencing',
+                            'Input sequence to output sequence',
+                            'Number sequences',
+                            'Sequential processing'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Seq2seq converts input sequences to output sequences (e.g., translation).',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is attention mechanism?',
+                        'options' => [
+                            'Human focus',
+                            'Focusing on relevant parts of input',
+                            'Memory attention',
+                            'Weight attention'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Attention allows models to focus on relevant parts of input when generating output.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is parsing in NLP?',
+                        'options' => [
+                            'Data parsing',
+                            'Analyzing grammatical structure',
+                            'Code parsing',
+                            'File parsing'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Parsing analyzes the grammatical structure of sentences.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is dependency parsing?',
+                        'options' => [
+                            'Making text dependent',
+                            'Analyzing word relationships',
+                            'Creating dependencies',
+                            'Dependent translation'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Dependency parsing analyzes grammatical relationships between words.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is text generation?',
+                        'options' => [
+                            'Typing text',
+                            'Automatically producing text',
+                            'Reading text',
+                            'Formatting text'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Text generation produces new text automatically using AI.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is question answering in NLP?',
+                        'options' => [
+                            'Answering phone calls',
+                            'Finding answers to questions from text',
+                            'Creating questionnaires',
+                            'Testing text'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Question answering systems find answers to questions from given text.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is TF-IDF?',
+                        'options' => [
+                            'Text format identification',
+                            'Term frequency-inverse document frequency',
+                            'Text file directory',
+                            'Transfer function identifier'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'TF-IDF measures word importance in documents based on frequency.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is stop word removal?',
+                        'options' => [
+                            'Stopping text processing',
+                            'Removing common words (the, is, a)',
+                            'Creating stop lists',
+                            'Stopping speech'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Stop word removal eliminates common words that add little meaning.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is lemmatization?',
+                        'options' => [
+                            'Lemur analysis',
+                            'Reducing words to base form',
+                            'Creating lemmas',
+                            'Lemma matching'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Lemmatization reduces words to their dictionary base form.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is stemming?',
+                        'options' => [
+                            'Stem cell research',
+                            'Removing word affixes to get root form',
+                            'Plant analysis',
+                            'Data stemming'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Stemming removes affixes to get word root (e.g., "running" -> "run").',
+                        'points' => 1,
+                    ],
+                ],
+            ],
+
+            [
+                'title' => 'MLOps & Deployment',
+                'description' => 'Test your knowledge of ML operations and production deployment.',
+                'learning_path' => 'mlops-engineering',
+                'passing_score' => 70,
+                'max_attempts' => 5,
+                'questions' => [
+                    [
+                        'question' => 'What is model versioning?',
+                        'options' => [
+                            'Changing model size',
+                            'Tracking model iterations and configurations',
+                            'Updating model weights only',
+                            'Version control for data'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Model versioning tracks different iterations of models with their configurations and metrics.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is A/B testing in ML?',
+                        'options' => [
+                            'Comparing two model architectures',
+                            'Testing different models with user groups',
+                            'Training two models simultaneously',
+                            'Splitting data into sets'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'A/B testing compares different models or strategies by deploying to different user groups.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What does MLflow primarily track?',
+                        'options' => [
+                            'User interactions',
+                            'Experiments, metrics, and artifacts',
+                            'Model code only',
+                            'Data processing time'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'MLflow is an open-source platform for tracking experiments, metrics, and model artifacts.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is model drift?',
+                        'options' => [
+                            'Model getting faster',
+                            'Model performance degrading over time',
+                            'Model size increasing',
+                            'Model training failing'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Model drift occurs when the model\'s predictions degrade as real-world data changes.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is feature store?',
+                        'options' => [
+                            'Storing model files',
+                            'Centralized repository for ML features',
+                            'Data visualization tool',
+                            'Training data storage'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'A feature store is a centralized repository for storing and serving ML features.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is canary deployment?',
+                        'options' => [
+                            'Bird-related deployment',
+                            'Gradually rolling out to small percentage',
+                            'Complete replacement',
+                            'Blue-green deployment only'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Canary deployment gradually introduces new model to small subset.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is shadow mode deployment?',
+                        'options' => [
+                            'Hidden deployment',
+                            'New model runs alongside without affecting decisions',
+                            'Backup mode',
+                            'Silent operation'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Shadow mode runs new model in parallel without impacting production.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is model registry?',
+                        'options' => [
+                            'Marriage service',
+                            'Centralized model versioning and management',
+                            'Government database',
+                            'Security feature'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Model registry centralizes model versioning and lifecycle management.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is inference optimization?',
+                        'options' => [
+                            'Better predictions',
+                            'Making model predictions faster and efficient',
+                            'Optimizing training',
+                            'Feature optimization'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Inference optimization improves speed and efficiency of predictions.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is model monitoring?',
+                        'options' => [
+                            'Watching models sleep',
+                            'Tracking model performance in production',
+                            'Model training watch',
+                            'Hardware monitoring'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Model monitoring tracks performance and health of deployed models.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is data drift?',
+                        'options' => [
+                            'Data moving',
+                            'Change in input data distribution',
+                            'Data backup',
+                            'Data migration'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Data drift occurs when input data distribution changes over time.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is concept drift?',
+                        'options' => [
+                            'Philosophy class',
+                            'Change in relationship between inputs and outputs',
+                            'Data migration',
+                            'Concept storage'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Concept drift is when the relationship between features and target changes.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is progressive deployment?',
+                        'options' => [
+                            'Slow deployment',
+                            'Gradually increasing traffic to new model',
+                            'One-time deployment',
+                            'Complete replacement'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Progressive deployment slowly increases model traffic over time.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is rollback in ML deployment?',
+                        'options' => [
+                            'Undo transaction',
+                            'Reverting to previous model version',
+                            'Database rollback',
+                            'Code rollback'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Rollback reverts to previous model when issues are detected.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is feature importance monitoring?',
+                        'options' => [
+                            'Monitoring feature files',
+                            'Tracking which features matter most',
+                            'Feature tracking',
+                            'Data importance'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Feature importance monitoring tracks which features drive predictions.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is prediction distribution monitoring?',
+                        'options' => [
+                            'Output tracking',
+                            'Monitoring model output distribution',
+                            'Data distribution',
+                            'Input tracking'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Prediction monitoring tracks the distribution of model outputs.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is CI/CD for ML?',
+                        'options' => [
+                            'Continuous Integration/Continuous Deployment for ML',
+                            'Computer Intelligence',
+                            'Code implementation',
+                            'Continuous improvement'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'CI/CD automates building, testing, and deploying ML models.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is model calibration?',
+                        'options' => [
+                            'Model training',
+                            'Ensuring model probabilities are accurate',
+                            'Model setup',
+                            'Feature calibration'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Calibration ensures model confidence scores match actual probabilities.',
+                        'points' => 1,
+                    ],
+                ],
+            ],
+
+            [
+                'title' => 'Transformers & Attention',
+                'description' => 'Test your understanding of transformer architecture and attention mechanisms.',
+                'learning_path' => 'deep-learning-expert',
+                'passing_score' => 70,
+                'max_attempts' => 5,
+                'questions' => [
+                    [
+                        'question' => 'What is self-attention?',
+                        'options' => [
+                            'Model attending to itself only',
+                            'Measuring relationships between all positions in a sequence',
+                            'Attention within a single layer',
+                            'Reducing model size'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Self-attention computes relationships between all positions in a sequence simultaneously.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What does positional encoding provide?',
+                        'options' => [
+                            'Model performance metrics',
+                            'Sequence order information',
+                            'Model regularization',
+                            'Data augmentation'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Positional encoding provides sequence order information since transformers have no recurrence.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is multi-head attention?',
+                        'options' => [
+                            'Using multiple transformer models',
+                            'Multiple attention mechanisms in parallel',
+                            'Attending to multiple sequences',
+                            'Stacking multiple layers'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Multi-head attention runs several attention mechanisms in parallel to capture different relationships.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Why use masked attention in language models?',
+                        'options' => [
+                            'To speed up training',
+                            'To prevent seeing future tokens',
+                            'To reduce model size',
+                            'To improve accuracy'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Masked attention prevents the model from seeing future tokens during training.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is the purpose of feed-forward layers in transformers?',
+                        'options' => [
+                            'Process sequential data',
+                            'Add non-linear transformations',
+                            'Reduce model size',
+                            'Handle attention weights'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Feed-forward layers provide non-linear transformations to process attention outputs.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is the attention score function?',
+                        'options' => [
+                            'Summing all values',
+                            'Scaled dot-product of query and key',
+                            'Maximum of all inputs',
+                            'Average pooling'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Attention uses scaled dot-product of query and key vectors to compute scores.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What are Q, K, V in attention?',
+                        'options' => [
+                            'Quality, Knowledge, Value',
+                            'Query, Key, Value',
+                            'Question, Kernel, Vector',
+                            'Quantity, Kind, Variable'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Q (Query), K (Key), V (Value) are learned linear projections for attention.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is rotary position embedding (RoPE)?',
+                        'options' => [
+                            'Rotating model weights',
+                            'Encoding position using rotation matrices',
+                            'Circular data augmentation',
+                            'Weight rotation'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'RoPE encodes position information using rotation matrices in the attention computation.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is KV cache in transformers?',
+                        'options' => [
+                            'Keyboard input cache',
+                            'Cached key-value pairs for faster inference',
+                            'Knowledge vector storage',
+                            'Kernel visualization'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'KV cache stores computed keys and values to avoid recomputation during generation.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is beam search?',
+                        'options' => [
+                            'Searching for beams in images',
+                            'Exploring multiple candidate sequences',
+                            'Network architecture',
+                            'Data structure'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Beam search explores multiple candidate sequences while generating text.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is greedy decoding?',
+                        'options' => [
+                            'Being greedy with resources',
+                            'Selecting highest probability token each step',
+                            'Searching all paths',
+                            'Random generation'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Greedy decoding selects the highest probability token at each step.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is temperature sampling?',
+                        'options' => [
+                            'Hardware temperature control',
+                            'Adjusting probability distribution randomness',
+                            'Training temperature',
+                            'Model cooling'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Temperature scaling adjusts the randomness of token selection.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is top-k sampling?',
+                        'options' => [
+                            'Selecting top keyboard keys',
+                            'Restricting token selection to top k candidates',
+                            'K-fold cross validation',
+                            'Top k layers'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Top-k sampling restricts token selection to the k most probable tokens.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is top-p (nucleus) sampling?',
+                        'options' => [
+                            'Top priority selection',
+                            'Selecting from smallest probability mass',
+                            'Picking top p tokens',
+                            'Nuclear sampling'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Top-p selects tokens that make up the top p% of probability mass.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is flash attention?',
+                        'options' => [
+                            'Quick keyboard shortcuts',
+                            'Memory-efficient attention computation',
+                            'Fast model training',
+                            'Speed boost technique'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Flash attention computes attention with reduced memory footprint.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is group query attention (GQA)?',
+                        'options' => [
+                            'Grouping queries together',
+                            'Sharing key heads across query heads',
+                            'Query clustering',
+                            'Multi-query optimization'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'GQA shares key/value heads across multiple query heads for efficiency.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is the decoder-only architecture?',
+                        'options' => [
+                            'Network with no decoder',
+                            'Transformer using causal (masked) attention',
+                            'Autoencoder variant',
+                            'Sequential decoder'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Decoder-only uses masked attention for autoregressive text generation.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is chain-of-thought in transformers?',
+                        'options' => [
+                            'Linking transformer layers',
+                            'Generating reasoning steps explicitly',
+                            'Sequential processing',
+                            'Layer chaining'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Chain-of-thought generates explicit reasoning steps for complex problems.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is mixture of experts (MoE)?',
+                        'options' => [
+                            'Combining expert systems',
+                            'Activating subset of parameters per input',
+                            'Multiple AI models',
+                            'Expert training'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'MoE activates only a subset of expert networks for each input.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is sliding window attention?',
+                        'options' => [
+                            'Window sliding animation',
+                            'Attending to fixed window of tokens',
+                            'Sliding model weights',
+                            'Window selection'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Sliding window attention limits attention to a fixed context window.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is full attention?',
+                        'options' => [
+                            'Attention with focus mode',
+                            'Attending to all positions in sequence',
+                            'Maximum attention',
+                            'Complete attention'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Full attention computes relationships between all positions in the sequence.',
+                        'points' => 1,
+                    ],
+                ],
+            ],
+
+            [
+                'title' => 'Vector Databases & Embeddings',
+                'description' => 'Test your understanding of embeddings and vector search.',
+                'learning_path' => 'rag-vector-search',
+                'passing_score' => 70,
+                'max_attempts' => 5,
+                'questions' => [
+                    [
+                        'question' => 'What is an embedding vector?',
+                        'options' => [
+                            'Text file format',
+                            'Dense numerical representation of data',
+                            'Encrypted data format',
+                            'Compressed image format'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Embedding vectors are dense numerical representations that capture semantic meaning.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is Approximate Nearest Neighbor (ANN)?',
+                        'options' => [
+                            'Exact matching algorithm',
+                            'Fast similarity search with trade-offs',
+                            'Neural network architecture',
+                            'Data compression method'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'ANN provides fast similarity search by trading some accuracy for speed.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What indexing method does Qdrant use?',
+                        'options' => [
+                            'B-tree only',
+                            'HNSW graph-based indexing',
+                            'Linear scanning',
+                            'Hash-based indexing'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Qdrant uses HNSW (Hierarchical Navigable Small World) for efficient vector indexing.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is semantic search?',
+                        'options' => [
+                            'Keyword matching',
+                            'Meaning-based search using embeddings',
+                            'Exact phrase matching',
+                            'Alphabetical sorting'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Semantic search finds results based on meaning rather than exact keyword matches.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is re-ranking in RAG?',
+                        'options' => [
+                            'Training the retriever',
+                            'Refining search results with a more accurate model',
+                            'Removing duplicate results',
+                            'Sorting by date'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Re-ranking uses a more powerful model to refine initial search results.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is cosine similarity?',
+                        'options' => [
+                            'Angle between vectors only',
+                            'Measure of vector direction similarity',
+                            'Vector length calculation',
+                            'Data compression'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Cosine similarity measures how similar two vectors are based on angle.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is Euclidean distance in vectors?',
+                        'options' => [
+                            'Angle between vectors',
+                            'Straight-line distance between points',
+                            'Vector direction',
+                            'Dot product'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Euclidean distance is the straight-line distance between two points.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is dot product similarity?',
+                        'options' => [
+                            'Cross multiplication',
+                            'Sum of element-wise products',
+                            'Vector division',
+                            'Matrix multiplication'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Dot product is the sum of element-wise products of two vectors.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is vector normalization?',
+                        'options' => [
+                            'Making vectors longer',
+                            'Scaling vectors to unit length',
+                            'Encrypting vectors',
+                            'Compressing vectors'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Normalization scales vectors to have unit length for consistent comparison.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is embedding dimensionality?',
+                        'options' => [
+                            'Number of vectors',
+                            'Length of each vector',
+                            'Number of dimensions',
+                            'Vector count'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Dimensionality is the number of values in each embedding vector.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is Pinecone vector database?',
+                        'options' => [
+                            'Database for pine trees',
+                            'Managed vector database service',
+                            'Image processing tool',
+                            'Programming language'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Pinecone is a managed cloud service for storing and searching vectors.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is Weaviate?',
+                        'options' => [
+                            'Weather API',
+                            'Open-source vector search engine',
+                            'Data visualization',
+                            'Network tool'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Weaviate is an open-source vector search engine with built-in embeddings.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is Milvus?',
+                        'options' => [
+                            'Military database',
+                            'Open-source vector database',
+                            'Email client',
+                            'Image editor'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Milvus is an open-source vector database for AI applications.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is Chroma?',
+                        'options' => [
+                            'Color picker',
+                            'Embedding database for AI',
+                            'Audio processor',
+                            'Image filter'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Chroma is an open-source embedding database designed for AI applications.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is FAISS?',
+                        'options' => [
+                            'Facebook AI Similarity Search',
+                            'Library for efficient similarity search',
+                            'File system',
+                            'Network protocol'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'FAISS is Facebook AI\'s library for efficient dense vector similarity search.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is IVF index in vector search?',
+                        'options' => [
+                            'In-Vivo Fertilization',
+                            'Inverted File Index for clustering',
+                            'Input-Validation-Format',
+                            'Indexed Vector File'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'IVF clusters vectors and searches within relevant clusters only.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is HNSW algorithm?',
+                        'options' => [
+                            'Hierarchical Non-Sequential Walk',
+                            'Hierarchical Navigable Small World',
+                            'High Number Sparse Weights',
+                            'Hybrid Network Search Wave'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'HNSW builds a multi-layer graph for fast approximate nearest neighbor search.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is vector quantization?',
+                        'options' => [
+                            'Increasing vector size',
+                            'Compressing vectors to codes',
+                            'Encrypting vectors',
+                            'Duplicating vectors'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Quantization compresses vectors by mapping to representative codes.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is product quantization?',
+                        'options' => [
+                            'E-commerce search',
+                            'Splitting vectors into subvectors for compression',
+                            'Product database',
+                            'Vector multiplication'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Product quantization splits vectors into subvectors for efficient storage.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is ANN recall?',
+                        'options' => [
+                            'Recall ability of model',
+                            'Percentage of true neighbors found',
+                            'Memory recall',
+                            'Training recall'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'ANN recall measures how many true nearest neighbors are found by approximate search.',
+                        'points' => 1,
+                    ],
+                ],
+            ],
+
+            [
+                'title' => 'AI Agents Deep Dive',
+                'description' => 'Test your understanding of AI agent architectures and capabilities.',
+                'learning_path' => 'multi-agent-systems-architect',
+                'passing_score' => 70,
+                'max_attempts' => 5,
+                'questions' => [
+                    [
+                        'question' => 'What is tool use in AI agents?',
+                        'options' => [
+                            'Using hardware tools',
+                            'Calling external functions/APIs',
+                            'Training models',
+                            'Creating software'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Tool use allows agents to call external functions, APIs, or services to accomplish tasks.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is memory in agent systems?',
+                        'options' => [
+                            'RAM allocation',
+                            'Persisting information across interactions',
+                            'Training data storage',
+                            'Cache management'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Agent memory enables persisting context and information across multiple interactions.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is reflection in agents?',
+                        'options' => [
+                            'Mirror image processing',
+                            'Agent evaluating its own outputs',
+                            'Training technique',
+                            'Data augmentation'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Reflection enables agents to evaluate and improve their own outputs and reasoning.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is planning in agent systems?',
+                        'options' => [
+                            'Creating project plans',
+                            'Breaking tasks into executable steps',
+                            'Scheduling training jobs',
+                            'Resource allocation'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Planning allows agents to break complex tasks into manageable executable steps.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What does LangGraph excel at?',
+                        'options' => [
+                            'Simple linear workflows',
+                            'Stateful workflows with cycles',
+                            'Static page generation',
+                            'Database queries'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'LangGraph specializes in stateful workflows with cycles and persistence.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is autonomous AI?',
+                        'options' => [
+                            'AI that works alone',
+                            'AI that makes decisions and acts without human input',
+                            'Standalone AI systems',
+                            'Manual AI processes'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Autonomous AI makes decisions and takes actions independently.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is multi-agent collaboration?',
+                        'options' => [
+                            'Single agent processing',
+                            'Multiple agents working together on tasks',
+                            'Agent competition',
+                            'Sequential agent tasks'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Multi-agent systems have multiple agents working together.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is agent role assignment?',
+                        'options' => [
+                            'Assigning human roles',
+                            'Giving agents specific responsibilities',
+                            'Role-based access control',
+                            'Task assignment'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Role assignment gives agents specific responsibilities in multi-agent systems.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is agent communication protocol?',
+                        'options' => [
+                            'Network protocol',
+                            'Rules for agent-to-agent messaging',
+                            'User communication',
+                            'API protocol'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Communication protocols define how agents exchange information.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is hierarchical agent design?',
+                        'options' => [
+                            'Flat agent structure',
+                            'Organizing agents in parent-child relationships',
+                            'Network hierarchy',
+                            'Layer-based agents'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Hierarchical design organizes agents in supervisory relationships.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is agent goal decomposition?',
+                        'options' => [
+                            'Breaking goals into smaller tasks',
+                            'Combining multiple goals',
+                            'Goal prioritization',
+                            'Goal evaluation'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Goal decomposition breaks complex goals into achievable subgoals.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is agent self-correction?',
+                        'options' => [
+                            'Fixing typos',
+                            'Agent identifying and fixing own errors',
+                            'Code correction',
+                            'Human correction'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Self-correction allows agents to identify and fix their own mistakes.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is agent deliberation?',
+                        'options' => [
+                            'Fast decision making',
+                            'Careful reasoning before action',
+                            'Automatic processing',
+                            'Random decisions'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Deliberation is careful reasoning before taking action.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is agent execution monitoring?',
+                        'options' => [
+                            'Agent shutting down',
+                            'Tracking and verifying task execution',
+                            'Running agents',
+                            'Agent performance'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Monitoring tracks whether tasks are executed correctly.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is reactive agent behavior?',
+                        'options' => [
+                            'Proactive planning',
+                            'Responding directly to environment',
+                            'Delayed response',
+                            'Inactive state'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Reactive behavior responds directly to environmental stimuli.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is proactive agent behavior?',
+                        'options' => [
+                            'Waiting for input',
+                            'Anticipating and acting on future needs',
+                            'Reactive only',
+                            'Passive processing'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Proactive agents anticipate needs and act ahead of time.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is agent safety constraint?',
+                        'options' => [
+                            'Physical locks',
+                            'Rules preventing harmful actions',
+                            'User permissions',
+                            'System limits'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Safety constraints prevent agents from taking harmful actions.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is agent sandboxing?',
+                        'options' => [
+                            'Beach simulation',
+                            'Isolated environment for agent execution',
+                            'Container technology',
+                            'Security feature only'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Sandboxing isolates agents to prevent unintended consequences.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is agent observability?',
+                        'options' => [
+                            'Agent vision',
+                            'Understanding agent decision-making process',
+                            'Agent visibility',
+                            'Display features'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Observability means understanding why agents make certain decisions.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is agent rollback?',
+                        'options' => [
+                            'Database rollback',
+                            'Reverting agent to previous state',
+                            'Error recovery',
+                            'State restoration'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Rollback reverts agent to a known good previous state.',
+                        'points' => 1,
+                    ],
+                ],
+            ],
+
+            [
+                'title' => 'Local AI & Inference',
+                'description' => 'Test your understanding of running AI models locally.',
+                'learning_path' => 'local-ai-deployment',
+                'passing_score' => 70,
+                'max_attempts' => 5,
+                'questions' => [
+                    [
+                        'question' => 'What is GGUF format in llama.cpp?',
+                        'options' => [
+                            'Graphics format',
+                            'Quantized model format',
+                            'Programming language',
+                            'Network protocol'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'GGUF is a quantized model format optimized for CPU inference with llama.cpp.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What does quantization reduce?',
+                        'options' => [
+                            'Model accuracy',
+                            'Model size and memory usage',
+                            'Training time',
+                            'Dataset size'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Quantization reduces model size and memory by using lower-precision numbers.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is Ollama primarily used for?',
+                        'options' => [
+                            'Model training',
+                            'Running LLMs locally with simple commands',
+                            'Data preprocessing',
+                            'Model evaluation'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Ollama enables running LLMs locally with simple command-line interface.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is vLLM known for?',
+                        'options' => [
+                            'Easy local setup',
+                            'High-throughput LLM serving with PagedAttention',
+                            'Model quantization',
+                            'Chat interface'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'vLLM provides high-throughput LLM serving using PagedAttention technique.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is KV cache quantization?',
+                        'options' => [
+                            'Reducing training data',
+                            'Compressing attention key/value cache',
+                            'Quantizing model weights only',
+                            'Dataset compression'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'KV cache quantization compresses the attention cache to reduce memory usage.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is llama.cpp?',
+                        'options' => [
+                            'Llamas in C++',
+                            'C++ inference engine for LLMs',
+                            'Python library',
+                            'Web framework'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'llama.cpp is a C++ library for efficient LLM inference.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What does GGML stand for?',
+                        'options' => [
+                            'GNU General ML',
+                            'GPT Generated Model Language',
+                            'Machine learning library format',
+                            'Graphics Gateway Markup Language'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'GGML (now replaced by GGUF) was a tensor library for machine learning.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is tensor in local AI?',
+                        'options' => [
+                            'Smartphone device',
+                            'Multi-dimensional array for computations',
+                            'Sensor data',
+                            'Time series'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Tensors are multi-dimensional arrays used for neural network computations.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is batch inference?',
+                        'options' => [
+                            'Single prediction at a time',
+                            'Processing multiple inputs simultaneously',
+                            'Batch training',
+                            'Sequential processing'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Batch inference processes multiple inputs together for efficiency.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is streaming inference?',
+                        'options' => [
+                            'Video streaming',
+                            'Generating tokens one at a time as they are produced',
+                            'Batch processing',
+                            'Offline inference'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Streaming outputs tokens as they are generated rather than waiting for complete response.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is model quantization?',
+                        'options' => [
+                            'Increasing model size',
+                            'Converting to lower precision (e.g., 8-bit)',
+                            'Model training',
+                            'Data quantization'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Quantization converts model weights to lower precision for efficiency.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is AWQ quantization?',
+                        'options' => [
+                            'Automatic Weight Quantization',
+                            'Activation-Aware Weight Quantization',
+                            'Adaptive Weight Quality',
+                            'Array Weight Query'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'AWQ is a quantization method that preserves important weights.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is GPTQ quantization?',
+                        'options' => [
+                            'GPT Protocol',
+                            'Post-Training Quantization for GPT models',
+                            'General Purpose Training Quantization',
+                            'Gradient-based Precision Training'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'GPTQ is a post-training quantization method for efficient inference.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is ExLlamaV2?',
+                        'options' => [
+                            'Extended llama version',
+                            'Optimized inference engine for llama models',
+                            'LLaMA visual interface',
+                            'LLaMA training tool'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'ExLlamaV2 is an optimized inference engine for LLaMA models.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is TensorRT-LLM?',
+                        'options' => [
+                            'Tensor processing library',
+                            'NVIDIA optimized LLM inference engine',
+                            'Neural network trainer',
+                            'Data tensor format'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'TensorRT-LLM is NVIDIA\'s optimized inference engine for LLMs.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is LM Studio?',
+                        'options' => [
+                            'Music production software',
+                            'Desktop app for running LLMs locally',
+                            'Machine learning studio',
+                            'Language model toolkit'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'LM Studio is a desktop application for running LLMs locally.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is Jan local inference?',
+                        'options' => [
+                            'January releases',
+                            'Open-source local AI inference engine',
+                            'Java AI framework',
+                            'Neural network library'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Jan is an open-source alternative for local AI inference.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is continuous batching?',
+                        'options' => [
+                            'Training continuously',
+                            'Dynamic batching of requests during generation',
+                            'Permanent storage',
+                            'Sequential processing'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Continuous batching dynamically adds requests to batches during generation.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is speculative decoding?',
+                        'options' => [
+                            'Predicting model outputs',
+                            'Using small draft model to predict, large model to verify',
+                            'Random decoding',
+                            'Sequential prediction'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Speculative decoding uses draft model predictions for faster inference.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is GPU offloading?',
+                        'options' => [
+                            'Removing GPU',
+                            'Loading model layers across CPU/GPU dynamically',
+                            'Turning off GPU',
+                            'External GPU'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Offloading distributes model across CPU and GPU memory.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is llamafile?',
+                        'options' => [
+                            'Llama documentation',
+                            'Single-file LLM executable',
+                            'LLaMA file format',
+                            'Llama backup'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'llamafile packages LLMs as single executable files.',
+                        'points' => 1,
+                    ],
+                ],
+            ],
+
+            [
+                'title' => 'Reinforcement Learning Basics',
+                'description' => 'Test your understanding of reinforcement learning concepts.',
+                'learning_path' => 'autonomous-systems-developer',
+                'passing_score' => 70,
+                'max_attempts' => 5,
+                'questions' => [
+                    [
+                        'question' => 'What is an agent in RL?',
+                        'options' => [
+                            'Human researcher',
+                            'The AI system learning and acting',
+                            'Environment controller',
+                            'Data processor'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'The agent is the AI system that learns to make decisions through interaction.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is a reward in RL?',
+                        'options' => [
+                            'Training bonus',
+                            'Signal for good/bad actions',
+                            'Final score',
+                            'Data label'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Reward is a signal that tells the agent how good its action was.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is the purpose of exploration vs exploitation?',
+                        'options' => [
+                            'Training vs inference',
+                            'Trying new actions vs using known best',
+                            'Model selection',
+                            'Data collection'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Exploration tries new actions to discover better strategies; exploitation uses known best actions.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is Q-learning?',
+                        'options' => [
+                            'Quality function',
+                            'Learning action values',
+                            'Question answering',
+                            'Query processing'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Q-learning learns the value of taking specific actions in specific states.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is policy gradient?',
+                        'options' => [
+                            'Gradient descent optimization',
+                            'Learning policy directly',
+                            'Computing policy gradients',
+                            'Policy iteration'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Policy gradient methods directly optimize the policy that maps states to actions.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is an environment in RL?',
+                        'options' => [
+                            'Physical location',
+                            'The world the agent interacts with',
+                            'Training setup',
+                            'Hardware configuration'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Environment is everything the agent interacts with and learns from.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is a state in RL?',
+                        'options' => [
+                            'US state',
+                            'Current situation of the environment',
+                            'Agent status',
+                            'Training stage'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'State represents the current situation of the environment.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is an action in RL?',
+                        'options' => [
+                            'Physical movement',
+                            'What the agent can do in the environment',
+                            'Environment change',
+                            'Training step'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Action is what the agent can do to affect the environment.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is a policy in RL?',
+                        'options' => [
+                            'Company policy',
+                            'Strategy mapping states to actions',
+                            'Training rules',
+                            'Safety guidelines'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Policy defines how the agent chooses actions given states.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is a value function?',
+                        'options' => [
+                            'Net worth',
+                            'Expected future rewards from a state',
+                            'Current reward',
+                            'Training metric'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Value function estimates expected cumulative future rewards.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is a Q-function?',
+                        'options' => [
+                            'Quality factor',
+                            'Expected rewards for state-action pairs',
+                            'Question function',
+                            'Quantization function'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Q-function (action-value function) estimates rewards for state-action pairs.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is the discount factor?',
+                        'options' => [
+                            'Price reduction',
+                            'Weight for future rewards (usually gamma)',
+                            'Training rate',
+                            'Memory factor'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Discount factor (gamma) determines how much future rewards matter.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is temporal difference learning?',
+                        'options' => [
+                            'Time travel',
+                            'Learning from differences between predictions',
+                            'Time series analysis',
+                            'Delayed learning'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'TD learning combines sampling and bootstrapping to learn from experience.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is Monte Carlo learning?',
+                        'options' => [
+                            'Casino AI',
+                            'Learning from complete episode returns',
+                            'Statistical analysis',
+                            'Random sampling only'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Monte Carlo learns from complete episodes, not partial sequences.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is on-policy learning?',
+                        'options' => [
+                            'Police training',
+                            'Learning from current policy behavior',
+                            'Offline learning',
+                            'Batch learning'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'On-policy learns from the policy currently being executed.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is off-policy learning?',
+                        'options' => [
+                            'Old policy training',
+                            'Learning from different policy behavior',
+                            'Online learning',
+                            'Real-time learning'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Off-policy learns from data generated by a different policy.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is DQN (Deep Q-Network)?',
+                        'options' => [
+                            'Deep Quality Network',
+                            'Deep neural network for Q-learning',
+                            'Dynamic Q-Network',
+                            'Distributed Q-Learning'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'DQN combines deep learning with Q-learning for complex environments.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is experience replay?',
+                        'options' => [
+                            'Playing games again',
+                            'Storing and sampling past experiences',
+                            'Replay buffer',
+                            'Memory storage'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Experience replay stores past experiences for efficient learning.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is a replay buffer?',
+                        'options' => [
+                            'Audio memory',
+                            'Storage for agent experiences',
+                            'Training data',
+                            'Network buffer'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Replay buffer stores agent experiences for replay during training.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is target network in DQN?',
+                        'options' => [
+                            'Network goal',
+                            'Stable Q-value targets for training',
+                            'Final network',
+                            'Main network'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Target network provides stable Q-values for training DQN.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is epsilon-greedy exploration?',
+                        'options' => [
+                            'Random exploration with probability epsilon',
+                            'Greedy algorithm',
+                            'Efficient exploration',
+                            'Maximum exploration'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Epsilon-greedy explores randomly with probability epsilon.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is reward shaping?',
+                        'options' => [
+                            'Sculpting rewards',
+                            'Modifying rewards to guide learning',
+                            'Reward calculation',
+                            'Final reward selection'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Reward shaping modifies rewards to help agents learn faster.',
+                        'points' => 1,
+                    ],
+                ],
+            ],
+
+            // === CLAUDE CODE POLICY QUIZ (from TRAINING-QUIZ.html) ===
+            [
+                'title' => 'Claude Code Policy Training',
+                'description' => 'Test your understanding of Claude Code policy requirements before using the tool. Required for access.',
+                'learning_path' => null,
+                'passing_score' => 80,
+                'max_attempts' => 10,
+                'questions' => [
+                    [
+                        'question' => 'You\'re debugging a payment integration issue. What should you do?',
+                        'options' => [
+                            'Paste your .env file with real API keys to Claude so it can see the configuration',
+                            'Share the code with placeholder values (sk_test_xxx) and describe the issue without credentials',
+                            'Don\'t ask Claude - handle it yourself'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Never share actual secrets. Use placeholder values instead.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Claude generates authentication code. What must you do before merging to main?',
+                        'options' => [
+                            'Test locally and merge immediately (it works on my machine)',
+                            'Understand the code, test thoroughly, request peer review, wait for approval before merging',
+                            'Have Claude review its own code and approve'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Code review is mandatory. Never skip testing or peer review.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What should you NEVER share with Claude Code?',
+                        'options' => [
+                            'Production database dumps with real customer data',
+                            'API keys and secret tokens',
+                            'Both A and B are things you should NEVER share'
+                        ],
+                        'correct_option' => 2,
+                        'explanation' => 'Never share secrets OR production data. Both are strictly prohibited.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'You accidentally share an API key with Claude. What do you do?',
+                        'options' => [
+                            'Don\'t tell anyone - just rotate the key quietly',
+                            'Tell your manager and security team immediately, then rotate the key',
+                            'Hope it doesn\'t matter since it\'s just one key'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Self-reporting results in lighter consequences. Report immediately.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What\'s a red flag in code Claude generates that you should watch for?',
+                        'options' => [
+                            'Missing error handling for API calls',
+                            'Database loops without eager loading (N+1 queries)',
+                            'Both A and B are red flags to watch for'
+                        ],
+                        'correct_option' => 2,
+                        'explanation' => 'Both missing error handling and N+1 queries are common Claude mistakes.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'As a junior developer, can you approve your own PRs?',
+                        'options' => [
+                            'Yes, if the tests pass',
+                            'No, a senior developer must review and approve',
+                            'Only if you wrote the code without Claude\'s help'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Code review is mandatory for all juniors. Never approve your own code.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What must you do before asking Claude for help with code?',
+                        'options' => [
+                            'Just ask Claude directly - it knows everything',
+                            'Provide clear requirements, context, and constraints without secrets',
+                            'Never ask Claude - that\'s cheating'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Good prompts with context get better results. Never share secrets.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Can you share a production database dump with Claude to "optimize a query"?',
+                        'options' => [
+                            'Yes, if you\'re just looking at the schema',
+                            'No, never. It may contain customer data and violates privacy laws',
+                            'Only with permission from the database owner'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Never share production data. It violates privacy laws and company policy.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What should be in your .gitignore file?',
+                        'options' => [
+                            '.env files with actual secrets/credentials',
+                            'node_modules, build artifacts, temporary files',
+                            'Both A and B'
+                        ],
+                        'correct_option' => 2,
+                        'explanation' => 'Both .env files with secrets AND build artifacts should be excluded.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'You don\'t understand Claude\'s generated code. What should you do?',
+                        'options' => [
+                            'Commit it anyway - you\'ll learn as you go',
+                            'Ask Claude to explain it, then ask your senior to review',
+                            'Delete it and write it yourself'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Always understand code before committing. Get senior review.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What are you responsible for after Claude generates code?',
+                        'options' => [
+                            'Claude is responsible - you just copied it',
+                            'You are responsible. Claude\'s code may have bugs, security issues, or performance problems',
+                            'Your manager is responsible for reviewing'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'You own the code you commit. Always validate before committing.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What\'s the proper workflow when using Claude Code?',
+                        'options' => [
+                            'Claude → Commit to main → Deploy',
+                            'Claude → Local Test → Branch → PR → Review → CI → Staging → Deploy',
+                            'Claude → Deploy directly to staging'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'This ensures quality and safety. Never skip the review process.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What common security problem does Claude often miss?',
+                        'options' => [
+                            'Missing input validation on server-side',
+                            'Missing authorization checks (auth ≠ authz)',
+                            'Both A and B are commonly missed by Claude'
+                        ],
+                        'correct_option' => 2,
+                        'explanation' => 'Always verify security features like input validation and authorization.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Before making a PR with AI-generated code, you should:',
+                        'options' => [
+                            'Run linter, run tests, test manually, then request peer review',
+                            'Just create the PR - reviewers will catch issues',
+                            'Ask Claude if the code is good before PRing'
+                        ],
+                        'correct_option' => 0,
+                        'explanation' => 'You must validate locally before PR. Never rely solely on reviewers.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What counts as "production data" you can\'t share?',
+                        'options' => [
+                            'Real customer emails, names, phone numbers',
+                            'Payment card information, transaction details',
+                            'Both A and B (and other PII)'
+                        ],
+                        'correct_option' => 2,
+                        'explanation' => 'All PII is prohibited. Customer data, payment info, and personal information cannot be shared.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'How should you handle .env files?',
+                        'options' => [
+                            'Commit .env with real values so everyone has the same config',
+                            'Commit .env.example with placeholder values, .env in .gitignore with real values local',
+                            'Never use .env files'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Use .env.example and .gitignore to protect secrets while enabling development.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Who is responsible for code quality in AI-generated code?',
+                        'options' => [
+                            'Claude - it should generate perfect code',
+                            'The reviewer - they should catch all issues',
+                            'You, the developer - you must validate and test before committing'
+                        ],
+                        'correct_option' => 2,
+                        'explanation' => 'You are accountable for all code you commit, including AI-generated code.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What should you do if you spot a policy violation by a team member?',
+                        'options' => [
+                            'Ignore it - not your problem',
+                            'Report it to security team or your manager',
+                            'Tell everyone on Slack to shame them'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Report violations through proper channels. Don\'t ignore or publicly shame.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Can you use Claude Code for personal projects on company time?',
+                        'options' => [
+                            'Yes, as long as you don\'t use company code',
+                            'No, Claude Code access is for company work only',
+                            'Yes, it doesn\'t matter as long as no secrets are shared'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Claude Code is for company work only. Company tools = company work.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What\'s the most important rule when using Claude Code?',
+                        'options' => [
+                            'Never share secrets or sensitive data with Claude',
+                            'Always understand code before committing it',
+                            'Both A and B are equally critical'
+                        ],
+                        'correct_option' => 2,
+                        'explanation' => 'Both are fundamental to safe usage. Never share secrets AND always understand code.',
+                        'points' => 1,
+                    ],
+                ],
+            ],
+
+            // === ISO 27001 & SOC 2 COMPLIANCE QUIZ (from TRAINING-QUIZ-COMPREHENSIVE.html) ===
+            [
+                'title' => 'ISO 27001 & SOC 2 Compliance',
+                'description' => 'Comprehensive training on ISO 27001 and SOC 2 requirements for Claude Code and AI Agents usage. Required for access.',
+                'learning_path' => null,
+                'passing_score' => 85,
+                'max_attempts' => 10,
+                'questions' => [
+                    // Security & Secrets (Questions 1-15)
+                    [
+                        'question' => 'According to ISO 27001, who is responsible for information security in an organization?',
+                        'options' => [
+                            'Only the Security Team',
+                            'Everyone - it\'s a shared responsibility',
+                            'Only management'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'ISO 27001 requires information security to be everyone\'s responsibility.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What must you do if you accidentally share an API key with Claude?',
+                        'options' => [
+                            'Nothing - Claude is trusted',
+                            'Report to security team within 1 hour, rotate key immediately, log incident',
+                            'Just rotate the key quietly'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Incident reporting and rotation are required for SOC 2 compliance.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is the primary purpose of .env files in application security?',
+                        'options' => [
+                            'Store all application configuration',
+                            'Separate secrets from code to prevent accidental exposure',
+                            'It doesn\'t matter where secrets go'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Separation prevents exposure. This is an ISO 27001 control (A.14.2.1).',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Which of the following is NOT acceptable to share with Claude?',
+                        'options' => [
+                            'Code structure explanation',
+                            'Production database connection string with password',
+                            'Error message description'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Never share credentials. This is ISO 27001 A.9.2.1.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is the acceptable use of Claude Code according to SOC 2 Type II?',
+                        'options' => [
+                            'Any work-related use, including personal projects if no secrets shared',
+                            'Company work only, with proper logging and audit trails',
+                            'Any use is acceptable'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'SOC 2 requires logged, auditable business use only (CC6.1).',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Which data is NEVER acceptable to share with Claude?',
+                        'options' => [
+                            'Real customer names, emails, phone numbers',
+                            'Payment card information',
+                            'Both A and B (all PII)'
+                        ],
+                        'correct_option' => 2,
+                        'explanation' => 'Both violate ISO 27001 (A.13.2.2) and SOC 2 data protection.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What should be in your .gitignore file per ISO 27001 A.14.2.1?',
+                        'options' => [
+                            'Only large files',
+                            '.env files, build artifacts, node_modules, and any files with credentials',
+                            'Nothing - all files should be committed'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Proper .gitignore prevents credential leakage.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'How should secrets be managed in production per ISO 27001?',
+                        'options' => [
+                            'Use environment variables only from secure vaults (AWS Secrets Manager, HashiCorp Vault)',
+                            'Commit encrypted secrets to git',
+                            'Store in a text file on the server'
+                        ],
+                        'correct_option' => 0,
+                        'explanation' => 'ISO 27001 A.9.1.1 requires secret vaults with access controls.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is the risk of sharing database credentials with Claude?',
+                        'options' => [
+                            'Attackers could gain unauthorized database access',
+                            'GDPR/CCPA violations if customer data accessed',
+                            'Both A and B are risks'
+                        ],
+                        'correct_option' => 2,
+                        'explanation' => 'Both risks violate ISO 27001 and SOC 2 controls.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'According to ISO 27001 A.12.4.1, what must be monitored in information systems?',
+                        'options' => [
+                            'Unusual activity, unauthorized access attempts, security events',
+                            'Only things that are obviously breaking',
+                            'Nothing needs to be monitored'
+                        ],
+                        'correct_option' => 0,
+                        'explanation' => 'ISO 27001 A.12.4.1 requires logging and monitoring of all security events.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What should you do if you discover a team member shared secrets with Claude?',
+                        'options' => [
+                            'Ignore it - they\'ll figure it out',
+                            'Report to security team immediately and document the incident',
+                            'Tell everyone on Slack to shame them'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'ISO 27001 A.16.1 requires incident reporting and documentation.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'How long should security incident logs be retained per SOC 2?',
+                        'options' => [
+                            '30 days',
+                            '1 year minimum, with archival for 3+ years',
+                            'Only while needed for active investigation'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'SOC 2 CC7.2 requires extended log retention for audit trails.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is the primary control for preventing secret leaks in git?',
+                        'options' => [
+                            'Hope developers don\'t accidentally commit secrets',
+                            'GitHub secret scanning + pre-commit hooks + .gitignore + code review',
+                            'Regular git repository audits only'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Defense-in-depth is required by ISO 27001 A.13.1.3.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Per ISO 27001, who must approve access to Claude Code?',
+                        'options' => [
+                            'Developers can self-approve',
+                            'Manager approval required + security team verification (A.9.2.2)',
+                            'Security team only'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'ISO 27001 A.9.2.2 requires authorized access approval.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'When Claude access is revoked, what must happen per SOC 2?',
+                        'options' => [
+                            'Just remove their account',
+                            'Deactivate account + audit all previous conversations + document reason + log in security system (CC6.2)',
+                            'Delete all history with that user'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'SOC 2 CC6.2 requires documented access termination.',
+                        'points' => 1,
+                    ],
+                    // ISO 27001 & SOC 2 Compliance (Questions 16-27)
+                    [
+                        'question' => 'What is the primary goal of ISO 27001?',
+                        'options' => [
+                            'Make developers\' lives harder',
+                            'Establish Information Security Management System (ISMS) with controls and continuous improvement',
+                            'Only for IT departments'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'ISO 27001 establishes organization-wide ISMS with risk management.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What does SOC 2 Type II measure?',
+                        'options' => [
+                            'How a company operates at a point in time',
+                            'Whether security controls work effectively OVER TIME (6+ months)',
+                            'Only password policies'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'SOC 2 Type II audits control effectiveness over time.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What are the Trust Service Criteria (TSC) in SOC 2?',
+                        'options' => [
+                            'CC (Common Criteria) + PO (Process Operations) + PT (Process, Technology) controls',
+                            'Just about passwords',
+                            'Only for financial companies'
+                        ],
+                        'correct_option' => 0,
+                        'explanation' => 'SOC 2 audits against CC, PO, PT criteria for security controls.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is ISO 27001 Annex A.13.1.3 about?',
+                        'options' => [
+                            'Separating development, testing, and production systems',
+                            'Only about hiring',
+                            'Password complexity'
+                        ],
+                        'correct_option' => 0,
+                        'explanation' => 'Separation of environments is a critical control (A.13.1.3).',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Per ISO 27001 A.6.1.1, what must be established for information security?',
+                        'options' => [
+                            'Only IT policies',
+                            'Set of policies and objectives approved by management',
+                            'Nothing specific needed'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'A.6.1.1 requires management-approved information security policies.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What SOC 2 control covers access controls and user provisioning?',
+                        'options' => [
+                            'CC6 (Logical and Physical Access Controls)',
+                            'Only PO controls',
+                            'Not covered in SOC 2'
+                        ],
+                        'correct_option' => 0,
+                        'explanation' => 'CC6 covers access control and logical security.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Which SOC 2 criterion covers availability and performance?',
+                        'options' => [
+                            'A (Availability criterion - availability, performance, timeliness)',
+                            'S (Security criterion)',
+                            'Only IT operations team responsibility'
+                        ],
+                        'correct_option' => 0,
+                        'explanation' => 'The A criterion covers availability and performance requirements.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What does ISO 27001 require for risk assessment (A.12.6.1)?',
+                        'options' => [
+                            'Just once when implementing',
+                            'Continuous monitoring, regular review, and assessment of information security risks',
+                            'Not required if nothing bad has happened'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'A.12.6.1 requires continuous and regular risk assessment.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Per ISO 27001 A.16.1, what must organizations do with information security incidents?',
+                        'options' => [
+                            'Keep them secret internally',
+                            'Report, assess, respond, recover, and learn (with documented procedures)',
+                            'Incidents don\'t need procedures'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'A.16.1 requires formal incident management procedures.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What does SOC 2 CC7.2 require regarding information system activity?',
+                        'options' => [
+                            'No logging needed',
+                            'System activity monitoring, logging, retention, and secure review',
+                            'Logs can be deleted after 2 weeks'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'CC7.2 requires monitoring, logging, and retention of system activity.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is required by SOC 2 for third-party service providers (CC7.3)?',
+                        'options' => [
+                            'No assessment needed',
+                            'Identify, select, monitor, and review third-parties\' security practices (applies to Claude/AI providers)',
+                            'Trust all third parties equally'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'CC7.3 requires assessment and monitoring of third-party providers.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What does ISO 27001 A.14.2.1 cover?',
+                        'options' => [
+                            'Information transfer and confidentiality (preventing unauthorized disclosure)',
+                            'Only email security',
+                            'Not relevant to Claude Code'
+                        ],
+                        'correct_option' => 0,
+                        'explanation' => 'A.14.2.1 requires controls to prevent unauthorized disclosure.',
+                        'points' => 1,
+                    ],
+                    // Agent & MCP Usage (Questions 28-37)
+                    [
+                        'question' => 'What is an MCP (Model Context Protocol) server in Claude ecosystem?',
+                        'options' => [
+                            'A way to extend Claude with custom tools and integrations',
+                            'Only for advanced users',
+                            'Not relevant to development'
+                        ],
+                        'correct_option' => 0,
+                        'explanation' => 'MCP servers extend Claude with custom capabilities.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'When using agents with Claude, what security consideration is critical?',
+                        'options' => [
+                            'Agents can access any resource without controls',
+                            'Agents must have minimal permissions, audit trails, and cannot access production credentials',
+                            'Security doesn\'t apply to agents'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Agents must follow ISO 27001 A.13.1.3 principle of least privilege.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Can you configure an agent to directly access your production database?',
+                        'options' => [
+                            'Yes, if it\'s faster',
+                            'No - agents get read-only access to test/staging data only (ISO 27001 A.13.1.3)',
+                            'Only if the agent is from a trusted vendor'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Agents must never have production database access.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What must be logged when an agent performs actions per SOC 2?',
+                        'options' => [
+                            'Nothing - it\'s automated',
+                            'Who triggered agent, what actions, when, what data accessed (CC7.2)',
+                            'Only failures need to be logged'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'SOC 2 CC7.2 requires comprehensive agent activity logging.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is required when using MCP servers to access company systems?',
+                        'options' => [
+                            'No special requirements',
+                            'Security review, SOC 2 assessment of the server, audit logging, access controls (A.13.1.1, CC6)',
+                            'Only if your company is large'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'MCP servers require security and SOC 2 controls.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Can an agent write data to production systems?',
+                        'options' => [
+                            'Yes, agents should be able to modify production',
+                            'No - only humans with proper approval can modify production (ISO 27001 A.14.2.4)',
+                            'Only on Fridays'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Only authorized humans can change production systems.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What should you do if you want to create an agent to analyze production data?',
+                        'options' => [
+                            'Just point it at production database',
+                            'Create anonymized test data, get security review, verify no PII exposure, log all access (A.13.2.2)',
+                            'Agents shouldn\'t access any data'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Anonymized data required for agent analysis.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'How often should agent actions and MCP server access be reviewed?',
+                        'options' => [
+                            'Never - set it and forget it',
+                            'Quarterly minimum, with continuous monitoring (ISO 27001 A.12.4.1, SOC 2 CC7.2)',
+                            'Only if something goes wrong'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Continuous monitoring and quarterly review required.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What happens if an agent error causes unauthorized data access?',
+                        'options' => [
+                            'Nothing - it\'s automated',
+                            'Must be reported as security incident, investigated, and documented (ISO 27001 A.16.1)',
+                            'Only if a human notices it'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'All security incidents require formal incident management.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Can you use agents to automate code deployment to production?',
+                        'options' => [
+                            'Yes, agents should deploy automatically',
+                            'No - only approved humans can authorize production changes (ISO 27001 A.14.2.4, SOC 2 CC7)',
+                            'Only to staging'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Humans must approve production changes.',
+                        'points' => 1,
+                    ],
+                    // Code Review & Quality (Questions 38-50)
+                    [
+                        'question' => 'What is the minimum number of code reviews required before merge per ISO 27001 A.14.2.3?',
+                        'options' => [
+                            'Zero - if the author says it\'s good',
+                            'Minimum 1 peer review (2 for critical code), logged and documented',
+                            'Only for new developers'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'ISO 27001 A.14.2.3 requires segregation of duties in code review.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Who can approve code written by a junior developer?',
+                        'options' => [
+                            'The junior developer themselves',
+                            'Only senior developer or tech lead (segregation of duties - A.14.2.3)',
+                            'Any other developer'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Segregation of duties requires different approver.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What should code review focus on per ISO 27001 A.14.2.3?',
+                        'options' => [
+                            'Just formatting and style',
+                            'Security, functionality, performance, maintainability, no secrets, compliance',
+                            'Doesn\'t matter - just rubber stamp'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Code review must verify security and quality.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What must happen before code goes to production per ISO 27001 A.14.2.7?',
+                        'options' => [
+                            'Testing in staging, security testing, performance testing, approval',
+                            'Just hope it works',
+                            'Quick test in prod then revert'
+                        ],
+                        'correct_option' => 0,
+                        'explanation' => 'A.14.2.7 requires testing before production release.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is the minimum acceptable code coverage for AI-generated code?',
+                        'options' => [
+                            'No tests needed if Claude generated it',
+                            'Same or higher than human code - at least 80% unit test coverage (SOC 2 controls)',
+                            '10% is fine'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Same standards apply to AI-generated code.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What security-specific code review items are critical?',
+                        'options' => [
+                            'Doesn\'t matter - security is IT\'s job',
+                            'SQL injection, XSS, auth bypass, hardcoded secrets, CSRF, insecure defaults (OWASP top 10)',
+                            'Only password policies'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Every developer reviews for OWASP vulnerabilities.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'How long should code review comments be documented per SOC 2?',
+                        'options' => [
+                            'Don\'t need to document - just talk verbally',
+                            'Permanently in Git/GitHub (audit trail required - CC7.2)',
+                            'Email is fine'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Audit trails in version control required by SOC 2.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What should be checked for AI-generated code specifically?',
+                        'options' => [
+                            'Nothing extra - Claude code is always correct',
+                            'Error handling, edge cases, N+1 queries, missing security checks, assumptions (extra scrutiny)',
+                            'Less review since it\'s AI'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'AI code requires extra scrutiny for common mistakes.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What violates ISO 27001 A.14.2.3 (segregation of duties)?',
+                        'options' => [
+                            'Author approves their own code and merges it',
+                            'Developer and reviewer are different people',
+                            'Tech Lead can do everything'
+                        ],
+                        'correct_option' => 0,
+                        'explanation' => 'Approving your own code violates segregation of duties.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What must all code changes be tracked with per ISO 27001 A.14.1.1?',
+                        'options' => [
+                            'Don\'t need to track anything',
+                            'Version control (git) with meaningful messages showing what/why changed',
+                            'Email notifications only'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'A.14.1.1 requires change tracking in version control.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is NOT acceptable in a PR with AI-generated code?',
+                        'options' => [
+                            'Notation that Claude generated it (for extra scrutiny)',
+                            'Merging without review or testing',
+                            'Both A is good, B is bad'
+                        ],
+                        'correct_option' => 2,
+                        'explanation' => 'Disclose AI involvement, never skip review/testing.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What does linting/formatting validation do per ISO 27001 A.14.2.3?',
+                        'options' => [
+                            'Nothing important',
+                            'Enforces consistency, detects issues automatically before human review',
+                            'Fixes all security issues'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Linting is first layer of automated quality checks.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is the most important principle when using Claude Code per this policy?',
+                        'options' => [
+                            'Speed is more important than security',
+                            'YOU are responsible for understanding, testing, and securing all code you commit (never share secrets or sensitive data)',
+                            'Trust Claude to handle everything'
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Developer accountability is fundamental to ISO 27001 and SOC 2.',
+                        'points' => 1,
+                    ],
+                ],
+            ],
+        ];
+
+        foreach ($quizzes as $quizData) {
+            $learningPathId = null;
+            if (!empty($quizData['learning_path'])) {
+                $path = \App\Models\LearningPath::where('slug', $quizData['learning_path'])->first();
+                $learningPathId = $path?->id;
+            }
+            
+            $quiz = Quiz::updateOrCreate(
+                ['title' => $quizData['title']],
+                [
+                    'description' => $quizData['description'],
+                    'learning_path_id' => $learningPathId,
+                    'passing_score' => $quizData['passing_score'],
+                    'max_attempts' => $quizData['max_attempts'],
+                    'is_published' => true,
+                ]
+            );
+
+            $quiz->questions()->delete();
+
+            foreach ($quizData['questions'] as $questionData) {
+                $quiz->questions()->create($questionData);
+            }
+        }
+    }
+}
