@@ -110,6 +110,58 @@ class ResourceSeeder extends Seeder
                 'category' => 'Claude Code', 'type' => 'GitHub', 'url' => 'https://github.com/wong2/awesome-mcp-servers', 'duration_minutes' => 25, 'difficulty_level' => 2, 'icon' => '🌐',
             ],
 
+            // Claude Code - Ecosystem (Guides)
+            [
+                'title' => 'Build an MCP GitHub Agent in 50 Lines',
+                'description' => 'Step-by-step tutorial to build a fully functional GitHub agent using MCP in under 50 lines of Python.',
+                'learning_reason' => 'Building a working agent in 50 lines shows you how simple MCP integrations really are. You\'ll demystify agent development and gain the confidence to build custom tool integrations for any API.',
+                'category' => 'Claude Code', 'type' => 'Guide', 'url' => 'https://www.theunwindai.com/p/build-an-mcp-github-agent-in-less-than-50-lines-of-code', 'duration_minutes' => 30, 'difficulty_level' => 2, 'icon' => '🌐',
+            ],
+            [
+                'title' => 'Build a Notion Agent with MCP',
+                'description' => 'Build a terminal-based Notion agent using Model Context Protocol — fully open source with step-by-step instructions.',
+                'learning_reason' => 'Connecting AI to productivity tools like Notion demonstrates real-world MCP value. You\'ll learn to bridge AI agents with the tools your team already uses daily.',
+                'category' => 'Claude Code', 'type' => 'Guide', 'url' => 'https://www.theunwindai.com/p/build-a-terminal-based-notion-agent-with-mcp', 'duration_minutes' => 35, 'difficulty_level' => 2, 'icon' => '🌐',
+            ],
+
+            // Claude Code - Official Tools
+            [
+                'title' => 'Claude Code',
+                'description' => 'Agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster through natural language commands.',
+                'learning_reason' => 'This is the tool itself — the foundation everything else in this platform builds upon. Installing and using Claude Code daily is the single most important step to becoming an AI-augmented developer.',
+                'category' => 'Claude Code', 'type' => 'GitHub', 'url' => 'https://github.com/anthropics/claude-code', 'duration_minutes' => 20, 'difficulty_level' => 1, 'icon' => '⚡',
+            ],
+            [
+                'title' => 'Anthropic Skills',
+                'description' => 'Public repository for Agent Skills — reusable, composable skill definitions for Claude Code agents.',
+                'learning_reason' => 'Skills are the building blocks of Claude Code\'s intelligence. Understanding the official skills repo teaches you how to create, share, and compose skills for your own agent workflows.',
+                'category' => 'Claude Code', 'type' => 'GitHub', 'url' => 'https://github.com/anthropics/skills', 'duration_minutes' => 30, 'difficulty_level' => 2, 'icon' => '🧩',
+            ],
+            [
+                'title' => 'Superpowers',
+                'description' => 'An agentic skills framework and software development methodology that works — by obra.',
+                'learning_reason' => 'Superpowers provides a battle-tested methodology for structuring AI-assisted development. It shows you how to organize skills and workflows into a coherent system that scales across projects.',
+                'category' => 'Claude Code', 'type' => 'GitHub', 'url' => 'https://github.com/obra/superpowers', 'duration_minutes' => 35, 'difficulty_level' => 2, 'icon' => '💪',
+            ],
+            [
+                'title' => 'Claude Mem',
+                'description' => 'A Claude Code plugin that automatically captures everything Claude does during coding sessions, compresses it with AI, and injects relevant context into future sessions.',
+                'learning_reason' => 'Memory management is key to productive AI sessions. Claude Mem solves the context problem by automatically preserving and retrieving relevant history across conversations.',
+                'category' => 'Claude Code', 'type' => 'GitHub', 'url' => 'https://github.com/thedotmack/claude-mem', 'duration_minutes' => 20, 'difficulty_level' => 2, 'icon' => '🧠',
+            ],
+            [
+                'title' => 'UI/UX Pro Max Skill',
+                'description' => 'An AI skill that provides design intelligence for building professional UI/UX across multiple platforms.',
+                'learning_reason' => 'Good UI/UX separates amateur projects from professional ones. This skill gives Claude Code design expertise, teaching you how AI can make informed visual and interaction design decisions.',
+                'category' => 'Claude Code', 'type' => 'GitHub', 'url' => 'https://github.com/nextlevelbuilder/ui-ux-pro-max-skill', 'duration_minutes' => 25, 'difficulty_level' => 2, 'icon' => '🎨',
+            ],
+            [
+                'title' => 'Open Claude Cowork',
+                'description' => 'Open-source version of Claude Cowork with 500+ SaaS app integrations via Composio.',
+                'learning_reason' => 'Connecting Claude Code to 500+ SaaS tools opens up automation possibilities across your entire workflow — from Slack to Jira to Notion. This is the bridge between AI coding and business automation.',
+                'category' => 'Claude Code', 'type' => 'GitHub', 'url' => 'https://github.com/composiohq/open-claude-cowork', 'duration_minutes' => 30, 'difficulty_level' => 2, 'icon' => '🔗',
+            ],
+
             // Prompt Engineering
             [
                 'title' => 'Prompt Engineering Interactive Tutorial',
@@ -174,6 +226,40 @@ class ResourceSeeder extends Seeder
                 'category' => 'AI Agents', 'type' => 'GitHub', 'url' => 'https://github.com/google/adk-python', 'duration_minutes' => 60, 'difficulty_level' => 3, 'icon' => '🤖',
             ],
 
+            // AI Agents (Guides)
+            [
+                'title' => 'Build an Autonomous AI Agent Team (24/7)',
+                'description' => 'Full tutorial to build an autonomous agent team that runs continuously using OpenClaw — covers orchestration and scheduling.',
+                'learning_reason' => 'Autonomous agent teams represent the next leap in AI automation. Learning to orchestrate agents that run 24/7 teaches you scheduling, error recovery, and long-running system design.',
+                'category' => 'AI Agents', 'type' => 'Guide', 'url' => 'https://www.theunwindai.com/p/how-i-built-an-autonomous-ai-agent-team-that-runs-24-7', 'duration_minutes' => 45, 'difficulty_level' => 3, 'icon' => '🤖',
+            ],
+            [
+                'title' => 'Deep Research Agent with OpenAI Agents SDK',
+                'description' => 'Build a multi-phase deep research agent combining OpenAI Agents SDK and Firecrawl for autonomous web research.',
+                'learning_reason' => 'Deep research agents automate hours of manual research. This tutorial teaches multi-phase agent design — planning, searching, synthesizing — patterns applicable to any complex agent workflow.',
+                'category' => 'AI Agents', 'type' => 'Guide', 'url' => 'https://www.theunwindai.com/p/build-a-deep-research-agent-with-openai-agents-sdk-and-firecrawl', 'duration_minutes' => 40, 'difficulty_level' => 3, 'icon' => '🤖',
+            ],
+            [
+                'title' => 'AI Sales Intelligence Agent with Google ADK',
+                'description' => 'Multi-agent app using Google ADK and Gemini 3 — covers agent coordination, tool use, and data pipelines.',
+                'learning_reason' => 'Building a multi-agent business application shows how AI agents deliver real ROI. You\'ll learn agent coordination patterns and data pipeline design that apply across industries.',
+                'category' => 'AI Agents', 'type' => 'Guide', 'url' => 'https://www.theunwindai.com/p/build-an-ai-sales-intelligence-agent-team-with-google-adk-gemini-3', 'duration_minutes' => 50, 'difficulty_level' => 3, 'icon' => '🤖',
+            ],
+            [
+                'title' => 'AI Travel Planning Agent with MCP',
+                'description' => 'Build a multi-agent travel planner using MCP — demonstrates real-world agent orchestration patterns.',
+                'learning_reason' => 'A travel planner is a perfect multi-agent use case — search, compare, book. Building this teaches you how to decompose complex user goals into coordinated agent actions.',
+                'category' => 'AI Agents', 'type' => 'Guide', 'url' => 'https://www.theunwindai.com/p/build-an-ai-travel-planning-agent-with-mcp', 'duration_minutes' => 40, 'difficulty_level' => 2, 'icon' => '🤖',
+            ],
+
+            // AI Agents (Tools)
+            [
+                'title' => 'Agent Bank',
+                'description' => 'CLI-first banking for agents — financial infrastructure that lets AI agents handle transactions, invoicing, and payments.',
+                'learning_reason' => 'As AI agents become autonomous, they need financial infrastructure. Agent Bank shows how to build the plumbing that lets agents transact in the real world — a frontier use case.',
+                'category' => 'AI Agents', 'type' => 'GitHub', 'url' => 'https://github.com/different-ai/agent-bank', 'duration_minutes' => 30, 'difficulty_level' => 3, 'icon' => '🏦',
+            ],
+
             // AI Coding
             [
                 'title' => 'Continue',
@@ -198,6 +284,58 @@ class ResourceSeeder extends Seeder
                 'description' => 'Open-source AI coding assistant for the terminal.',
                 'learning_reason' => 'Opencode offers a lightweight, terminal-native AI assistant. Learning multiple tools in this space helps you pick the right tool for each project and team context.',
                 'category' => 'AI Coding', 'type' => 'GitHub', 'url' => 'https://github.com/different-ai/opencode', 'duration_minutes' => 20, 'difficulty_level' => 1, 'icon' => '⌨️',
+            ],
+
+            // AI Coding (Guides)
+            [
+                'title' => 'Multimodal AI Coding Agent Team',
+                'description' => 'Build a coding agent team combining o3-mini and Gemini 2.0 for multimodal code generation and review.',
+                'learning_reason' => 'Combining multiple AI models in a coding pipeline produces better results than any single model. This teaches you model orchestration and how to leverage each model\'s strengths.',
+                'category' => 'AI Coding', 'type' => 'Guide', 'url' => 'https://www.theunwindai.com/p/build-a-multimodal-ai-coding-agent-team-with-o3-mini-and-gemini-2-0', 'duration_minutes' => 45, 'difficulty_level' => 3, 'icon' => '⌨️',
+            ],
+
+            // AI Coding (Platforms & Tools)
+            [
+                'title' => 'OpenWork',
+                'description' => 'Open-source alternative to Claude Cowork built for teams, powered by opencode.',
+                'learning_reason' => 'Team-based AI coding is the future of software development. OpenWork demonstrates how to build collaborative AI environments where multiple developers work alongside AI agents.',
+                'category' => 'AI Coding', 'type' => 'GitHub', 'url' => 'https://github.com/different-ai/openwork', 'duration_minutes' => 25, 'difficulty_level' => 2, 'icon' => '👥',
+            ],
+            [
+                'title' => 'Opencode Browser',
+                'description' => 'OpenCode plugin to automate Chrome — inspired by Claude in Chrome.',
+                'learning_reason' => 'Browser automation powered by AI agents opens up testing, scraping, and workflow automation. This plugin shows how to extend coding assistants into the browser environment.',
+                'category' => 'AI Coding', 'type' => 'GitHub', 'url' => 'https://github.com/different-ai/opencode-browser', 'duration_minutes' => 20, 'difficulty_level' => 2, 'icon' => '🌐',
+            ],
+            [
+                'title' => 'Rocket.new Templates',
+                'description' => 'AI-powered web and app builder with 25,000+ industry-specific templates for rapid development.',
+                'learning_reason' => 'Starting from curated templates dramatically reduces setup time. Rocket.new shows how AI can customize templates to your specific industry needs, accelerating project kickoff.',
+                'category' => 'AI Coding', 'type' => 'Tool', 'url' => 'https://www.rocket.new/templates', 'duration_minutes' => 20, 'difficulty_level' => 1, 'icon' => '🚀',
+            ],
+            [
+                'title' => 'Verdent AI',
+                'description' => 'AI-native coding partner that orchestrates multiple agents working in parallel — available as desktop app, VS Code, and JetBrains plugin.',
+                'learning_reason' => 'Parallel AI agents working on different parts of your code simultaneously represent the next evolution of AI-assisted development. Verdent shows what multi-agent coding workflows look like in practice.',
+                'category' => 'AI Coding', 'type' => 'Tool', 'url' => 'https://www.verdent.ai/', 'duration_minutes' => 25, 'difficulty_level' => 2, 'icon' => '🌿',
+            ],
+            [
+                'title' => 'Compyle',
+                'description' => 'AI coding agent that emphasizes collaboration and planning — researches your codebase, asks questions, and creates detailed plans before writing code.',
+                'learning_reason' => 'The "plan before code" approach produces significantly better AI-generated code. Compyle\'s overwatcher pattern teaches you how collaborative AI development should work.',
+                'category' => 'AI Coding', 'type' => 'Tool', 'url' => 'https://www.compyle.ai/', 'duration_minutes' => 20, 'difficulty_level' => 2, 'icon' => '🔄',
+            ],
+            [
+                'title' => 'cto.new',
+                'description' => 'Completely free AI code agent platform — build apps, agents, and startup projects with no payment or API keys required.',
+                'learning_reason' => 'Zero-barrier access to AI code generation lets you prototype ideas instantly. cto.new is perfect for learning AI-assisted development without worrying about costs or setup.',
+                'category' => 'AI Coding', 'type' => 'Tool', 'url' => 'https://cto.new/', 'duration_minutes' => 20, 'difficulty_level' => 1, 'icon' => '🆓',
+            ],
+            [
+                'title' => 'Lovart',
+                'description' => 'The world\'s first AI design agent — automates graphic design with brand consistency, style intelligence, and visual insights.',
+                'learning_reason' => 'AI design agents eliminate the gap between developers and designers. Lovart shows how AI maintains brand consistency across assets — essential knowledge for building visually polished products.',
+                'category' => 'AI Coding', 'type' => 'Tool', 'url' => 'https://www.lovart.ai/', 'duration_minutes' => 20, 'difficulty_level' => 1, 'icon' => '🎨',
             ],
 
             // ML Foundations
@@ -234,6 +372,13 @@ class ResourceSeeder extends Seeder
                 'description' => '16-hour track covering LLM concepts, transformers, and building LLM apps.',
                 'learning_reason' => 'LLMs are reshaping every industry. Understanding how they work — tokenization, attention, fine-tuning — lets you build smarter applications and make informed decisions about when and how to use them.',
                 'category' => 'LLMs', 'type' => 'Course', 'url' => 'https://www.datacamp.com/tracks/developing-large-language-models', 'duration_minutes' => 960, 'difficulty_level' => 2, 'icon' => '📝',
+            ],
+
+            [
+                'title' => 'Awesome LLM Apps',
+                'description' => 'Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini, and open-source models.',
+                'learning_reason' => 'Seeing real LLM applications built with different providers and architectures gives you a pattern library to draw from. Each app demonstrates a different approach to solving problems with language models.',
+                'category' => 'LLMs', 'type' => 'GitHub', 'url' => 'https://github.com/Shubhamsaboo/awesome-llm-apps', 'duration_minutes' => 45, 'difficulty_level' => 2, 'icon' => '📝',
             ],
 
             // Reinforcement Learning
@@ -408,6 +553,20 @@ class ResourceSeeder extends Seeder
                 'category' => 'Inference Tools', 'type' => 'GitHub', 'url' => 'https://github.com/cheahjs/free-llm-api-resources', 'duration_minutes' => 20, 'difficulty_level' => 1, 'icon' => '⚡',
             ],
 
+            // Inference Tools (Guides)
+            [
+                'title' => 'Local RAG Agent with DeepSeek R1',
+                'description' => 'Build a local reasoning RAG agent with DeepSeek R1 — runs offline with full retrieval and chain-of-thought.',
+                'learning_reason' => 'Running RAG entirely offline with reasoning capabilities means complete data privacy and zero API costs. This teaches you to build self-contained AI systems for sensitive environments.',
+                'category' => 'Inference Tools', 'type' => 'Guide', 'url' => 'https://www.theunwindai.com/p/build-a-local-rag-reasoning-agent-with-deepseek-r1', 'duration_minutes' => 40, 'difficulty_level' => 2, 'icon' => '⚡',
+            ],
+            [
+                'title' => 'Local ChatGPT Clone with Llama 3.1',
+                'description' => 'Build a local chatbot with memory and vector database — 100% free, no internet required, using Llama 3.1.',
+                'learning_reason' => 'Building a full ChatGPT-like experience locally teaches you the complete stack — model serving, memory management, and vector storage — without depending on any external APIs.',
+                'category' => 'Inference Tools', 'type' => 'Guide', 'url' => 'https://www.theunwindai.com/p/build-a-local-chatgpt-clone-with-memory-using-llama-3-1', 'duration_minutes' => 45, 'difficulty_level' => 2, 'icon' => '⚡',
+            ],
+
             // Fine-Tuning
             [
                 'title' => 'Unsloth',
@@ -432,6 +591,14 @@ class ResourceSeeder extends Seeder
                 'description' => 'Full-stack RLHF, SFT, DPO, and reward modeling.',
                 'learning_reason' => 'TRL is the go-to library for aligning language models with human preferences. Understanding RLHF and reward modeling is essential for building AI that\'s helpful, harmless, and honest.',
                 'category' => 'Fine-Tuning', 'type' => 'GitHub', 'url' => 'https://github.com/huggingface/trl', 'duration_minutes' => 60, 'difficulty_level' => 3, 'icon' => '🎛️',
+            ],
+
+            // Fine-Tuning (Guides)
+            [
+                'title' => 'Fine-tune Llama 3.2 in 30 Lines (Free)',
+                'description' => 'Fine-tune Llama 3.2 for free using Google Colab — covers LoRA setup, dataset prep, and training in 30 lines of Python.',
+                'learning_reason' => 'Fine-tuning in 30 lines on free hardware proves that model customization is accessible to everyone. You\'ll learn LoRA setup, dataset preparation, and the minimal viable fine-tuning workflow.',
+                'category' => 'Fine-Tuning', 'type' => 'Guide', 'url' => 'https://www.theunwindai.com/p/fine-tune-llama-3-2-for-free-in-30-lines-of-python-code', 'duration_minutes' => 30, 'difficulty_level' => 2, 'icon' => '🎛️',
             ],
 
             // RAG & Vector
@@ -464,6 +631,32 @@ class ResourceSeeder extends Seeder
                 'description' => 'Knowledge-graph-based retrieval for structured AI answers.',
                 'learning_reason' => 'Traditional RAG struggles with multi-hop reasoning. GraphRAG uses knowledge graphs to connect information across documents, enabling AI to answer complex questions that require synthesizing multiple sources.',
                 'category' => 'RAG & Vector', 'type' => 'GitHub', 'url' => 'https://github.com/microsoft/graphrag', 'duration_minutes' => 60, 'difficulty_level' => 3, 'icon' => '🔍',
+            ],
+
+            // RAG & Vector (Guides)
+            [
+                'title' => 'Agentic RAG App with Reasoning',
+                'description' => 'Build a fully functional agentic RAG app that combines retrieval with step-by-step reasoning — 100% open source.',
+                'learning_reason' => 'Agentic RAG adds reasoning to retrieval — the AI doesn\'t just fetch documents, it thinks through them. This pattern dramatically improves answer quality for complex, multi-step questions.',
+                'category' => 'RAG & Vector', 'type' => 'Guide', 'url' => 'https://www.theunwindai.com/p/build-an-agentic-rag-app-with-reasoning', 'duration_minutes' => 40, 'difficulty_level' => 2, 'icon' => '🔍',
+            ],
+            [
+                'title' => 'Vision RAG App with Gemini 2.5 Flash',
+                'description' => 'Multimodal RAG system handling images and text using Gemini 2.5 Flash — step-by-step open-source guide.',
+                'learning_reason' => 'Most RAG systems only handle text. Adding vision capabilities lets you build systems that understand documents with charts, diagrams, and images — unlocking a massive category of enterprise use cases.',
+                'category' => 'RAG & Vector', 'type' => 'Guide', 'url' => 'https://www.theunwindai.com/p/build-a-vision-rag-app-with-gemini-2-5-flash', 'duration_minutes' => 45, 'difficulty_level' => 3, 'icon' => '🔍',
+            ],
+            [
+                'title' => 'RAG App with Hybrid Search',
+                'description' => 'Build RAG with hybrid search using Claude 3.5 Sonnet, OpenAI embeddings, and PostgreSQL for production-grade retrieval.',
+                'learning_reason' => 'Hybrid search combines semantic and keyword matching for significantly better retrieval accuracy. This production-grade pattern using PostgreSQL is directly deployable in real applications.',
+                'category' => 'RAG & Vector', 'type' => 'Guide', 'url' => 'https://www.theunwindai.com/p/build-a-rag-app-with-hybrid-search', 'duration_minutes' => 40, 'difficulty_level' => 2, 'icon' => '🔍',
+            ],
+            [
+                'title' => 'Deploy RAG-as-a-Service',
+                'description' => 'Build and deploy a production RAG service with Claude 3.5 Sonnet in under 50 lines — covers deployment patterns.',
+                'learning_reason' => 'Going from a RAG prototype to a deployed service is where most projects stall. This guide covers the deployment patterns and production considerations that make RAG actually usable.',
+                'category' => 'RAG & Vector', 'type' => 'Guide', 'url' => 'https://www.theunwindai.com/p/build-and-deploy-rag-as-a-service', 'duration_minutes' => 35, 'difficulty_level' => 2, 'icon' => '🔍',
             ],
 
             // Books
