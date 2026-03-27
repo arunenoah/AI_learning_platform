@@ -72,17 +72,17 @@
                     </p>
                     <div class="flex items-center gap-6">
                         <div class="text-center">
-                            <p class="text-3xl font-bold text-white">500+</p>
+                            <p class="text-3xl font-bold text-white">{{ \App\Models\Resource::active()->count() }}+</p>
                             <p class="text-sm text-primary-200">Resources</p>
                         </div>
                         <div class="w-px h-12 bg-white/20"></div>
                         <div class="text-center">
-                            <p class="text-3xl font-bold text-white">50+</p>
+                            <p class="text-3xl font-bold text-white">{{ \App\Models\LearningPath::count() }}+</p>
                             <p class="text-sm text-primary-200">Learning Paths</p>
                         </div>
                         <div class="w-px h-12 bg-white/20"></div>
                         <div class="text-center">
-                            <p class="text-3xl font-bold text-white">100+</p>
+                            <p class="text-3xl font-bold text-white">{{ \App\Models\Quiz::count() }}+</p>
                             <p class="text-sm text-primary-200">Quizzes</p>
                         </div>
                     </div>

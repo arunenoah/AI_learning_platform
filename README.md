@@ -98,7 +98,7 @@ Visit `http://localhost:8000` — you'll land on the Resources page.
 The `--seed` flag populates:
 - **73 learning resources** across 16 categories with learning reasons
 - **25 learning paths** with multi-step progressions
-- **2+ quizzes** with 20+ questions each
+- **17 quizzes** with questions and scoring
 - **16 badges** for achievements
 
 ## Project Structure
