@@ -104,6 +104,13 @@ class ResourceController extends Controller
         return view('resources.show', compact('resource', 'isCompleted'));
     }
 
+    public function content(Resource $resource): JsonResponse
+    {
+        return response()->json([
+            'content' => $resource->content,
+        ]);
+    }
+
     public function complete(Request $request, Resource $resource): JsonResponse
     {
         $this->progressService->completeResource($request->user(), $resource);

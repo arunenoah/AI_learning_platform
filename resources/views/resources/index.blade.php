@@ -149,6 +149,9 @@
     .popup-body   { padding: 12px 20px; }
     .popup-footer { padding: 12px 20px 16px; border-top: 1px solid #f1f5f9; }
     @media (hover: none) { .resource-popup { display: none !important; } }
+    .prose-content { font-size: 13.5px; color: #475569; line-height: 1.7; }
+    .prose-content pre { white-space: pre-wrap; word-break: break-word; }
+    @keyframes spin { to { transform: rotate(360deg); } }
 </style>
 
 <div class="app-header">
@@ -342,25 +345,12 @@ const typeIcons = { article:'📝', video:'🎬', tutorial:'📚', documentation
 const diffLabels = { '1':'Beginner', '2':'Intermediate', '3':'Advanced' };
 const diffColors = { '1':'background:#dcfce7;color:#166534', '2':'background:#fef9c3;color:#854d0e', '3':'background:#fee2e2;color:#991b1b' };
 
-function showResourcePane(resourceId) {
-    const card = document.querySelector(`[data-resource-id="${resourceId}"]`);
-    if (!card) return;
-
-    const { title, description, learningReason, url, type, duration, category, difficulty } = card.dataset;
-    currentUrl = url;
-    currentView = 'details';
-
-    document.getElementById('paneTitle').textContent = title;
-    document.getElementById('paneOpenLink').href = url || '#';
-    document.getElementById('paneIcon').textContent = typeIcons[type] || '📄';
-    document.getElementById('paneResourceTitle').textContent = title;
-    document.getElementById('paneResourceMeta').textContent = `${category} · ${duration} min`;
-
+function renderPaneBase(resourceId, title, description, learningReason, url, type, duration, category, difficulty, contentHtml) {
     document.getElementById('detailsView').innerHTML = `
         <div class="space-y-5">
             <div class="flex items-center gap-3">
                 <span class="text-4xl">${typeIcons[type] || '📄'}</span>
-                <div class="flex gap-2">
+                <div class="flex gap-2 flex-wrap">
                     <span style="font-size:12px;padding:3px 10px;border-radius:20px;background:var(--orange-50);color:var(--orange-700);border:1px solid var(--orange-100);">${category}</span>
                     <span style="font-size:12px;padding:3px 10px;border-radius:20px;${diffColors[difficulty] || ''}">${diffLabels[difficulty] || 'Level ' + difficulty}</span>
                 </div>
@@ -379,10 +369,14 @@ function showResourcePane(resourceId) {
                     <p style="font-size:16px;font-weight:600;color:#1c1917;text-transform:capitalize;">${type}</p>
                 </div>
             </div>
-            ${url ? `<button onclick="loadIframe()" class="btn-primary w-full" style="justify-content:center;padding:10px 16px;">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                View Resource
-            </button>` : ''}
+            ${url ? `<a href="${url}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display:flex;justify-content:center;padding:10px 16px;text-decoration:none;">
+                <svg style="width:16px;height:16px;margin-right:6px;flex-shrink:0;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                Open Resource
+            </a>` : ''}
+            ${contentHtml ? `<div style="border-top:1px solid #e8e5e0;padding-top:16px;">
+                <p style="font-size:12px;font-weight:600;color:var(--slate-400);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:12px;">Content</p>
+                <div class="prose-content">${contentHtml}</div>
+            </div>` : ''}
             ${learningReason ? `<div style="border-top:1px solid #e8e5e0;padding-top:16px;">
                 <p style="font-size:12px;font-weight:600;color:var(--slate-400);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">Why learn this</p>
                 <div style="background:var(--orange-50);border:1px solid var(--orange-100);border-radius:8px;padding:14px;">
@@ -391,12 +385,80 @@ function showResourcePane(resourceId) {
             </div>` : ''}
         </div>
     `;
+}
+
+function showResourcePane(resourceId) {
+    const card = document.querySelector(`[data-resource-id="${resourceId}"]`);
+    if (!card) return;
+
+    const { title, description, learningReason, url, type, duration, category, difficulty } = card.dataset;
+    currentUrl = url;
+    currentView = 'details';
+
+    document.getElementById('paneTitle').textContent = title;
+    document.getElementById('paneOpenLink').href = url || '#';
+    document.getElementById('paneIcon').textContent = typeIcons[type] || '📄';
+    document.getElementById('paneResourceTitle').textContent = title;
+    document.getElementById('paneResourceMeta').textContent = `${category} · ${duration} min`;
+
+    // Show pane immediately with base info
+    renderPaneBase(resourceId, title, description, learningReason, url, type, duration, category, difficulty,
+        `<div style="text-align:center;padding:20px;color:var(--slate-400);">
+            <svg style="width:24px;height:24px;margin:0 auto 8px;animation:spin 1s linear infinite;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+            </svg>
+            Loading content…
+        </div>`
+    );
 
     document.getElementById('detailsView').classList.remove('hidden');
     document.getElementById('iframeView').classList.add('hidden');
     document.getElementById('resourcePane').classList.remove('translate-x-full');
     document.getElementById('paneOverlay').classList.remove('hidden');
     document.body.style.overflow = 'hidden';
+
+    // Fetch content
+    fetch(`/resources/${resourceId}/content`)
+        .then(r => r.json())
+        .then(data => {
+            const contentHtml = data.content ? markdownToHtml(data.content) : null;
+            renderPaneBase(resourceId, title, description, learningReason, url, type, duration, category, difficulty, contentHtml);
+        })
+        .catch(() => {
+            renderPaneBase(resourceId, title, description, learningReason, url, type, duration, category, difficulty, null);
+        });
+}
+
+// Simple markdown renderer
+function markdownToHtml(md) {
+    // Strip YAML frontmatter
+    md = md.replace(/^---[\s\S]*?---\n?/, '');
+
+    return md
+        // Headings
+        .replace(/^### (.+)$/gm, '<h3 style="font-size:14px;font-weight:700;color:#1c1917;margin:16px 0 6px;">$1</h3>')
+        .replace(/^## (.+)$/gm,  '<h2 style="font-size:15px;font-weight:700;color:#1c1917;margin:20px 0 8px;padding-bottom:4px;border-bottom:1px solid #e8e5e0;">$1</h2>')
+        .replace(/^# (.+)$/gm,   '<h1 style="font-size:17px;font-weight:700;color:#1c1917;margin:0 0 12px;">$1</h1>')
+        // Code blocks
+        .replace(/```(\w*)\n?([\s\S]*?)```/g, (_, lang, code) =>
+            `<pre style="background:#1c1917;color:#e7e5e4;padding:14px;border-radius:6px;overflow-x:auto;font-size:12px;line-height:1.6;margin:10px 0;font-family:'DM Mono',monospace;"><code>${escHtml(code.trim())}</code></pre>`)
+        // Inline code
+        .replace(/`([^`]+)`/g, '<code style="background:#f1f0ec;color:#c2410c;padding:1px 5px;border-radius:3px;font-size:12px;font-family:\'DM Mono\',monospace;">$1</code>')
+        // Bold/italic
+        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*(.+?)\*/g, '<em>$1</em>')
+        // Unordered lists
+        .replace(/^[-*] (.+)$/gm, '<li style="margin:3px 0;padding-left:4px;">$1</li>')
+        .replace(/(<li[^>]*>.*<\/li>\n?)+/g, m => `<ul style="padding-left:20px;margin:8px 0;list-style:disc;">${m}</ul>`)
+        // Paragraphs
+        .replace(/\n{2,}/g, '</p><p style="font-size:13.5px;color:#475569;line-height:1.7;margin:8px 0;">')
+        .replace(/^(?!<[hupol])(.+)$/gm, (line) => line.trim() ? line : '')
+        // Wrap in paragraph
+        .replace(/^([^<\n].*)$/gm, (line) => line.trim() && !line.startsWith('<') ? `<p style="font-size:13.5px;color:#475569;line-height:1.7;margin:6px 0;">${line}</p>` : line);
+}
+
+function escHtml(str) {
+    return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 }
 
 function loadIframe() {

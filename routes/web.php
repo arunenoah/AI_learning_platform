@@ -13,6 +13,7 @@ Route::get('/', fn () => redirect()->route('blogs.index'))->name('home');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/blogs', [ResourceController::class, 'index'])->name('blogs.index');
+Route::get('/resources/{resource}/content', [ResourceController::class, 'content'])->name('resources.content');
 Route::get('/claude-code-materials', [ClaudeCodeMaterialsController::class, 'index'])->name('claude-code-materials.index');
 
 Route::middleware('auth')->group(function () {
