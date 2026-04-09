@@ -686,6 +686,188 @@ class ResourceSeeder extends Seeder
                 'learning_reason' => 'Staying current with AI tutorials keeps your skills sharp in a rapidly evolving field. This curated archive filters the noise and surfaces the most practical, hands-on content.',
                 'category' => 'AI News', 'type' => 'Blog', 'url' => 'https://www.theunwindai.com/archive?tags=AI+Tutorial', 'duration_minutes' => 30, 'difficulty_level' => 1, 'icon' => '📰',
             ],
+
+            // Claude API
+            [
+                'title' => 'Claude API — Messages',
+                'description' => 'Official documentation for Claude\'s Messages API - send conversations and receive responses.',
+                'learning_reason' => 'Understanding the Messages API is fundamental to building any Claude-powered application. This is the core endpoint for all conversational interactions.',
+                'category' => 'Claude API', 'type' => 'Docs', 'url' => 'https://platform.claude.com/docs/en/api/messages', 'duration_minutes' => 20, 'difficulty_level' => 1, 'icon' => '📚',
+            ],
+            [
+                'title' => 'Claude API — Tool Use',
+                'description' => 'Learn how to enable Claude to use tools for actions like file operations, command execution, and web search.',
+                'learning_reason' => 'Tool use is what makes Claude powerful for real-world tasks. Mastering this lets you build agents that can actually do work, not just respond.',
+                'category' => 'Claude API', 'type' => 'Docs', 'url' => 'https://platform.claude.com/docs/en/build-with-claude/tool-use', 'duration_minutes' => 30, 'difficulty_level' => 2, 'icon' => '🔧',
+            ],
+            [
+                'title' => 'Claude API — Message Batches',
+                'description' => 'Process large volumes of conversations efficiently with batch API for cost savings.',
+                'learning_reason' => 'Message Batches enable processing thousands of conversations at 50% lower cost. Essential for building scalable AI applications.',
+                'category' => 'Claude API', 'type' => 'Docs', 'url' => 'https://platform.claude.com/docs/en/build-with-claude/message-batches', 'duration_minutes' => 25, 'difficulty_level' => 2, 'icon' => '⚡',
+            ],
+
+            // Claude Agent SDK
+            [
+                'title' => 'Claude Agent SDK — Overview',
+                'description' => 'Introduction to the Claude Agent SDK for building autonomous agents.',
+                'learning_reason' => 'The Agent SDK provides the foundational building blocks for agentic applications. Understanding its architecture is essential for advanced Claude implementations.',
+                'category' => 'Claude Agent SDK', 'type' => 'Docs', 'url' => 'https://platform.claude.com/docs/en/agent-sdk/overview', 'duration_minutes' => 20, 'difficulty_level' => 2, 'icon' => '🤖',
+            ],
+            [
+                'title' => 'Claude Agent SDK — Hooks',
+                'description' => 'Implement custom hooks to intercept and modify agent behavior at key points.',
+                'learning_reason' => 'Hooks let you customize agent behavior for logging, validation, or custom workflows. Essential for production-grade agent deployments.',
+                'category' => 'Claude Agent SDK', 'type' => 'Docs', 'url' => 'https://platform.claude.com/docs/en/agent-sdk/hooks', 'duration_minutes' => 25, 'difficulty_level' => 2, 'icon' => '🪝',
+            ],
+            [
+                'title' => 'Claude Agent SDK — Subagents',
+                'description' => 'Create and manage sub-agents for parallel task execution and complex workflows.',
+                'learning_reason' => 'Sub-agents enable decomposition of complex tasks into parallel workstreams. Key to building scalable agent systems.',
+                'category' => 'Claude Agent SDK', 'type' => 'Docs', 'url' => 'https://platform.claude.com/docs/en/agent-sdk/subagents', 'duration_minutes' => 25, 'difficulty_level' => 2, 'icon' => '👥',
+            ],
+            [
+                'title' => 'Claude Agent SDK — Sessions',
+                'description' => 'Manage conversation sessions with state persistence and history.',
+                'learning_reason' => 'Session management enables multi-turn conversations with context preservation. Essential for building conversational agents.',
+                'category' => 'Claude Agent SDK', 'type' => 'Docs', 'url' => 'https://platform.claude.com/docs/en/agent-sdk/sessions', 'duration_minutes' => 20, 'difficulty_level' => 2, 'icon' => '💬',
+            ],
+
+            // Model Context Protocol (MCP)
+            [
+                'title' => 'Model Context Protocol (MCP)',
+                'description' => 'Open standard for connecting AI assistants to external tools and data sources.',
+                'learning_reason' => 'MCP is becoming the standard for AI tool integration. Understanding it lets you connect Claude to any data source or tool.',
+                'category' => 'MCP', 'type' => 'Docs', 'url' => 'https://modelcontextprotocol.io/', 'duration_minutes' => 15, 'difficulty_level' => 1, 'icon' => '🔗',
+            ],
+            [
+                'title' => 'MCP — Tools',
+                'description' => 'Define and expose tools through MCP for AI model interaction.',
+                'learning_reason' => 'Tools are how MCP enables AI to take actions. Learning to define tools correctly is fundamental to MCP implementation.',
+                'category' => 'MCP', 'type' => 'Docs', 'url' => 'https://modelcontextprotocol.io/docs/concepts/tools', 'duration_minutes' => 20, 'difficulty_level' => 2, 'icon' => '🔧',
+            ],
+            [
+                'title' => 'MCP — Resources',
+                'description' => 'Expose data resources to AI models for context and retrieval.',
+                'learning_reason' => 'Resources let AI access data without function calls. Essential for building knowledge-augmented agents.',
+                'category' => 'MCP', 'type' => 'Docs', 'url' => 'https://modelcontextprotocol.io/docs/concepts/resources', 'duration_minutes' => 20, 'difficulty_level' => 2, 'icon' => '📦',
+            ],
+            [
+                'title' => 'MCP — Servers',
+                'description' => 'Build MCP servers to connect AI models with external systems.',
+                'learning_reason' => 'MCP Servers are the bridge between AI and your tools. Building custom servers lets you integrate any system with Claude.',
+                'category' => 'MCP', 'type' => 'Docs', 'url' => 'https://modelcontextprotocol.io/docs/concepts/servers', 'duration_minutes' => 25, 'difficulty_level' => 2, 'icon' => '🖥️',
+            ],
+
+            // Claude Code - Blog Resources
+            [
+                'title' => 'Claude Code Review: Is It Worth the Hype?',
+                'description' => 'An in-depth review of Claude Code exploring its capabilities, limitations, and real-world performance.',
+                'learning_reason' => 'Understanding real-world experiences helps you set realistic expectations for Claude Code adoption in your workflow.',
+                'category' => 'Claude Code', 'type' => 'Blog', 'url' => 'https://blog.devrevo.com/claude-code-review', 'duration_minutes' => 20, 'difficulty_level' => 1, 'icon' => '📝',
+            ],
+            [
+                'title' => 'Claude Code vs GitHub Copilot: A Comprehensive Comparison',
+                'description' => 'Detailed comparison of two leading AI coding assistants covering features, pricing, and use cases.',
+                'learning_reason' => 'Choosing the right AI assistant for your needs saves time and money. This comparison helps you make an informed decision.',
+                'category' => 'Claude Code', 'type' => 'Blog', 'url' => 'https://blog.devrevo.com/claude-code-vs-github-copilot', 'duration_minutes' => 25, 'difficulty_level' => 1, 'icon' => '📝',
+            ],
+            [
+                'title' => 'How to Use Claude Code Like a Pro',
+                'description' => 'Advanced tips and tricks for getting the most out of Claude Code in your daily development workflow.',
+                'learning_reason' => 'Pro-level usage patterns maximize your productivity gains. Learn the techniques that power users rely on.',
+                'category' => 'Claude Code', 'type' => 'Blog', 'url' => 'https://blog.devrevo.com/claude-code-pro-tips', 'duration_minutes' => 30, 'difficulty_level' => 2, 'icon' => '📝',
+            ],
+            [
+                'title' => 'Building MCP Servers: A Practical Guide',
+                'description' => 'Step-by-step tutorial on creating Model Context Protocol servers for Claude Code integration.',
+                'learning_reason' => 'MCP servers extend Claude Code to any tool or API. Building custom servers unlocks unlimited integration possibilities.',
+                'category' => 'Claude Code', 'type' => 'Blog', 'url' => 'https://www.theunwindai.com/p/building-mcp-servers-practical-guide', 'duration_minutes' => 35, 'difficulty_level' => 2, 'icon' => '📝',
+            ],
+            [
+                'title' => 'Claude Code for Enterprise Teams',
+                'description' => 'How to deploy and manage Claude Code at scale within enterprise development environments.',
+                'learning_reason' => 'Enterprise adoption requires different strategies than personal use. Learn security, compliance, and management best practices.',
+                'category' => 'Claude Code', 'type' => 'Blog', 'url' => 'https://blog.devrevo.com/claude-code-enterprise', 'duration_minutes' => 30, 'difficulty_level' => 2, 'icon' => '📝',
+            ],
+            [
+                'title' => 'Automating Code Reviews with Claude Code',
+                'description' => 'Set up automated code review workflows using Claude Code and GitHub Actions.',
+                'learning_reason' => 'Automated code review catches issues early and enforces coding standards consistently across your team.',
+                'category' => 'Claude Code', 'type' => 'Blog', 'url' => 'https://www.theunwindai.com/p/automating-code-reviews-claude-code', 'duration_minutes' => 25, 'difficulty_level' => 2, 'icon' => '📝',
+            ],
+            [
+                'title' => 'Claude Code Best Practices for 2024',
+                'description' => 'Updated best practices and patterns for effective Claude Code usage in modern development.',
+                'learning_reason' => 'Best practices evolve as tools mature. Stay current with proven patterns that maximize Claude Code effectiveness.',
+                'category' => 'Claude Code', 'type' => 'Blog', 'url' => 'https://blog.devrevo.com/claude-code-best-practices-2024', 'duration_minutes' => 20, 'difficulty_level' => 1, 'icon' => '📝',
+            ],
+            [
+                'title' => 'Debugging with Claude Code: Expert Techniques',
+                'description' => 'Advanced debugging strategies using Claude Code AI capabilities to find and fix bugs faster.',
+                'learning_reason' => 'AI-powered debugging dramatically reduces time spent on troubleshooting. Master these techniques to become a faster debuggger.',
+                'category' => 'Claude Code', 'type' => 'Blog', 'url' => 'https://www.theunwindai.com/p/debugging-with-claude-code', 'duration_minutes' => 30, 'difficulty_level' => 2, 'icon' => '📝',
+            ],
+
+            // Claude Code Advanced Docs
+            [
+                'title' => 'Claude Code — Skills',
+                'description' => 'Create reusable skills with slash commands for Claude Code.',
+                'learning_reason' => 'Skills let you encode reusable patterns and workflows. Master this to build your personal AI development methodology.',
+                'category' => 'Claude Code', 'type' => 'Docs', 'url' => 'https://code.claude.com/docs/en/skills', 'duration_minutes' => 20, 'difficulty_level' => 2, 'icon' => '🧩',
+            ],
+            [
+                'title' => 'Claude Code — MCP Integration',
+                'description' => 'Connect Claude Code to external tools via MCP servers.',
+                'learning_reason' => 'MCP integration extends Claude Code capabilities to your entire toolchain. Essential for building powerful AI-assisted workflows.',
+                'category' => 'Claude Code', 'type' => 'Docs', 'url' => 'https://code.claude.com/docs/en/mcp', 'duration_minutes' => 25, 'difficulty_level' => 2, 'icon' => '🔗',
+            ],
+            [
+                'title' => 'Claude Code — GitHub Actions CI/CD',
+                'description' => 'Integrate Claude Code into GitHub Actions for automated code review and PR assistance.',
+                'learning_reason' => 'CI/CD integration brings AI to your entire development workflow. Automated code review catches issues before they reach production.',
+                'category' => 'Claude Code', 'type' => 'Docs', 'url' => 'https://code.claude.com/docs/en/github-actions', 'duration_minutes' => 20, 'difficulty_level' => 2, 'icon' => '🔄',
+            ],
+            [
+                'title' => 'Claude Code — GitLab CI/CD',
+                'description' => 'Integrate Claude Code into GitLab CI/CD pipelines.',
+                'learning_reason' => 'GitLab CI integration provides the same AI-powered automation for GitLab-based projects.',
+                'category' => 'Claude Code', 'type' => 'Docs', 'url' => 'https://code.claude.com/docs/en/gitlab-ci-cd', 'duration_minutes' => 20, 'difficulty_level' => 2, 'icon' => '🔄',
+            ],
+            [
+                'title' => 'Claude Code — Headless Mode',
+                'description' => 'Run Claude Code in non-interactive mode for CI/CD and automation.',
+                'learning_reason' => 'Headless mode enables fully automated AI workflows. Perfect for pre-commit hooks and automated code quality checks.',
+                'category' => 'Claude Code', 'type' => 'Docs', 'url' => 'https://code.claude.com/docs/en/headless', 'duration_minutes' => 15, 'difficulty_level' => 2, 'icon' => '⚙️',
+            ],
+
+            // Prompt Engineering
+            [
+                'title' => 'Prompt Engineering Guide',
+                'description' => 'Comprehensive guide to crafting effective prompts for Claude.',
+                'learning_reason' => 'Prompt engineering is the highest-leverage skill for AI work. Better prompts = better results = less iteration.',
+                'category' => 'Prompt Engineering', 'type' => 'Docs', 'url' => 'https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview', 'duration_minutes' => 30, 'difficulty_level' => 1, 'icon' => '✏️',
+            ],
+            [
+                'title' => 'Extended Thinking',
+                'description' => 'Enable Claude to use extended reasoning for complex problem-solving.',
+                'learning_reason' => 'Extended Thinking lets Claude reason through complex problems step-by-step. Essential for tasks requiring deep analysis.',
+                'category' => 'Prompt Engineering', 'type' => 'Docs', 'url' => 'https://platform.claude.com/docs/en/build-with-claude/extended-thinking', 'duration_minutes' => 25, 'difficulty_level' => 2, 'icon' => '🧠',
+            ],
+            [
+                'title' => 'Anthropic Cookbook',
+                'description' => 'Practical code examples for building AI applications with Claude.',
+                'learning_reason' => 'The Cookbook provides copy-paste-ready patterns for common tasks. Accelerates development by providing working starting points.',
+                'category' => 'Prompt Engineering', 'type' => 'GitHub', 'url' => 'https://github.com/anthropics/anthropic-cookbook', 'duration_minutes' => 60, 'difficulty_level' => 2, 'icon' => '📖',
+            ],
+
+            // Claude Certified Architect Guide
+            [
+                'title' => 'Claude Certified Architect Guide',
+                'description' => 'Comprehensive guide to building production-grade AI systems with Claude.',
+                'learning_reason' => 'This guide covers architecture patterns, best practices, and real-world implementations for enterprise AI systems.',
+                'category' => 'AI Agents', 'type' => 'GitHub', 'url' => 'https://github.com/paullarionov/claude-certified-architect/blob/main/guide_en.MD', 'duration_minutes' => 120, 'difficulty_level' => 3, 'icon' => '🎓',
+            ],
         ];
 
         foreach ($resources as $resource) {

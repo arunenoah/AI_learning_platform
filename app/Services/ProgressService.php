@@ -2,19 +2,22 @@
 
 namespace App\Services;
 
-use App\Models\User;
-use App\Models\Resource;
+use App\Models\Badge;
 use App\Models\LearningPath;
-use App\Models\UserProgress;
-use App\Models\UserPathProgress;
 use App\Models\Quiz;
+use App\Models\Resource;
+use App\Models\User;
+use App\Models\UserPathProgress;
+use App\Models\UserProgress;
 use App\Models\UserQuizAttempt;
 use Illuminate\Support\Facades\DB;
 
 class ProgressService
 {
     protected StreakService $streakService;
+
     protected BadgeService $badgeService;
+
     protected PointsService $pointsService;
 
     public function __construct(
@@ -53,10 +56,21 @@ class ProgressService
             ]
         );
 
+        $this->checkDailyChallengeBonus($user, $resource);
         $this->checkPathProgress($user, $resource);
         $this->badgeService->checkAndAwardBadges($user);
 
         return $progress;
+    }
+
+    protected function checkDailyChallengeBonus(User $user, Resource $resource): void
+    {
+        $today = now()->toDateString();
+        $challenge = DailyChallenge::where('challenge_date', $today)->first();
+
+        if ($challenge && $challenge->resource_id == $resource->id) {
+            $this->pointsService->addPoints($user, $challenge->bonus_xp, 'Daily challenge completed');
+        }
     }
 
     public function startPath(User $user, LearningPath $path): UserPathProgress
@@ -73,7 +87,7 @@ class ProgressService
             ]
         );
 
-        if (!$progress->wasRecentlyCreated) {
+        if (! $progress->wasRecentlyCreated) {
             $progress->markAsStarted();
         }
 
@@ -94,7 +108,7 @@ class ProgressService
         );
 
         $totalSteps = $path->total_steps;
-        
+
         if ($stepNumber >= $totalSteps - 1) {
             $progress->update([
                 'current_step' => $totalSteps,
@@ -192,7 +206,7 @@ class ProgressService
             'paths_completed' => $user->completedPaths()->count(),
             'quizzes_passed' => $user->passedQuizzes()->count(),
             'badges_count' => $user->badges()->count(),
-            'total_badges' => \App\Models\Badge::count(),
+            'total_badges' => Badge::count(),
         ];
     }
 }

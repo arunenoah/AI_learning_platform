@@ -7,28 +7,292 @@
     <title>{{ $title ?? 'LearnHub - Corporate Learning Platform' }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            /* Orange Palette */
+            --orange-50:  #fff7ed;
+            --orange-100: #ffedd5;
+            --orange-200: #fed7aa;
+            --orange-300: #fdba74;
+            --orange-400: #fb923c;
+            --orange-500: #f97316;
+            --orange-600: #ea580c;
+            --orange-700: #c2410c;
+            --orange-800: #9a360d;
+            --orange-900: #7c2d12;
+
+            /* Warm Dark Sidebar */
+            --sidebar-bg:    #1c1917;
+            --sidebar-hover: #292524;
+            --sidebar-active:#292524;
+            --sidebar-text:  #d6d3d1;
+            --sidebar-muted: #78716c;
+            --sidebar-accent:#f97316;
+            --sidebar-border:#2c2826;
+
+            /* Canvas */
+            --canvas:      #fafaf8;
+            --surface:     #ffffff;
+            --surface-2:   #f5f5f2;
+
+            /* Header */
+            --header-bg:   #18181b;
+            --header-text: #fafafa;
+
+            /* Slate */
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-300: #cbd5e1;
+            --slate-400: #94a3b8;
+            --slate-500: #64748b;
+            --slate-600: #475569;
+            --slate-700: #334155;
+            --slate-800: #1e293b;
+            --slate-900: #0f172a;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background: var(--canvas) !important;
+            color: #1c1917;
+            font-family: 'DM Sans', sans-serif !important;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* ─── LAYOUT ─── */
+        .app-layout {
+            min-height: calc(100vh - 56px);
+        }
+
+        /* ─── MAIN CONTENT ─── */
+        .app-main {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 36px 32px;
+        }
+
+        /* ─── TYPOGRAPHY ─── */
+        .app-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 26px;
+            font-weight: 700;
+            color: #1c1917;
+            letter-spacing: -0.3px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 6px;
+        }
+
+        .app-subtitle {
+            font-size: 13.5px;
+            color: var(--slate-500);
+            font-weight: 400;
+            margin-bottom: 0;
+        }
+
+        .app-header {
+            margin-bottom: 28px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e8e5e0;
+        }
+
+        /* ─── BUTTONS ─── */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--orange-600);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 13.5px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.15s ease;
+        }
+        .btn-primary:hover { background: var(--orange-700); color: #fff; }
+
+        /* ─── CARD GRID ─── */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 16px;
+        }
+
+        /* ─── CARD — Editorial style ─── */
+        .card {
+            background: var(--surface);
+            border: 1px solid #e8e5e0;
+            border-left: 3px solid transparent;
+            border-radius: 6px;
+            padding: 18px 20px;
+            transition: border-left-color 0.15s ease, box-shadow 0.15s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .card:hover {
+            border-left-color: var(--orange-500);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .card-icon {
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            background: var(--orange-50);
+            border-radius: 6px;
+            flex-shrink: 0;
+        }
+
+        .card-title {
+            font-size: 14.5px;
+            font-weight: 600;
+            color: #1c1917;
+            word-break: break-word;
+            line-height: 1.35;
+        }
+
+        .card-category {
+            display: inline-block;
+            font-size: 10.5px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--orange-600);
+            background: var(--orange-50);
+            padding: 3px 7px;
+            border-radius: 3px;
+            letter-spacing: 0.6px;
+        }
+
+        .card-description {
+            font-size: 13px;
+            color: var(--slate-500);
+            line-height: 1.5;
+            flex: 1;
+        }
+
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 10px;
+            border-top: 1px solid #f0ece8;
+            font-size: 11.5px;
+            color: var(--slate-400);
+        }
+
+        /* ─── STAT CARD — Editorial style ─── */
+        .stat-card {
+            background: var(--surface);
+            border: 1px solid #e8e5e0;
+            border-radius: 6px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            position: relative;
+            overflow: hidden;
+        }
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: var(--orange-400);
+        }
+        .stat-card:hover {
+            border-color: #d5cfc8;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+        }
+
+        .stat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            color: var(--slate-400);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .stat-value {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: #1c1917;
+            line-height: 1;
+            margin-top: 6px;
+            letter-spacing: -0.5px;
+        }
+
+        .stat-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 6px;
+            background: var(--orange-50);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .app-main {
+                padding: 20px 16px;
+            }
+            .app-title {
+                font-size: 22px;
+            }
+            .card-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        'sans': ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
-                        'display': ['Inter', 'sans-serif'],
+                        'sans': ['DM Sans', 'sans-serif'],
+                        'display': ['Playfair Display', 'Georgia', 'serif'],
+                        'mono': ['DM Mono', 'monospace'],
                     },
                     colors: {
                         primary: {
-                            50: '#eff6ff',
-                            100: '#dbeafe',
-                            200: '#bfdbfe',
-                            300: '#93c5fd',
-                            400: '#60a5fa',
-                            500: '#3b82f6',
-                            600: '#2563eb',
-                            700: '#1d4ed8',
-                            800: '#1e40af',
-                            900: '#1e3a8a',
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            800: '#9a3412',
+                            900: '#7c2d12',
                         },
                         slate: {
                             850: '#1a2234',
@@ -61,157 +325,60 @@
             }
         }
     </script>
-    <style>
-        body {
-            font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
-            background: #ffffff;
-            min-height: 100vh;
-        }
-        
-        .card {
-            background: white;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-        }
-        
-        .card-hover {
-            transition: all 0.2s ease;
-        }
-        
-        .card-hover:hover {
-            border-color: #cbd5e1;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        }
-        
-        .btn-primary {
-            background: #2563eb;
-            transition: all 0.2s ease;
-        }
-        
-        .btn-primary:hover {
-            background: #1d4ed8;
-        }
-        
-        .progress-bar {
-            background: #2563eb;
-        }
-        
-        .nav-link {
-            position: relative;
-            transition: color 0.2s ease;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: #2563eb;
-            transition: all 0.2s ease;
-            transform: translateX(-50%);
-        }
-        
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-        
-        .nav-link.active {
-            color: #2563eb;
-        }
-    </style>
 </head>
 <body class="text-slate-900 antialiased">
-    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+    <nav style="background: var(--header-bg); border-bottom: 1px solid #2d2d2d; position: sticky; top: 0; z-index: 50;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
+            <div class="flex justify-between h-14">
                 <div class="flex items-center gap-8">
-                    <a href="{{ route('home') }}" class="flex items-center gap-2 group">
-                        <div class="w-10 h-10 rounded-lg bg-primary-600 flex items-center justify-center">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <a href="{{ route('home') }}" class="flex items-center gap-2.5">
+                        <div class="w-8 h-8 rounded bg-orange-600 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
                             </svg>
                         </div>
-                        <span class="text-xl font-bold text-slate-900 hidden sm:block">LearnHub</span>
+                        <span style="font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: #fafafa;" class="hidden sm:block">LearnHub</span>
                     </a>
-                    <div class="hidden md:flex items-center gap-1">
-                        <a href="@auth{{ route('dashboard') }}@else{{ route('login') }}@endauth"
-                           class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }} px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50">
-                            <span class="flex items-center gap-2">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
-                                </svg>
-                                Dashboard
-                            </span>
-                        </a>
-                        <a href="{{ route('resources.index') }}"
-                           class="nav-link {{ request()->routeIs('resources.*') ? 'active' : '' }} px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50">
-                            <span class="flex items-center gap-2">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                                </svg>
-                                Resources
-                            </span>
-                        </a>
+                    <div class="hidden md:flex items-center gap-0.5">
+                        <a href="{{ route('blogs.index') }}"
+                           style="{{ request()->routeIs('blogs.*') ? 'color:#f97316;' : 'color:#a8a29e;' }}"
+                           class="px-3 py-2 text-sm font-medium hover:text-white transition-colors">Blogs</a>
                         <a href="@auth{{ route('paths.index') }}@else{{ route('login') }}@endauth"
-                           class="nav-link {{ request()->routeIs('paths.*') ? 'active' : '' }} px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50">
-                            <span class="flex items-center gap-2">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
-                                </svg>
-                                Learning Paths
-                            </span>
-                        </a>
+                           style="{{ request()->routeIs('paths.*') ? 'color:#f97316;' : 'color:#a8a29e;' }}"
+                           class="px-3 py-2 text-sm font-medium hover:text-white transition-colors">Paths</a>
                         <a href="@auth{{ route('quizzes.index') }}@else{{ route('login') }}@endauth"
-                           class="nav-link {{ request()->routeIs('quizzes.*') ? 'active' : '' }} px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50">
-                            <span class="flex items-center gap-2">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                </svg>
-                                Quizzes
-                            </span>
-                        </a>
+                           style="{{ request()->routeIs('quizzes.*') ? 'color:#f97316;' : 'color:#a8a29e;' }}"
+                           class="px-3 py-2 text-sm font-medium hover:text-white transition-colors">Quizzes</a>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     @guest
-                        <a href="{{ route('login') }}" class="px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">
+                        <a href="{{ route('login') }}" class="px-3 py-1.5 text-sm font-medium text-stone-400 hover:text-white transition-colors">
                             Log in
                         </a>
-                        <a href="{{ route('register') }}" class="btn-primary px-5 py-2.5 rounded-lg text-sm font-semibold text-white">
+                        <a href="{{ route('register') }}" class="btn-primary">
                             Get Started
                         </a>
                     @else
-                        <div class="hidden sm:flex items-center gap-4">
-                            <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-100 border border-slate-200">
-                                <svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
-                                <span class="text-sm font-bold text-slate-700">{{ number_format(Auth::user()->points) }}</span>
-                                <span class="text-xs text-slate-500">pts</span>
-                            </div>
-                            
+                        <div class="hidden sm:flex items-center gap-3">
                             @if(isset($stats['streak']) && ($stats['streak']['current_streak'] ?? 0) > 0)
-                                <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-orange-50 border border-orange-200">
-                                    <span class="text-sm">🔥</span>
-                                    <span class="text-sm font-bold text-orange-600">{{ $stats['streak']['current_streak'] }}</span>
-                                    <span class="text-xs text-orange-500">day streak</span>
+                                <div class="flex items-center gap-1 px-2.5 py-1 rounded" style="background: rgba(234,88,12,0.15); border: 1px solid rgba(234,88,12,0.3);">
+                                    <span style="font-size: 12px;">🔥</span>
+                                    <span style="font-size: 13px; font-weight: 700; color: #fb923c;">{{ $stats['streak']['current_streak'] }}</span>
                                 </div>
                             @endif
                         </div>
-                        
+
                         <div class="relative">
-                            <button id="user-menu-button" class="flex items-center gap-2 p-1.5 rounded-lg hover:bg-slate-100 transition-colors group">
-                                <div class="w-9 h-9 rounded-lg bg-primary-600 flex items-center justify-center text-white font-bold">
+                            <button id="user-menu-button" class="flex items-center gap-2 p-1 rounded transition-colors" style="background: rgba(255,255,255,0.06);">
+                                <div class="w-8 h-8 rounded bg-orange-600 flex items-center justify-center text-white font-bold text-sm">
                                     {{ substr(Auth::user()->name, 0, 1) }}
                                 </div>
-                                <svg class="w-4 h-4 text-slate-400 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-3.5 h-3.5 text-stone-400 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                                 </svg>
                             </button>
-                            <div id="user-menu" class="hidden absolute right-0 mt-2 w-64 rounded-xl bg-white shadow-lg border border-slate-200 overflow-hidden">
+                            <div id="user-menu" class="hidden absolute right-0 mt-2 w-56 rounded-lg bg-white shadow-lg border border-slate-200 overflow-hidden">
                                 <div class="p-4 border-b border-slate-100">
                                     <p class="font-semibold text-slate-900">{{ Auth::user()->name }}</p>
                                     <p class="text-sm text-slate-500">{{ Auth::user()->email }}</p>
@@ -222,18 +389,6 @@
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
                                         </svg>
                                         Profile
-                                    </a>
-                                    <a href="{{ route('badges') }}" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors">
-                                        <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
-                                        </svg>
-                                        Badges
-                                    </a>
-                                    <a href="{{ route('leaderboard') }}" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors">
-                                        <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-                                        </svg>
-                                        Leaderboard
                                     </a>
                                 </div>
                                 <div class="p-2 border-t border-slate-100">
@@ -255,22 +410,24 @@
         </div>
     </nav>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
-        @yield('content')
-    </main>
+    <div class="app-layout">
+        <main class="app-main animate-fade-in">
+            @yield('content')
+        </main>
+    </div>
 
-    <footer class="border-t border-slate-200 bg-white mt-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+    <footer style="border-top: 1px solid #2d2d2d; background: var(--header-bg); margin-top: 48px;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
                 <div class="flex items-center gap-2">
-                    <div class="w-8 h-8 rounded-lg bg-primary-600 flex items-center justify-center">
+                    <div class="w-7 h-7 rounded bg-orange-600 flex items-center justify-center">
                         <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
                         </svg>
                     </div>
-                    <span class="font-bold text-slate-900">LearnHub</span>
+                    <span style="font-family: 'Playfair Display', serif; font-weight: 700; color: #fafafa; font-size: 15px;">LearnHub</span>
                 </div>
-                <p class="text-sm text-slate-500">
+                <p style="font-size: 12px; color: #78716c;">
                     &copy; {{ date('Y') }} LearnHub. Built with Laravel.
                 </p>
             </div>

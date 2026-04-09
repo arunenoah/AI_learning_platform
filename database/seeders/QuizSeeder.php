@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use App\Models\LearningPath;
 use App\Models\Quiz;
-use App\Models\QuizQuestion;
 use Illuminate\Database\Seeder;
 
 class QuizSeeder extends Seeder
@@ -25,7 +24,7 @@ class QuizSeeder extends Seeder
                             'Storing code snippets',
                             'Setting project-specific context and coding standards',
                             'Running tests',
-                            'Deploying code'
+                            'Deploying code',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'CLAUDE.md files help set project-specific context, coding standards, and workflow rules.',
@@ -37,7 +36,7 @@ class QuizSeeder extends Seeder
                             'Model Code Protocol',
                             'Model Context Protocol',
                             'Multi-Cloud Platform',
-                            'Managed Code Processing'
+                            'Managed Code Processing',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'MCP stands for Model Context Protocol, enabling Claude to connect with external tools and data sources.',
@@ -49,7 +48,7 @@ class QuizSeeder extends Seeder
                             'claude start',
                             'claude',
                             'start claude',
-                            'run claude'
+                            'run claude',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'The claude command in terminal starts Claude Code.',
@@ -61,7 +60,7 @@ class QuizSeeder extends Seeder
                             'Writing documentation',
                             'Parallel task execution',
                             'Code deployment',
-                            'Database management'
+                            'Database management',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Sub-agents enable parallel task execution for handling multiple tasks simultaneously.',
@@ -73,7 +72,7 @@ class QuizSeeder extends Seeder
                             'Git operations',
                             'File editing',
                             'Database design',
-                            'Web browsing'
+                            'Web browsing',
                         ],
                         'correct_option' => 2,
                         'explanation' => 'Claude Code can edit files, run git, and browse the web, but does not design databases directly.',
@@ -85,7 +84,7 @@ class QuizSeeder extends Seeder
                             '/exit or Ctrl+C',
                             '/quit',
                             'exit',
-                            'All of the above'
+                            'All of the above',
                         ],
                         'correct_option' => 3,
                         'explanation' => 'You can use /exit, /quit, or type exit to leave Claude Code.',
@@ -97,7 +96,7 @@ class QuizSeeder extends Seeder
                             'Shows current configuration',
                             'Starts a new Claude session',
                             'Clears conversation history',
-                            'Changes Claude\'s personality'
+                            'Changes Claude\'s personality',
                         ],
                         'correct_option' => 1,
                         'explanation' => '/claude starts a new Claude session within the current conversation.',
@@ -109,7 +108,7 @@ class QuizSeeder extends Seeder
                             'Compresses files',
                             'Summarizes conversation to fit context window',
                             'Optimizes code',
-                            'Creates backups'
+                            'Creates backups',
                         ],
                         'correct_option' => 1,
                         'explanation' => '/compact summarizes the conversation to free up context space.',
@@ -121,7 +120,7 @@ class QuizSeeder extends Seeder
                             'No, only file editing',
                             'Yes, with permission',
                             'Only on macOS',
-                            'Only with special plugins'
+                            'Only with special plugins',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Claude Code can execute shell commands but asks for permission first.',
@@ -133,7 +132,7 @@ class QuizSeeder extends Seeder
                             'Paste entire files',
                             'Use /read command or share specific sections',
                             'Upload zip files',
-                            'Describe code verbally'
+                            'Describe code verbally',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Use /read or share specific sections rather than pasting entire files.',
@@ -145,7 +144,7 @@ class QuizSeeder extends Seeder
                             'Reads all files at once',
                             'Uses CLAUDE.md and context to understand structure',
                             'Requires manual file selection',
-                            'Cannot handle large codebases'
+                            'Cannot handle large codebases',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'CLAUDE.md and context help Claude understand the codebase structure.',
@@ -157,7 +156,7 @@ class QuizSeeder extends Seeder
                             'Be vague and let Claude figure it out',
                             'Be specific with clear requirements and constraints',
                             'Provide minimal information',
-                            'Only describe the end goal'
+                            'Only describe the end goal',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Specific and clear requirements help Claude deliver better results.',
@@ -169,7 +168,7 @@ class QuizSeeder extends Seeder
                             'No, git is separate',
                             'Yes, can commit, branch, diff, and more',
                             'Only on GitHub',
-                            'Only read-only operations'
+                            'Only read-only operations',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Claude Code has built-in git capabilities for version control operations.',
@@ -181,7 +180,7 @@ class QuizSeeder extends Seeder
                             'Allow multiple Claude sessions',
                             'Allow multiple file edits at once',
                             'Allow multiple commits',
-                            'Disable safety checks'
+                            'Disable safety checks',
                         ],
                         'correct_option' => 3,
                         'explanation' => 'This flag disables certain safety checks - use with caution.',
@@ -193,7 +192,7 @@ class QuizSeeder extends Seeder
                             'Always accept them',
                             'Review and validate before applying',
                             'Ignore them',
-                            'Only accept from senior Claude'
+                            'Only accept from senior Claude',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Always review suggestions - you are responsible for all code changes.',
@@ -205,7 +204,7 @@ class QuizSeeder extends Seeder
                             'Required file for all projects',
                             'Optional context file for project-specific instructions',
                             'Backup of project documentation',
-                            'Git configuration file'
+                            'Git configuration file',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'CLAUDE.md is optional but highly recommended for project-specific context.',
@@ -217,7 +216,7 @@ class QuizSeeder extends Seeder
                             'No',
                             'Yes, using built-in web search',
                             'Only with MCP servers',
-                            'Only on Pro plans'
+                            'Only on Pro plans',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Claude Code can search the web to find documentation or information.',
@@ -229,7 +228,7 @@ class QuizSeeder extends Seeder
                             'Conversation ends',
                             'Must start over',
                             'Use /compact to summarize',
-                            'Pay for more'
+                            'Pay for more',
                         ],
                         'correct_option' => 2,
                         'explanation' => 'Use /compact to summarize conversation and free up context space.',
@@ -241,7 +240,7 @@ class QuizSeeder extends Seeder
                             'Must wait until complete',
                             'Can interrupt and provide guidance',
                             'Cannot modify tasks',
-                            'Only via CLAUDE.md'
+                            'Only via CLAUDE.md',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'You can interrupt and redirect Claude at any time during a task.',
@@ -253,7 +252,7 @@ class QuizSeeder extends Seeder
                             'Share with Claude for better help',
                             'Use placeholders and never share actual secrets',
                             'Store in comments',
-                            'Share only on first use'
+                            'Share only on first use',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Never share actual secrets - use placeholders like sk_test_xxx.',
@@ -274,7 +273,7 @@ class QuizSeeder extends Seeder
                             'Writing prompts with minimal words',
                             'Providing examples in the prompt',
                             'Using multiple AI models at once',
-                            'Prompting with limited context'
+                            'Prompting with limited context',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Few-shot prompting provides examples within the prompt to guide the AI\'s response.',
@@ -286,7 +285,7 @@ class QuizSeeder extends Seeder
                             'Being shorter and faster',
                             'Breaking down reasoning steps',
                             'Using more tokens',
-                            'Avoiding technical terms'
+                            'Avoiding technical terms',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Chain-of-thought prompting breaks down complex reasoning into steps.',
@@ -298,7 +297,7 @@ class QuizSeeder extends Seeder
                             'Response speed',
                             'Creativity vs determinism',
                             'Token limit',
-                            'Context window size'
+                            'Context window size',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Lower temperature = more deterministic, higher = more creative.',
@@ -310,7 +309,7 @@ class QuizSeeder extends Seeder
                             'A prompt for system files',
                             'Instructions defining AI behavior',
                             'A programming prompt',
-                            'A security prompt'
+                            'A security prompt',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'System prompts define the AI\'s role, behavior, and constraints.',
@@ -322,7 +321,7 @@ class QuizSeeder extends Seeder
                             'Using more emojis',
                             'Numbered lists for tasks',
                             'Shorter prompts',
-                            'Higher temperature'
+                            'Higher temperature',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Numbered lists help AI address each task separately and avoid overlooking items.',
@@ -334,7 +333,7 @@ class QuizSeeder extends Seeder
                             'Prompts with no words',
                             'Asking model to perform without examples',
                             'Using only system prompts',
-                            'Prompting with zero context'
+                            'Prompting with zero context',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Zero-shot prompting asks the model to perform without any examples.',
@@ -346,7 +345,7 @@ class QuizSeeder extends Seeder
                             'As short as possible',
                             'Concise but includes all necessary context',
                             'Always maximum length',
-                            'One sentence only'
+                            'One sentence only',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Include enough context for the task without being overly verbose.',
@@ -358,7 +357,7 @@ class QuizSeeder extends Seeder
                             'Limits total tokens',
                             'Controls diversity of token selection',
                             'Increases response speed',
-                            'Changes context window'
+                            'Changes context window',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Top-p controls which tokens are considered based on cumulative probability.',
@@ -370,7 +369,7 @@ class QuizSeeder extends Seeder
                             'Make prompts look pretty',
                             'Clearly separate content sections',
                             'Increase token count',
-                            'Enable faster processing'
+                            'Enable faster processing',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Delimiters like ###help separate instructions from content clearly.',
@@ -382,7 +381,7 @@ class QuizSeeder extends Seeder
                             'Multiple prompts in one message',
                             'Breaking complex tasks into sequential prompts',
                             'Sending prompts to multiple models',
-                            'Repeating the same prompt'
+                            'Repeating the same prompt',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Prompt chaining breaks complex tasks into manageable sequential steps.',
@@ -394,7 +393,7 @@ class QuizSeeder extends Seeder
                             'It reduces token usage',
                             'It ensures consistent, usable responses',
                             'It speeds up processing',
-                            'It\'s required by all models'
+                            'It\'s required by all models',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Specifying format like JSON or bullet points ensures usable output.',
@@ -406,7 +405,7 @@ class QuizSeeder extends Seeder
                             'A user account',
                             'A role or character the AI should adopt',
                             'A security feature',
-                            'A text formatting style'
+                            'A text formatting style',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Persona assigns the AI a specific role like "You are a senior developer...".',
@@ -418,7 +417,7 @@ class QuizSeeder extends Seeder
                             'Makes responses faster',
                             'Sets context and expertise level',
                             'Enables multi-modal inputs',
-                            'Reduces costs'
+                            'Reduces costs',
                         ],
                         'correct_option' => 1,
                         'explanation' => '"Act as a Python expert" helps model provide appropriate expertise.',
@@ -430,7 +429,7 @@ class QuizSeeder extends Seeder
                             'Prompting without text',
                             'Specifying what NOT to do',
                             'Asking model to refuse',
-                            'Reverse psychology'
+                            'Reverse psychology',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Telling the model what to avoid helps refine its responses.',
@@ -442,7 +441,7 @@ class QuizSeeder extends Seeder
                             'To make prompts longer',
                             'To guide the model toward desired output',
                             'To confuse the model',
-                            'To use more tokens'
+                            'To use more tokens',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Constraints like "must be under 100 words" help control output.',
@@ -454,7 +453,7 @@ class QuizSeeder extends Seeder
                             'Uses more tokens',
                             'Refines results through multiple rounds',
                             'Faster responses',
-                            'Works only with images'
+                            'Works only with images',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Iterative prompting builds on responses to get better results.',
@@ -466,7 +465,7 @@ class QuizSeeder extends Seeder
                             'No effect',
                             'Limits how much information you can provide',
                             'Only affects images',
-                            'Increases cost linearly'
+                            'Increases cost linearly',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Context window limits total tokens for instructions + examples + output.',
@@ -478,7 +477,7 @@ class QuizSeeder extends Seeder
                             'Model always agrees with itself',
                             'Generating multiple responses and picking best',
                             'Consistent formatting',
-                            'Fixed temperature'
+                            'Fixed temperature',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Self-consistency samples multiple paths and selects most common answer.',
@@ -490,7 +489,7 @@ class QuizSeeder extends Seeder
                             'They\'re too long',
                             'They bias the model toward expected answer',
                             'They cause errors',
-                            'They waste tokens'
+                            'They waste tokens',
                         ],
                         'correct_option' => 1,
                         'explanation' => '"Don\'t you think X is bad?" biases the response toward agreeing.',
@@ -502,7 +501,7 @@ class QuizSeeder extends Seeder
                             'Warming up the model',
                             'Setting up context before main request',
                             'Testing API connection',
-                            'Reducing latency'
+                            'Reducing latency',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Priming provides background context before the main task.',
@@ -523,7 +522,7 @@ class QuizSeeder extends Seeder
                             'Agents use more tokens',
                             'Agents can plan and use tools autonomously',
                             'Agents are faster',
-                            'Agents are free'
+                            'Agents are free',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Agents can plan, reason, and use tools autonomously without human intervention.',
@@ -535,7 +534,7 @@ class QuizSeeder extends Seeder
                             'Rapid Application Growth',
                             'Retrieval-Augmented Generation',
                             'Resource Allocation Guide',
-                            'Runtime Agent Gateway'
+                            'Runtime Agent Gateway',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'RAG combines retrieval systems with LLM generation for grounded responses.',
@@ -547,7 +546,7 @@ class QuizSeeder extends Seeder
                             'Tool use',
                             'Memory persistence',
                             'Writing emails',
-                            'Planning multi-step tasks'
+                            'Planning multi-step tasks',
                         ],
                         'correct_option' => 2,
                         'explanation' => 'Writing emails is not a core agent capability; agents typically focus on reasoning and tool use.',
@@ -559,7 +558,7 @@ class QuizSeeder extends Seeder
                             'React framework for UI',
                             'Reasoning + Acting approach',
                             'API authentication method',
-                            'Code refactoring pattern'
+                            'Code refactoring pattern',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'ReAct combines reasoning traces with action planning for better agent performance.',
@@ -571,7 +570,7 @@ class QuizSeeder extends Seeder
                             'LangChain',
                             'LangGraph',
                             'CrewAI',
-                            'AutoGen'
+                            'AutoGen',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'LangGraph specializes in stateful orchestration with cycles and persistence.',
@@ -583,7 +582,7 @@ class QuizSeeder extends Seeder
                             'Using hardware tools',
                             'Calling external functions and APIs',
                             'Training models',
-                            'Creating software'
+                            'Creating software',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Tool use allows agents to call external functions, APIs, or services.',
@@ -595,7 +594,7 @@ class QuizSeeder extends Seeder
                             'RAM allocation',
                             'Persisting information across interactions',
                             'Training data storage',
-                            'Cache management'
+                            'Cache management',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Agent memory enables persisting context across multiple interactions.',
@@ -607,7 +606,7 @@ class QuizSeeder extends Seeder
                             'Creating project plans',
                             'Breaking tasks into executable steps',
                             'Scheduling training jobs',
-                            'Resource allocation'
+                            'Resource allocation',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Planning allows agents to break complex tasks into manageable steps.',
@@ -619,7 +618,7 @@ class QuizSeeder extends Seeder
                             'Mirror image processing',
                             'Agent evaluating its own outputs',
                             'Training technique',
-                            'Data augmentation'
+                            'Data augmentation',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Reflection enables agents to evaluate and improve their own outputs.',
@@ -631,7 +630,7 @@ class QuizSeeder extends Seeder
                             'Lower cost',
                             'Specialized agents working together',
                             'Faster processing',
-                            'Simpler code'
+                            'Simpler code',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Multi-agent systems leverage specialized agents for different subtasks.',
@@ -643,7 +642,7 @@ class QuizSeeder extends Seeder
                             'Visual display size',
                             'Data the agent perceives from environment',
                             'Memory capacity',
-                            'Network bandwidth'
+                            'Network bandwidth',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Observation space defines what data the agent can perceive.',
@@ -655,7 +654,7 @@ class QuizSeeder extends Seeder
                             'Physical movement area',
                             'All possible actions the agent can take',
                             'Memory size',
-                            'Processing speed'
+                            'Processing speed',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Action space defines all possible actions the agent can execute.',
@@ -667,7 +666,7 @@ class QuizSeeder extends Seeder
                             'Following pre-programmed instructions only',
                             'Making decisions without human intervention',
                             'Random action selection',
-                            'API-only interactions'
+                            'API-only interactions',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Autonomous reasoning allows agents to make decisions independently.',
@@ -679,7 +678,7 @@ class QuizSeeder extends Seeder
                             'Detecting hardware loops',
                             'Preventing infinite agent cycles',
                             'Network loop prevention',
-                            'Memory leak detection'
+                            'Memory leak detection',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Loop detection prevents agents from getting stuck in repetitive cycles.',
@@ -691,7 +690,7 @@ class QuizSeeder extends Seeder
                             'Breaking code into files',
                             'Splitting complex tasks into subtasks',
                             'Database partitioning',
-                            'Image segmentation'
+                            'Image segmentation',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Task decomposition breaks complex goals into manageable subtasks.',
@@ -703,7 +702,7 @@ class QuizSeeder extends Seeder
                             'Music composition',
                             'Coordinating multiple agents',
                             'Database management',
-                            'Network routing'
+                            'Network routing',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Agent orchestration coordinates multiple agents working together.',
@@ -715,7 +714,7 @@ class QuizSeeder extends Seeder
                             'RAM storage',
                             'Current conversation context',
                             'Permanent storage',
-                            'Backup system'
+                            'Backup system',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Short-term memory holds the current conversation context.',
@@ -727,7 +726,7 @@ class QuizSeeder extends Seeder
                             'Cache storage',
                             'Persistent knowledge across sessions',
                             'Temporary buffers',
-                            'Session data only'
+                            'Session data only',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Long-term memory persists knowledge across different sessions.',
@@ -739,7 +738,7 @@ class QuizSeeder extends Seeder
                             'Hardware specifications',
                             'Schema describing how to call a function',
                             'Code documentation',
-                            'Test definitions'
+                            'Test definitions',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Tool definitions describe the interface for agent tool usage.',
@@ -751,7 +750,7 @@ class QuizSeeder extends Seeder
                             'Sequential function calls',
                             'Explicit reasoning steps',
                             'Linked list implementation',
-                            'API chaining'
+                            'API chaining',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Chain-of-thought makes the agent\'s reasoning process explicit.',
@@ -772,7 +771,7 @@ class QuizSeeder extends Seeder
                             'Random unlabeled data',
                             'Labeled training data',
                             'Only test data',
-                            'No data'
+                            'No data',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Supervised learning trains on labeled data with known outputs.',
@@ -784,7 +783,7 @@ class QuizSeeder extends Seeder
                             'Model is too simple',
                             'Model memorized training data',
                             'Training is too fast',
-                            'Using wrong language'
+                            'Using wrong language',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Overfitting occurs when a model memorizes training data instead of learning patterns.',
@@ -796,7 +795,7 @@ class QuizSeeder extends Seeder
                             'Increase loss',
                             'Optimize model parameters',
                             'Generate data',
-                            'Visualize results'
+                            'Visualize results',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Gradient descent iteratively optimizes parameters to minimize the loss function.',
@@ -808,7 +807,7 @@ class QuizSeeder extends Seeder
                             'Final testing only',
                             'Hyperparameter tuning',
                             'Training the model',
-                            'Data augmentation'
+                            'Data augmentation',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Validation sets are used for hyperparameter tuning and model selection.',
@@ -820,7 +819,7 @@ class QuizSeeder extends Seeder
                             'ReLU',
                             'Sigmoid or Softmax',
                             'Tanh',
-                            'Leaky ReLU'
+                            'Leaky ReLU',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Sigmoid (binary) and Softmax (multi-class) are used for classification outputs.',
@@ -832,7 +831,7 @@ class QuizSeeder extends Seeder
                             'Model is too complex',
                             'Model is too simple to capture patterns',
                             'Too much training data',
-                            'Model is over-optimized'
+                            'Model is over-optimized',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Underfitting occurs when a model is too simple to capture data patterns.',
@@ -844,7 +843,7 @@ class QuizSeeder extends Seeder
                             'Increasing model complexity',
                             'Techniques to prevent overfitting',
                             'Data preprocessing',
-                            'Feature selection only'
+                            'Feature selection only',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Regularization adds penalties to prevent overfitting.',
@@ -856,7 +855,7 @@ class QuizSeeder extends Seeder
                             'Model size',
                             'Step size in gradient descent',
                             'Number of layers',
-                            'Data batch size'
+                            'Data batch size',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Learning rate controls how much parameters change during optimization.',
@@ -868,7 +867,7 @@ class QuizSeeder extends Seeder
                             'Data that is lost',
                             'Metric to measure model error',
                             'Hardware component',
-                            'Training time'
+                            'Training time',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Loss function measures how wrong the model predictions are.',
@@ -880,7 +879,7 @@ class QuizSeeder extends Seeder
                             'Testing on new data only',
                             'Using multiple train/test splits for robust evaluation',
                             'Training multiple models',
-                            'Data augmentation technique'
+                            'Data augmentation technique',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Cross-validation uses multiple splits to evaluate model performance.',
@@ -892,7 +891,7 @@ class QuizSeeder extends Seeder
                             'Balancing model complexity and generalization',
                             'Equal importance of features',
                             'Training speed vs accuracy',
-                            'Data quality vs quantity'
+                            'Data quality vs quantity',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Bias-variance tradeoff balances underfitting and overfitting.',
@@ -904,7 +903,7 @@ class QuizSeeder extends Seeder
                             'Reducing number of features',
                             'Normalizing feature ranges',
                             'Creating new features',
-                            'Selecting best features'
+                            'Selecting best features',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Feature scaling normalizes feature values for better model performance.',
@@ -916,7 +915,7 @@ class QuizSeeder extends Seeder
                             'Random data table',
                             'Visualization of classification results',
                             'Feature importance chart',
-                            'Training progress graph'
+                            'Training progress graph',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Confusion matrix shows true/false positives/negatives for classification.',
@@ -928,7 +927,7 @@ class QuizSeeder extends Seeder
                             'Speed of training',
                             'True positives / (True positives + False positives)',
                             'Total correct predictions',
-                            'Model complexity'
+                            'Model complexity',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Precision measures accuracy of positive predictions.',
@@ -940,7 +939,7 @@ class QuizSeeder extends Seeder
                             'Memory usage',
                             'True positives / (True positives + False negatives)',
                             'Training iterations',
-                            'Feature count'
+                            'Feature count',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Recall measures how many actual positives were captured.',
@@ -952,7 +951,7 @@ class QuizSeeder extends Seeder
                             'First iteration score',
                             'Harmonic mean of precision and recall',
                             'Final model accuracy',
-                            'Feature importance'
+                            'Feature importance',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'F1 score balances precision and recall using harmonic mean.',
@@ -964,7 +963,7 @@ class QuizSeeder extends Seeder
                             'Training on single model',
                             'Combining multiple models for better predictions',
                             'Selecting best features',
-                            'Data preprocessing'
+                            'Data preprocessing',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Ensemble learning combines multiple models for improved predictions.',
@@ -976,7 +975,7 @@ class QuizSeeder extends Seeder
                             'Single decision tree',
                             'Ensemble of decision trees',
                             'Neural network type',
-                            'Data preprocessing'
+                            'Data preprocessing',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Random forest is an ensemble of multiple decision trees.',
@@ -988,7 +987,7 @@ class QuizSeeder extends Seeder
                             'Parameter learned from data',
                             'Setting configured before training',
                             'Output of the model',
-                            'Type of data'
+                            'Type of data',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Hyperparameters are settings configured before training begins.',
@@ -1000,7 +999,7 @@ class QuizSeeder extends Seeder
                             'Normalizing input data only',
                             'Normalizing layer inputs within a network',
                             'Using large batches',
-                            'Batch processing data'
+                            'Batch processing data',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Batch normalization normalizes inputs within network layers.',
@@ -1021,7 +1020,7 @@ class QuizSeeder extends Seeder
                             'Convolutions',
                             'Self-attention mechanism',
                             'Recurrent gates',
-                            'Pooling layers'
+                            'Pooling layers',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Transformers use self-attention to process sequences in parallel.',
@@ -1033,7 +1032,7 @@ class QuizSeeder extends Seeder
                             'Increase model size',
                             'Stabilize training',
                             'Add more layers',
-                            'Reduce overfitting'
+                            'Reduce overfitting',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Layer normalization stabilizes training by normalizing inputs across features.',
@@ -1045,7 +1044,7 @@ class QuizSeeder extends Seeder
                             'Moving code between projects',
                             'Using pre-trained model weights',
                             'Training from scratch',
-                            'Transferring data between databases'
+                            'Transferring data between databases',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Transfer learning uses knowledge from pre-trained models on new tasks.',
@@ -1057,7 +1056,7 @@ class QuizSeeder extends Seeder
                             'Gradient magnitudes',
                             'Weighted relationships between tokens',
                             'Model parameters',
-                            'Loss values'
+                            'Loss values',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Attention computes weighted relationships showing how tokens relate to each other.',
@@ -1069,7 +1068,7 @@ class QuizSeeder extends Seeder
                             'SGD',
                             'Adam',
                             'K-means',
-                            'PCA'
+                            'PCA',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Adam is the standard optimizer for transformer models.',
@@ -1081,7 +1080,7 @@ class QuizSeeder extends Seeder
                             'Increase model size',
                             'Prevent overfitting by randomly dropping neurons',
                             'Speed up training',
-                            'Add more layers'
+                            'Add more layers',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Dropout randomly deactivates neurons during training to prevent overfitting.',
@@ -1093,7 +1092,7 @@ class QuizSeeder extends Seeder
                             'Text generation',
                             'Image and spatial data processing',
                             'Time series forecasting',
-                            'Recommendation systems'
+                            'Recommendation systems',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'CNNs excel at processing images and spatial data with convolutional filters.',
@@ -1105,7 +1104,7 @@ class QuizSeeder extends Seeder
                             'Connecting to external APIs',
                             'Skip connection that adds input to output',
                             'Final output layer',
-                            'Loss function connection'
+                            'Loss function connection',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Residual connections (skip connections) add input to output to enable deeper networks.',
@@ -1117,7 +1116,7 @@ class QuizSeeder extends Seeder
                             'Removing gradients from model',
                             'Limiting gradient values to prevent exploding gradients',
                             'Choosing best gradients',
-                            'Freezing gradient computation'
+                            'Freezing gradient computation',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Gradient clipping prevents exploding gradients by limiting their maximum value.',
@@ -1129,7 +1128,7 @@ class QuizSeeder extends Seeder
                             'Layer for data storage',
                             'Reduces spatial dimensions and computations',
                             'Increases feature maps',
-                            'Normalizes inputs'
+                            'Normalizes inputs',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Pooling reduces spatial dimensions through max or average operations.',
@@ -1141,7 +1140,7 @@ class QuizSeeder extends Seeder
                             'Training from scratch',
                             'Continuing training pre-trained model on specific data',
                             'Adjusting model colors',
-                            'Changing model size'
+                            'Changing model size',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Fine-tuning continues training pre-trained models on specific datasets.',
@@ -1153,7 +1152,7 @@ class QuizSeeder extends Seeder
                             'Visual representation layer',
                             'Converts discrete tokens to dense vectors',
                             'Output prediction layer',
-                            'Normalization layer'
+                            'Normalization layer',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Embedding layers convert discrete tokens into dense vector representations.',
@@ -1165,7 +1164,7 @@ class QuizSeeder extends Seeder
                             'Gradients become too large',
                             'Gradients become too small for effective learning',
                             'Gradients disappear completely',
-                            'Loss becomes zero'
+                            'Loss becomes zero',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Vanishing gradients occur when gradients become too small for learning.',
@@ -1177,7 +1176,7 @@ class QuizSeeder extends Seeder
                             'Squares all values',
                             'Sets negative values to zero',
                             'Normalizes all values',
-                            'Generates random values'
+                            'Generates random values',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'ReLU (Rectified Linear Unit) outputs max(0, x) - zeroes negatives.',
@@ -1189,7 +1188,7 @@ class QuizSeeder extends Seeder
                             'Total dataset size',
                             'Number of samples processed together',
                             'Model output size',
-                            'Feature count'
+                            'Feature count',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Batch size is the number of samples processed before updating weights.',
@@ -1201,7 +1200,7 @@ class QuizSeeder extends Seeder
                             'Physical model storage',
                             'Complexity and learning ability of model',
                             'Training speed',
-                            'Dataset size'
+                            'Dataset size',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Model capacity refers to the complexity and expressive power of a model.',
@@ -1213,7 +1212,7 @@ class QuizSeeder extends Seeder
                             'Setting all weights to zero',
                             'Starting weight values before training',
                             'Loading pre-trained weights only',
-                            'Final model state'
+                            'Final model state',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Weight initialization sets starting values before training begins.',
@@ -1225,7 +1224,7 @@ class QuizSeeder extends Seeder
                             'Same thing',
                             'Epoch = full dataset pass, iteration = batch pass',
                             'Iteration is longer',
-                            'Epoch is for images only'
+                            'Epoch is for images only',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Epoch processes full dataset once; iteration processes one batch.',
@@ -1237,7 +1236,7 @@ class QuizSeeder extends Seeder
                             'Stopping training immediately',
                             'Stopping when validation performance stops improving',
                             'Stopping at first error',
-                            'Skipping first batch'
+                            'Skipping first batch',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Early stopping halts training when validation performance plateaus.',
@@ -1249,7 +1248,7 @@ class QuizSeeder extends Seeder
                             'Compresses data',
                             'Generates output from encoded representations',
                             'Encrypts data',
-                            'Deletes features'
+                            'Deletes features',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Decoder generates output sequence from encoded representations.',
@@ -1270,7 +1269,7 @@ class QuizSeeder extends Seeder
                             'Store raw text',
                             'Store embeddings for similarity search',
                             'Run SQL queries',
-                            'Manage user authentication'
+                            'Manage user authentication',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Vector databases store embeddings enabling fast similarity search.',
@@ -1282,7 +1281,7 @@ class QuizSeeder extends Seeder
                             'Counting words',
                             'Measuring embedding similarity',
                             'Encrypting data',
-                            'Compressing text'
+                            'Compressing text',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Cosine similarity measures how similar two embeddings are.',
@@ -1294,7 +1293,7 @@ class QuizSeeder extends Seeder
                             'Compressing the model',
                             'Breaking documents into searchable pieces',
                             'Encrypting data',
-                            'Training faster'
+                            'Training faster',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Chunking breaks documents into manageable pieces for embedding and retrieval.',
@@ -1306,7 +1305,7 @@ class QuizSeeder extends Seeder
                             'YOLO',
                             'BERT or similar',
                             'ResNet',
-                            'U-Net'
+                            'U-Net',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'BERT-based models are commonly used for generating text embeddings.',
@@ -1318,7 +1317,7 @@ class QuizSeeder extends Seeder
                             'Using two LLMs',
                             'Combining keyword and vector search',
                             'Training on two datasets',
-                            'Using two GPUs'
+                            'Using two GPUs',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Hybrid search combines traditional keyword search with semantic vector search.',
@@ -1330,7 +1329,7 @@ class QuizSeeder extends Seeder
                             'Text file format',
                             'Dense numerical representation of data',
                             'Encrypted data format',
-                            'Compressed image format'
+                            'Compressed image format',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Embedding vectors are dense numerical representations that capture semantic meaning.',
@@ -1342,7 +1341,7 @@ class QuizSeeder extends Seeder
                             'Exact matching algorithm',
                             'Fast similarity search with trade-offs',
                             'Neural network architecture',
-                            'Data compression method'
+                            'Data compression method',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'ANN provides fast similarity search by trading some accuracy for speed.',
@@ -1354,7 +1353,7 @@ class QuizSeeder extends Seeder
                             'B-tree only',
                             'HNSW graph-based indexing',
                             'Linear scanning',
-                            'Hash-based indexing'
+                            'Hash-based indexing',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Qdrant uses HNSW (Hierarchical Navigable Small World) for efficient vector indexing.',
@@ -1366,7 +1365,7 @@ class QuizSeeder extends Seeder
                             'Keyword matching',
                             'Meaning-based search using embeddings',
                             'Exact phrase matching',
-                            'Alphabetical sorting'
+                            'Alphabetical sorting',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Semantic search finds results based on meaning rather than exact keyword matches.',
@@ -1378,7 +1377,7 @@ class QuizSeeder extends Seeder
                             'Training the retriever',
                             'Refining search results with a more accurate model',
                             'Removing duplicate results',
-                            'Sorting by date'
+                            'Sorting by date',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Re-ranking uses a more powerful model to refine initial search results.',
@@ -1390,7 +1389,7 @@ class QuizSeeder extends Seeder
                             'Removing all metadata',
                             'Filtering results based on document attributes',
                             'Encrypting metadata',
-                            'Compressing metadata'
+                            'Compressing metadata',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Metadata filtering allows filtering by document attributes like date, category, etc.',
@@ -1402,7 +1401,7 @@ class QuizSeeder extends Seeder
                             'Always maximum size',
                             'Depends on use case, typically 512-1024 tokens',
                             'Always 256 tokens',
-                            'Size does not matter'
+                            'Size does not matter',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Chunk size depends on the use case; 512-1024 tokens is a common range.',
@@ -1414,7 +1413,7 @@ class QuizSeeder extends Seeder
                             'Copying chunks multiple times',
                             'Having adjacent chunks share some context',
                             'Stacking chunks',
-                            'Compressing chunks'
+                            'Compressing chunks',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Overlap ensures context continuity by sharing tokens between chunks.',
@@ -1426,7 +1425,7 @@ class QuizSeeder extends Seeder
                             'Training with retrieved data',
                             'Combining retrieval systems with LLM generation',
                             'Generating retrieval queries',
-                            'Storing generated outputs'
+                            'Storing generated outputs',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'RAG combines retrieval systems with LLM generation for grounded responses.',
@@ -1438,7 +1437,7 @@ class QuizSeeder extends Seeder
                             'RAG is always cheaper',
                             'RAG allows updating knowledge without retraining',
                             'RAG requires less data',
-                            'RAG is faster to deploy'
+                            'RAG is faster to deploy',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'RAG allows updating knowledge by changing documents without retraining.',
@@ -1450,7 +1449,7 @@ class QuizSeeder extends Seeder
                             'Device that retrieves files',
                             'Component that finds relevant documents',
                             'Database backup system',
-                            'Search engine crawler'
+                            'Search engine crawler',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Retriever finds relevant documents from the knowledge base.',
@@ -1462,7 +1461,7 @@ class QuizSeeder extends Seeder
                             'Neural network architecture',
                             'Traditional keyword-based retrieval algorithm',
                             'Vector similarity measure',
-                            'Chunking strategy'
+                            'Chunking strategy',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'BM25 is a classic sparse retrieval algorithm used in hybrid search.',
@@ -1474,7 +1473,7 @@ class QuizSeeder extends Seeder
                             'Getting root documents only',
                             'Retrieving larger context that contains chunk',
                             'Finding parent nodes in tree',
-                            'Loading parent class'
+                            'Loading parent class',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Parent document retrieval fetches larger context containing the matched chunk.',
@@ -1486,7 +1485,7 @@ class QuizSeeder extends Seeder
                             'Retrieving compressed data',
                             'Using neural embeddings for retrieval',
                             'Fetching database records',
-                            'Getting dense files'
+                            'Getting dense files',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Dense retrieval uses neural embeddings to find semantically similar content.',
@@ -1498,7 +1497,7 @@ class QuizSeeder extends Seeder
                             'Getting small files',
                             'Using keyword-based matching like TF-IDF',
                             'Compressed data retrieval',
-                            'Memory-efficient search'
+                            'Memory-efficient search',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Sparse retrieval uses traditional keyword matching like BM25 or TF-IDF.',
@@ -1519,7 +1518,7 @@ class QuizSeeder extends Seeder
                             'Low-rank Adaptation',
                             'Large Output Response Analysis',
                             'Linear Output Regularization Algorithm',
-                            'Learning Rate Optimization Approach'
+                            'Learning Rate Optimization Approach',
                         ],
                         'correct_option' => 0,
                         'explanation' => 'LoRA (Low-rank Adaptation) updates only a small subset of parameters.',
@@ -1531,7 +1530,7 @@ class QuizSeeder extends Seeder
                             'Uses more RAM',
                             'Quantizes model weights to 4-bit',
                             'Removes all layers',
-                            'Uses smaller batch sizes'
+                            'Uses smaller batch sizes',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'QLoRA quantizes weights to 4-bit while maintaining training quality.',
@@ -1543,7 +1542,7 @@ class QuizSeeder extends Seeder
                             'Random lightweight file hosting',
                             'Aligning models with human preferences',
                             'Running language model inference',
-                            'Reducing model latency'
+                            'Reducing model latency',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'RLHF (Reinforcement Learning from Human Feedback) aligns model outputs with human preferences.',
@@ -1555,7 +1554,7 @@ class QuizSeeder extends Seeder
                             'Python Enhanced File Transfer',
                             'Parameter-Efficient Fine-Tuning',
                             'Parallel Execution Framework Technology',
-                            'Precision Error Fix Toolkit'
+                            'Precision Error Fix Toolkit',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'PEFT enables fine-tuning with minimal parameter updates.',
@@ -1567,7 +1566,7 @@ class QuizSeeder extends Seeder
                             'Direct Parameter Optimization',
                             'Direct Preference Optimization',
                             'Distributed Processing Operation',
-                            'Deep Preference Output'
+                            'Deep Preference Output',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'DPO (Direct Preference Optimization) simplifies RLHF without reward modeling.',
@@ -1579,7 +1578,7 @@ class QuizSeeder extends Seeder
                             'Network connector',
                             'Trainable low-rank matrices added to layers',
                             'Output formatter',
-                            'Data loader'
+                            'Data loader',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'LoRA adapters are trainable low-rank matrices injected into model layers.',
@@ -1591,7 +1590,7 @@ class QuizSeeder extends Seeder
                             'Model ranking position',
                             'Dimension of low-rank matrices',
                             'Number of adapters',
-                            'Training epoch count'
+                            'Training epoch count',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Rank determines the dimension size of LoRA\'s low-rank matrices.',
@@ -1603,7 +1602,7 @@ class QuizSeeder extends Seeder
                             'Using all available data',
                             'Updating all model parameters',
                             'Training entire network',
-                            'Using all training epochs'
+                            'Using all training epochs',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Full fine-tuning updates all model parameters, not just adapters.',
@@ -1615,7 +1614,7 @@ class QuizSeeder extends Seeder
                             'Fine-tuning on instructions',
                             'Training model to follow instructions',
                             'Using instruction-level parallelism',
-                            'Debugging instructions'
+                            'Debugging instructions',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Instruction fine-tuning trains models to better follow user instructions.',
@@ -1627,7 +1626,7 @@ class QuizSeeder extends Seeder
                             'Changing model architecture',
                             'Fine-tuning on domain-specific data',
                             'Adapting to new hardware',
-                            'Changing model size'
+                            'Changing model size',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Domain adaptation fine-tunes models for specific industries or topics.',
@@ -1639,7 +1638,7 @@ class QuizSeeder extends Seeder
                             'Compensation model',
                             'Model that scores outputs based on human preferences',
                             'Cost function',
-                            'Pricing model'
+                            'Pricing model',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Reward model learns to score outputs based on human preference data.',
@@ -1651,7 +1650,7 @@ class QuizSeeder extends Seeder
                             'Simple Fine-Tuning',
                             'Supervised Fine-Tuning',
                             'Stochastic Function Training',
-                            'Standard Format Transfer'
+                            'Standard Format Transfer',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'SFT (Supervised Fine-Tuning) is the first phase of RLHF training.',
@@ -1663,7 +1662,7 @@ class QuizSeeder extends Seeder
                             'Adding prefixes to prompts',
                             'Tuning continuous prompt embeddings',
                             'Prefixing all outputs',
-                            'Adding header tokens'
+                            'Adding header tokens',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Prefix tuning tunes continuous embeddings added to model layers.',
@@ -1675,7 +1674,7 @@ class QuizSeeder extends Seeder
                             'Manually crafting prompts',
                             'Learning soft prompt embeddings',
                             'Testing different prompts',
-                            'Optimizing prompt length'
+                            'Optimizing prompt length',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Prompt tuning learns soft prompt embeddings without fine-tuning model.',
@@ -1687,7 +1686,7 @@ class QuizSeeder extends Seeder
                             'Unexpected model crash',
                             'Model loses previous knowledge when learning new',
                             'Training instability',
-                            'Memory overflow'
+                            'Memory overflow',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Catastrophic forgetting occurs when new training erases previous knowledge.',
@@ -1699,7 +1698,7 @@ class QuizSeeder extends Seeder
                             'Better accuracy',
                             'Less compute and storage required',
                             'Faster inference',
-                            'Smaller model size'
+                            'Smaller model size',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'LoRA requires less compute, storage, and is more memory-efficient.',
@@ -1711,7 +1710,7 @@ class QuizSeeder extends Seeder
                             'Combining model weights',
                             'Merging adapter weights into base model',
                             'Joining weight files',
-                            'Averaging weights'
+                            'Averaging weights',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Weight merging combines adapter weights into base model for deployment.',
@@ -1723,7 +1722,7 @@ class QuizSeeder extends Seeder
                             'Dataset users prefer',
                             'Pairs of responses ranked by humans',
                             'Preferred model settings',
-                            'User demographic data'
+                            'User demographic data',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Preference dataset contains response pairs ranked by human annotators.',
@@ -1735,7 +1734,7 @@ class QuizSeeder extends Seeder
                             'Preferred Parameter Optimization',
                             'Proximal Policy Optimization',
                             'Probabilistic Parameter Operation',
-                            'Parallel Preference Optimization'
+                            'Parallel Preference Optimization',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'PPO (Proximal Policy Optimization) is used to optimize the policy model.',
@@ -1747,7 +1746,7 @@ class QuizSeeder extends Seeder
                             'Endless training',
                             'Further training base model on domain data',
                             'Ongoing model updates',
-                            'Iterative fine-tuning'
+                            'Iterative fine-tuning',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Continuous pre-training continues training base model on domain-specific data.',
@@ -1768,7 +1767,7 @@ class QuizSeeder extends Seeder
                             'Linear Learning Machine',
                             'Large Language Model',
                             'Local Learning Module',
-                            'Logarithmic Loss Method'
+                            'Logarithmic Loss Method',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'LLM stands for Large Language Model.',
@@ -1780,7 +1779,7 @@ class QuizSeeder extends Seeder
                             'Encrypting text',
                             'Breaking text into tokens for models',
                             'Translating languages',
-                            'Compressing files'
+                            'Compressing files',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Tokenization breaks text into tokens (words/subwords) that models can process.',
@@ -1792,7 +1791,7 @@ class QuizSeeder extends Seeder
                             'Image generation errors',
                             'Confident but incorrect responses',
                             'Training failures',
-                            'Memory overflow'
+                            'Memory overflow',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Hallucination is when models generate plausible-sounding but incorrect information.',
@@ -1804,7 +1803,7 @@ class QuizSeeder extends Seeder
                             'A debugging tool',
                             'Maximum tokens model can process at once',
                             'Training batch size',
-                            'Model file size'
+                            'Model file size',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Context window is the maximum input/output token limit for a model.',
@@ -1816,7 +1815,7 @@ class QuizSeeder extends Seeder
                             'Application Programming Interface',
                             'Advanced Program Integration',
                             'Automated Protocol Interface',
-                            'Application Process Integration'
+                            'Application Process Integration',
                         ],
                         'correct_option' => 0,
                         'explanation' => 'API stands for Application Programming Interface.',
@@ -1828,7 +1827,7 @@ class QuizSeeder extends Seeder
                             'Robotic component',
                             'Neural network architecture using attention',
                             'Data conversion tool',
-                            'Hardware device'
+                            'Hardware device',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Transformer is a neural network architecture that uses self-attention mechanisms.',
@@ -1840,7 +1839,7 @@ class QuizSeeder extends Seeder
                             'Training the model',
                             'Using trained model to make predictions',
                             'Measuring model accuracy',
-                            'Data preprocessing'
+                            'Data preprocessing',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Inference is using a trained model to generate predictions.',
@@ -1852,7 +1851,7 @@ class QuizSeeder extends Seeder
                             'Technical error message',
                             'Input text to AI model',
                             'Model configuration file',
-                            'Training dataset'
+                            'Training dataset',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Prompt is the input text given to an AI model to generate response.',
@@ -1864,7 +1863,7 @@ class QuizSeeder extends Seeder
                             'Increasing model size',
                             'Reducing model precision to smaller numbers',
                             'Quantifying model outputs',
-                            'Adding more parameters'
+                            'Adding more parameters',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Quantization reduces model precision (e.g., 32-bit to 8-bit) to reduce size.',
@@ -1876,7 +1875,7 @@ class QuizSeeder extends Seeder
                             'Basic model structure',
                             'Large pre-trained model for transfer learning',
                             'Simple linear model',
-                            'Base hardware configuration'
+                            'Base hardware configuration',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Foundation models are large pre-trained models adaptable to many tasks.',
@@ -1888,7 +1887,7 @@ class QuizSeeder extends Seeder
                             'AI using one data type',
                             'AI processing multiple data types (text, image, audio)',
                             'AI with multiple outputs',
-                            'Multiple AI models'
+                            'Multiple AI models',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Multimodal AI can process and generate multiple data types.',
@@ -1900,7 +1899,7 @@ class QuizSeeder extends Seeder
                             'Hardware temperature',
                             'Controls randomness of output',
                             'Training temperature',
-                            'Model complexity'
+                            'Model complexity',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Temperature controls randomness: lower = more focused, higher = more creative.',
@@ -1912,7 +1911,7 @@ class QuizSeeder extends Seeder
                             'Training without data',
                             'Model performing tasks without examples',
                             'Zero-parameter models',
-                            'Learning nothing'
+                            'Learning nothing',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Zero-shot learning is model performing tasks it wasn\'t explicitly trained on.',
@@ -1924,7 +1923,7 @@ class QuizSeeder extends Seeder
                             'Training with minimal data',
                             'Using few examples in prompt',
                             'Models with few parameters',
-                            'Low-resource learning'
+                            'Low-resource learning',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Few-shot learning uses examples in prompt to guide model behavior.',
@@ -1936,7 +1935,7 @@ class QuizSeeder extends Seeder
                             'Physical anchoring',
                             'Connecting AI responses to real-world knowledge',
                             'Training stability',
-                            'Error fixing'
+                            'Error fixing',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Grounding connects AI outputs to factual, verifiable information.',
@@ -1948,7 +1947,7 @@ class QuizSeeder extends Seeder
                             'Model failure',
                             'Unexpected complex capabilities from simpler components',
                             'Gradual learning',
-                            'Error emergence'
+                            'Error emergence',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Emergence is complex behaviors arising from simpler model interactions.',
@@ -1960,7 +1959,7 @@ class QuizSeeder extends Seeder
                             'Weight balancing',
                             'Ensuring AI behaves according to human values',
                             'Architecture symmetry',
-                            'Layer alignment'
+                            'Layer alignment',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Model alignment ensures AI behavior matches human intentions and values.',
@@ -1972,7 +1971,7 @@ class QuizSeeder extends Seeder
                             'Compressing models',
                             'Larger models often have better capabilities',
                             'Reducing parameters',
-                            'Faster inference'
+                            'Faster inference',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Scaling shows larger models tend to have improved capabilities.',
@@ -1984,7 +1983,7 @@ class QuizSeeder extends Seeder
                             'Hardware instruction',
                             'High-level instructions defining AI behavior',
                             'Error message',
-                            'User input'
+                            'User input',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'System prompt sets overall context and behavior rules for the AI.',
@@ -1996,7 +1995,7 @@ class QuizSeeder extends Seeder
                             'Sequential API calls',
                             'Asking model to explain reasoning steps',
                             'Linked prompts',
-                            'Step-by-step processing'
+                            'Step-by-step processing',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Chain-of-thought prompts encourage model to show its reasoning process.',
@@ -2020,7 +2019,7 @@ class QuizSeeder extends Seeder
                             'Translating between languages',
                             'Splitting text into words/subwords',
                             'Generating new text',
-                            'Summarizing documents'
+                            'Summarizing documents',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Tokenization splits text into smaller units (words, subwords, or characters) that models can process.',
@@ -2032,7 +2031,7 @@ class QuizSeeder extends Seeder
                             'Encrypting words',
                             'Dense numerical representation of words',
                             'Word counting',
-                            'Language detection'
+                            'Language detection',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Word embeddings represent words as dense vectors capturing semantic meaning.',
@@ -2044,7 +2043,7 @@ class QuizSeeder extends Seeder
                             'Text generation',
                             'Bidirectional context understanding',
                             'Image recognition',
-                            'Audio processing'
+                            'Audio processing',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'BERT processes text bidirectionally, understanding context from both directions.',
@@ -2056,7 +2055,7 @@ class QuizSeeder extends Seeder
                             'Generating new entity names',
                             'Identifying persons, organizations, locations',
                             'Translating entities',
-                            'Counting entities'
+                            'Counting entities',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'NER identifies and classifies named entities like people, organizations, and locations.',
@@ -2068,7 +2067,7 @@ class QuizSeeder extends Seeder
                             'Generating emotional text',
                             'Determining emotional tone of text',
                             'Translating emotions',
-                            'Counting emotions'
+                            'Counting emotions',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Sentiment analysis determines whether text expresses positive, negative, or neutral opinions.',
@@ -2080,7 +2079,7 @@ class QuizSeeder extends Seeder
                             'Tagging music parts',
                             'Labeling words with grammar categories',
                             'Removing parts of speech',
-                            'Categorizing speakers'
+                            'Categorizing speakers',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'POS tagging labels each word with its grammatical category (noun, verb, etc.).',
@@ -2092,7 +2091,7 @@ class QuizSeeder extends Seeder
                             'Adding text to documents',
                             'Creating shorter versions of text',
                             'Encrypting text',
-                            'Translating text'
+                            'Translating text',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Text summarization creates concise summaries of longer documents.',
@@ -2104,7 +2103,7 @@ class QuizSeeder extends Seeder
                             'Physical machine moving',
                             'Automatic translation between languages',
                             'Machine repair',
-                            'Text classification'
+                            'Text classification',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Machine translation automatically converts text from one language to another.',
@@ -2116,7 +2115,7 @@ class QuizSeeder extends Seeder
                             'Creating new languages',
                             'Predicting probability of word sequences',
                             'Modeling language teachers',
-                            'Building language apps'
+                            'Building language apps',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Language modeling predicts the probability of word sequences.',
@@ -2128,7 +2127,7 @@ class QuizSeeder extends Seeder
                             'Organizing physical text',
                             'Assigning categories to text',
                             'Classifying fonts',
-                            'Sorting documents'
+                            'Sorting documents',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Text classification assigns predefined categories to text documents.',
@@ -2140,7 +2139,7 @@ class QuizSeeder extends Seeder
                             'DNA sequencing',
                             'Input sequence to output sequence',
                             'Number sequences',
-                            'Sequential processing'
+                            'Sequential processing',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Seq2seq converts input sequences to output sequences (e.g., translation).',
@@ -2152,7 +2151,7 @@ class QuizSeeder extends Seeder
                             'Human focus',
                             'Focusing on relevant parts of input',
                             'Memory attention',
-                            'Weight attention'
+                            'Weight attention',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Attention allows models to focus on relevant parts of input when generating output.',
@@ -2164,7 +2163,7 @@ class QuizSeeder extends Seeder
                             'Data parsing',
                             'Analyzing grammatical structure',
                             'Code parsing',
-                            'File parsing'
+                            'File parsing',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Parsing analyzes the grammatical structure of sentences.',
@@ -2176,7 +2175,7 @@ class QuizSeeder extends Seeder
                             'Making text dependent',
                             'Analyzing word relationships',
                             'Creating dependencies',
-                            'Dependent translation'
+                            'Dependent translation',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Dependency parsing analyzes grammatical relationships between words.',
@@ -2188,7 +2187,7 @@ class QuizSeeder extends Seeder
                             'Typing text',
                             'Automatically producing text',
                             'Reading text',
-                            'Formatting text'
+                            'Formatting text',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Text generation produces new text automatically using AI.',
@@ -2200,7 +2199,7 @@ class QuizSeeder extends Seeder
                             'Answering phone calls',
                             'Finding answers to questions from text',
                             'Creating questionnaires',
-                            'Testing text'
+                            'Testing text',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Question answering systems find answers to questions from given text.',
@@ -2212,7 +2211,7 @@ class QuizSeeder extends Seeder
                             'Text format identification',
                             'Term frequency-inverse document frequency',
                             'Text file directory',
-                            'Transfer function identifier'
+                            'Transfer function identifier',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'TF-IDF measures word importance in documents based on frequency.',
@@ -2224,7 +2223,7 @@ class QuizSeeder extends Seeder
                             'Stopping text processing',
                             'Removing common words (the, is, a)',
                             'Creating stop lists',
-                            'Stopping speech'
+                            'Stopping speech',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Stop word removal eliminates common words that add little meaning.',
@@ -2236,7 +2235,7 @@ class QuizSeeder extends Seeder
                             'Lemur analysis',
                             'Reducing words to base form',
                             'Creating lemmas',
-                            'Lemma matching'
+                            'Lemma matching',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Lemmatization reduces words to their dictionary base form.',
@@ -2248,7 +2247,7 @@ class QuizSeeder extends Seeder
                             'Stem cell research',
                             'Removing word affixes to get root form',
                             'Plant analysis',
-                            'Data stemming'
+                            'Data stemming',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Stemming removes affixes to get word root (e.g., "running" -> "run").',
@@ -2270,7 +2269,7 @@ class QuizSeeder extends Seeder
                             'Changing model size',
                             'Tracking model iterations and configurations',
                             'Updating model weights only',
-                            'Version control for data'
+                            'Version control for data',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Model versioning tracks different iterations of models with their configurations and metrics.',
@@ -2282,7 +2281,7 @@ class QuizSeeder extends Seeder
                             'Comparing two model architectures',
                             'Testing different models with user groups',
                             'Training two models simultaneously',
-                            'Splitting data into sets'
+                            'Splitting data into sets',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'A/B testing compares different models or strategies by deploying to different user groups.',
@@ -2294,7 +2293,7 @@ class QuizSeeder extends Seeder
                             'User interactions',
                             'Experiments, metrics, and artifacts',
                             'Model code only',
-                            'Data processing time'
+                            'Data processing time',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'MLflow is an open-source platform for tracking experiments, metrics, and model artifacts.',
@@ -2306,7 +2305,7 @@ class QuizSeeder extends Seeder
                             'Model getting faster',
                             'Model performance degrading over time',
                             'Model size increasing',
-                            'Model training failing'
+                            'Model training failing',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Model drift occurs when the model\'s predictions degrade as real-world data changes.',
@@ -2318,7 +2317,7 @@ class QuizSeeder extends Seeder
                             'Storing model files',
                             'Centralized repository for ML features',
                             'Data visualization tool',
-                            'Training data storage'
+                            'Training data storage',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'A feature store is a centralized repository for storing and serving ML features.',
@@ -2330,7 +2329,7 @@ class QuizSeeder extends Seeder
                             'Bird-related deployment',
                             'Gradually rolling out to small percentage',
                             'Complete replacement',
-                            'Blue-green deployment only'
+                            'Blue-green deployment only',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Canary deployment gradually introduces new model to small subset.',
@@ -2342,7 +2341,7 @@ class QuizSeeder extends Seeder
                             'Hidden deployment',
                             'New model runs alongside without affecting decisions',
                             'Backup mode',
-                            'Silent operation'
+                            'Silent operation',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Shadow mode runs new model in parallel without impacting production.',
@@ -2354,7 +2353,7 @@ class QuizSeeder extends Seeder
                             'Marriage service',
                             'Centralized model versioning and management',
                             'Government database',
-                            'Security feature'
+                            'Security feature',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Model registry centralizes model versioning and lifecycle management.',
@@ -2366,7 +2365,7 @@ class QuizSeeder extends Seeder
                             'Better predictions',
                             'Making model predictions faster and efficient',
                             'Optimizing training',
-                            'Feature optimization'
+                            'Feature optimization',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Inference optimization improves speed and efficiency of predictions.',
@@ -2378,7 +2377,7 @@ class QuizSeeder extends Seeder
                             'Watching models sleep',
                             'Tracking model performance in production',
                             'Model training watch',
-                            'Hardware monitoring'
+                            'Hardware monitoring',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Model monitoring tracks performance and health of deployed models.',
@@ -2390,7 +2389,7 @@ class QuizSeeder extends Seeder
                             'Data moving',
                             'Change in input data distribution',
                             'Data backup',
-                            'Data migration'
+                            'Data migration',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Data drift occurs when input data distribution changes over time.',
@@ -2402,7 +2401,7 @@ class QuizSeeder extends Seeder
                             'Philosophy class',
                             'Change in relationship between inputs and outputs',
                             'Data migration',
-                            'Concept storage'
+                            'Concept storage',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Concept drift is when the relationship between features and target changes.',
@@ -2414,7 +2413,7 @@ class QuizSeeder extends Seeder
                             'Slow deployment',
                             'Gradually increasing traffic to new model',
                             'One-time deployment',
-                            'Complete replacement'
+                            'Complete replacement',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Progressive deployment slowly increases model traffic over time.',
@@ -2426,7 +2425,7 @@ class QuizSeeder extends Seeder
                             'Undo transaction',
                             'Reverting to previous model version',
                             'Database rollback',
-                            'Code rollback'
+                            'Code rollback',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Rollback reverts to previous model when issues are detected.',
@@ -2438,7 +2437,7 @@ class QuizSeeder extends Seeder
                             'Monitoring feature files',
                             'Tracking which features matter most',
                             'Feature tracking',
-                            'Data importance'
+                            'Data importance',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Feature importance monitoring tracks which features drive predictions.',
@@ -2450,7 +2449,7 @@ class QuizSeeder extends Seeder
                             'Output tracking',
                             'Monitoring model output distribution',
                             'Data distribution',
-                            'Input tracking'
+                            'Input tracking',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Prediction monitoring tracks the distribution of model outputs.',
@@ -2462,7 +2461,7 @@ class QuizSeeder extends Seeder
                             'Continuous Integration/Continuous Deployment for ML',
                             'Computer Intelligence',
                             'Code implementation',
-                            'Continuous improvement'
+                            'Continuous improvement',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'CI/CD automates building, testing, and deploying ML models.',
@@ -2474,7 +2473,7 @@ class QuizSeeder extends Seeder
                             'Model training',
                             'Ensuring model probabilities are accurate',
                             'Model setup',
-                            'Feature calibration'
+                            'Feature calibration',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Calibration ensures model confidence scores match actual probabilities.',
@@ -2496,7 +2495,7 @@ class QuizSeeder extends Seeder
                             'Model attending to itself only',
                             'Measuring relationships between all positions in a sequence',
                             'Attention within a single layer',
-                            'Reducing model size'
+                            'Reducing model size',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Self-attention computes relationships between all positions in a sequence simultaneously.',
@@ -2508,7 +2507,7 @@ class QuizSeeder extends Seeder
                             'Model performance metrics',
                             'Sequence order information',
                             'Model regularization',
-                            'Data augmentation'
+                            'Data augmentation',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Positional encoding provides sequence order information since transformers have no recurrence.',
@@ -2520,7 +2519,7 @@ class QuizSeeder extends Seeder
                             'Using multiple transformer models',
                             'Multiple attention mechanisms in parallel',
                             'Attending to multiple sequences',
-                            'Stacking multiple layers'
+                            'Stacking multiple layers',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Multi-head attention runs several attention mechanisms in parallel to capture different relationships.',
@@ -2532,7 +2531,7 @@ class QuizSeeder extends Seeder
                             'To speed up training',
                             'To prevent seeing future tokens',
                             'To reduce model size',
-                            'To improve accuracy'
+                            'To improve accuracy',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Masked attention prevents the model from seeing future tokens during training.',
@@ -2544,7 +2543,7 @@ class QuizSeeder extends Seeder
                             'Process sequential data',
                             'Add non-linear transformations',
                             'Reduce model size',
-                            'Handle attention weights'
+                            'Handle attention weights',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Feed-forward layers provide non-linear transformations to process attention outputs.',
@@ -2556,7 +2555,7 @@ class QuizSeeder extends Seeder
                             'Summing all values',
                             'Scaled dot-product of query and key',
                             'Maximum of all inputs',
-                            'Average pooling'
+                            'Average pooling',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Attention uses scaled dot-product of query and key vectors to compute scores.',
@@ -2568,7 +2567,7 @@ class QuizSeeder extends Seeder
                             'Quality, Knowledge, Value',
                             'Query, Key, Value',
                             'Question, Kernel, Vector',
-                            'Quantity, Kind, Variable'
+                            'Quantity, Kind, Variable',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Q (Query), K (Key), V (Value) are learned linear projections for attention.',
@@ -2580,7 +2579,7 @@ class QuizSeeder extends Seeder
                             'Rotating model weights',
                             'Encoding position using rotation matrices',
                             'Circular data augmentation',
-                            'Weight rotation'
+                            'Weight rotation',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'RoPE encodes position information using rotation matrices in the attention computation.',
@@ -2592,7 +2591,7 @@ class QuizSeeder extends Seeder
                             'Keyboard input cache',
                             'Cached key-value pairs for faster inference',
                             'Knowledge vector storage',
-                            'Kernel visualization'
+                            'Kernel visualization',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'KV cache stores computed keys and values to avoid recomputation during generation.',
@@ -2604,7 +2603,7 @@ class QuizSeeder extends Seeder
                             'Searching for beams in images',
                             'Exploring multiple candidate sequences',
                             'Network architecture',
-                            'Data structure'
+                            'Data structure',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Beam search explores multiple candidate sequences while generating text.',
@@ -2616,7 +2615,7 @@ class QuizSeeder extends Seeder
                             'Being greedy with resources',
                             'Selecting highest probability token each step',
                             'Searching all paths',
-                            'Random generation'
+                            'Random generation',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Greedy decoding selects the highest probability token at each step.',
@@ -2628,7 +2627,7 @@ class QuizSeeder extends Seeder
                             'Hardware temperature control',
                             'Adjusting probability distribution randomness',
                             'Training temperature',
-                            'Model cooling'
+                            'Model cooling',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Temperature scaling adjusts the randomness of token selection.',
@@ -2640,7 +2639,7 @@ class QuizSeeder extends Seeder
                             'Selecting top keyboard keys',
                             'Restricting token selection to top k candidates',
                             'K-fold cross validation',
-                            'Top k layers'
+                            'Top k layers',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Top-k sampling restricts token selection to the k most probable tokens.',
@@ -2652,7 +2651,7 @@ class QuizSeeder extends Seeder
                             'Top priority selection',
                             'Selecting from smallest probability mass',
                             'Picking top p tokens',
-                            'Nuclear sampling'
+                            'Nuclear sampling',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Top-p selects tokens that make up the top p% of probability mass.',
@@ -2664,7 +2663,7 @@ class QuizSeeder extends Seeder
                             'Quick keyboard shortcuts',
                             'Memory-efficient attention computation',
                             'Fast model training',
-                            'Speed boost technique'
+                            'Speed boost technique',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Flash attention computes attention with reduced memory footprint.',
@@ -2676,7 +2675,7 @@ class QuizSeeder extends Seeder
                             'Grouping queries together',
                             'Sharing key heads across query heads',
                             'Query clustering',
-                            'Multi-query optimization'
+                            'Multi-query optimization',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'GQA shares key/value heads across multiple query heads for efficiency.',
@@ -2688,7 +2687,7 @@ class QuizSeeder extends Seeder
                             'Network with no decoder',
                             'Transformer using causal (masked) attention',
                             'Autoencoder variant',
-                            'Sequential decoder'
+                            'Sequential decoder',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Decoder-only uses masked attention for autoregressive text generation.',
@@ -2700,7 +2699,7 @@ class QuizSeeder extends Seeder
                             'Linking transformer layers',
                             'Generating reasoning steps explicitly',
                             'Sequential processing',
-                            'Layer chaining'
+                            'Layer chaining',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Chain-of-thought generates explicit reasoning steps for complex problems.',
@@ -2712,7 +2711,7 @@ class QuizSeeder extends Seeder
                             'Combining expert systems',
                             'Activating subset of parameters per input',
                             'Multiple AI models',
-                            'Expert training'
+                            'Expert training',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'MoE activates only a subset of expert networks for each input.',
@@ -2724,7 +2723,7 @@ class QuizSeeder extends Seeder
                             'Window sliding animation',
                             'Attending to fixed window of tokens',
                             'Sliding model weights',
-                            'Window selection'
+                            'Window selection',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Sliding window attention limits attention to a fixed context window.',
@@ -2736,7 +2735,7 @@ class QuizSeeder extends Seeder
                             'Attention with focus mode',
                             'Attending to all positions in sequence',
                             'Maximum attention',
-                            'Complete attention'
+                            'Complete attention',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Full attention computes relationships between all positions in the sequence.',
@@ -2758,7 +2757,7 @@ class QuizSeeder extends Seeder
                             'Text file format',
                             'Dense numerical representation of data',
                             'Encrypted data format',
-                            'Compressed image format'
+                            'Compressed image format',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Embedding vectors are dense numerical representations that capture semantic meaning.',
@@ -2770,7 +2769,7 @@ class QuizSeeder extends Seeder
                             'Exact matching algorithm',
                             'Fast similarity search with trade-offs',
                             'Neural network architecture',
-                            'Data compression method'
+                            'Data compression method',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'ANN provides fast similarity search by trading some accuracy for speed.',
@@ -2782,7 +2781,7 @@ class QuizSeeder extends Seeder
                             'B-tree only',
                             'HNSW graph-based indexing',
                             'Linear scanning',
-                            'Hash-based indexing'
+                            'Hash-based indexing',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Qdrant uses HNSW (Hierarchical Navigable Small World) for efficient vector indexing.',
@@ -2794,7 +2793,7 @@ class QuizSeeder extends Seeder
                             'Keyword matching',
                             'Meaning-based search using embeddings',
                             'Exact phrase matching',
-                            'Alphabetical sorting'
+                            'Alphabetical sorting',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Semantic search finds results based on meaning rather than exact keyword matches.',
@@ -2806,7 +2805,7 @@ class QuizSeeder extends Seeder
                             'Training the retriever',
                             'Refining search results with a more accurate model',
                             'Removing duplicate results',
-                            'Sorting by date'
+                            'Sorting by date',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Re-ranking uses a more powerful model to refine initial search results.',
@@ -2818,7 +2817,7 @@ class QuizSeeder extends Seeder
                             'Angle between vectors only',
                             'Measure of vector direction similarity',
                             'Vector length calculation',
-                            'Data compression'
+                            'Data compression',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Cosine similarity measures how similar two vectors are based on angle.',
@@ -2830,7 +2829,7 @@ class QuizSeeder extends Seeder
                             'Angle between vectors',
                             'Straight-line distance between points',
                             'Vector direction',
-                            'Dot product'
+                            'Dot product',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Euclidean distance is the straight-line distance between two points.',
@@ -2842,7 +2841,7 @@ class QuizSeeder extends Seeder
                             'Cross multiplication',
                             'Sum of element-wise products',
                             'Vector division',
-                            'Matrix multiplication'
+                            'Matrix multiplication',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Dot product is the sum of element-wise products of two vectors.',
@@ -2854,7 +2853,7 @@ class QuizSeeder extends Seeder
                             'Making vectors longer',
                             'Scaling vectors to unit length',
                             'Encrypting vectors',
-                            'Compressing vectors'
+                            'Compressing vectors',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Normalization scales vectors to have unit length for consistent comparison.',
@@ -2866,7 +2865,7 @@ class QuizSeeder extends Seeder
                             'Number of vectors',
                             'Length of each vector',
                             'Number of dimensions',
-                            'Vector count'
+                            'Vector count',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Dimensionality is the number of values in each embedding vector.',
@@ -2878,7 +2877,7 @@ class QuizSeeder extends Seeder
                             'Database for pine trees',
                             'Managed vector database service',
                             'Image processing tool',
-                            'Programming language'
+                            'Programming language',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Pinecone is a managed cloud service for storing and searching vectors.',
@@ -2890,7 +2889,7 @@ class QuizSeeder extends Seeder
                             'Weather API',
                             'Open-source vector search engine',
                             'Data visualization',
-                            'Network tool'
+                            'Network tool',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Weaviate is an open-source vector search engine with built-in embeddings.',
@@ -2902,7 +2901,7 @@ class QuizSeeder extends Seeder
                             'Military database',
                             'Open-source vector database',
                             'Email client',
-                            'Image editor'
+                            'Image editor',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Milvus is an open-source vector database for AI applications.',
@@ -2914,7 +2913,7 @@ class QuizSeeder extends Seeder
                             'Color picker',
                             'Embedding database for AI',
                             'Audio processor',
-                            'Image filter'
+                            'Image filter',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Chroma is an open-source embedding database designed for AI applications.',
@@ -2926,7 +2925,7 @@ class QuizSeeder extends Seeder
                             'Facebook AI Similarity Search',
                             'Library for efficient similarity search',
                             'File system',
-                            'Network protocol'
+                            'Network protocol',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'FAISS is Facebook AI\'s library for efficient dense vector similarity search.',
@@ -2938,7 +2937,7 @@ class QuizSeeder extends Seeder
                             'In-Vivo Fertilization',
                             'Inverted File Index for clustering',
                             'Input-Validation-Format',
-                            'Indexed Vector File'
+                            'Indexed Vector File',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'IVF clusters vectors and searches within relevant clusters only.',
@@ -2950,7 +2949,7 @@ class QuizSeeder extends Seeder
                             'Hierarchical Non-Sequential Walk',
                             'Hierarchical Navigable Small World',
                             'High Number Sparse Weights',
-                            'Hybrid Network Search Wave'
+                            'Hybrid Network Search Wave',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'HNSW builds a multi-layer graph for fast approximate nearest neighbor search.',
@@ -2962,7 +2961,7 @@ class QuizSeeder extends Seeder
                             'Increasing vector size',
                             'Compressing vectors to codes',
                             'Encrypting vectors',
-                            'Duplicating vectors'
+                            'Duplicating vectors',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Quantization compresses vectors by mapping to representative codes.',
@@ -2974,7 +2973,7 @@ class QuizSeeder extends Seeder
                             'E-commerce search',
                             'Splitting vectors into subvectors for compression',
                             'Product database',
-                            'Vector multiplication'
+                            'Vector multiplication',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Product quantization splits vectors into subvectors for efficient storage.',
@@ -2986,7 +2985,7 @@ class QuizSeeder extends Seeder
                             'Recall ability of model',
                             'Percentage of true neighbors found',
                             'Memory recall',
-                            'Training recall'
+                            'Training recall',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'ANN recall measures how many true nearest neighbors are found by approximate search.',
@@ -3008,7 +3007,7 @@ class QuizSeeder extends Seeder
                             'Using hardware tools',
                             'Calling external functions/APIs',
                             'Training models',
-                            'Creating software'
+                            'Creating software',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Tool use allows agents to call external functions, APIs, or services to accomplish tasks.',
@@ -3020,7 +3019,7 @@ class QuizSeeder extends Seeder
                             'RAM allocation',
                             'Persisting information across interactions',
                             'Training data storage',
-                            'Cache management'
+                            'Cache management',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Agent memory enables persisting context and information across multiple interactions.',
@@ -3032,7 +3031,7 @@ class QuizSeeder extends Seeder
                             'Mirror image processing',
                             'Agent evaluating its own outputs',
                             'Training technique',
-                            'Data augmentation'
+                            'Data augmentation',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Reflection enables agents to evaluate and improve their own outputs and reasoning.',
@@ -3044,7 +3043,7 @@ class QuizSeeder extends Seeder
                             'Creating project plans',
                             'Breaking tasks into executable steps',
                             'Scheduling training jobs',
-                            'Resource allocation'
+                            'Resource allocation',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Planning allows agents to break complex tasks into manageable executable steps.',
@@ -3056,7 +3055,7 @@ class QuizSeeder extends Seeder
                             'Simple linear workflows',
                             'Stateful workflows with cycles',
                             'Static page generation',
-                            'Database queries'
+                            'Database queries',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'LangGraph specializes in stateful workflows with cycles and persistence.',
@@ -3068,7 +3067,7 @@ class QuizSeeder extends Seeder
                             'AI that works alone',
                             'AI that makes decisions and acts without human input',
                             'Standalone AI systems',
-                            'Manual AI processes'
+                            'Manual AI processes',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Autonomous AI makes decisions and takes actions independently.',
@@ -3080,7 +3079,7 @@ class QuizSeeder extends Seeder
                             'Single agent processing',
                             'Multiple agents working together on tasks',
                             'Agent competition',
-                            'Sequential agent tasks'
+                            'Sequential agent tasks',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Multi-agent systems have multiple agents working together.',
@@ -3092,7 +3091,7 @@ class QuizSeeder extends Seeder
                             'Assigning human roles',
                             'Giving agents specific responsibilities',
                             'Role-based access control',
-                            'Task assignment'
+                            'Task assignment',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Role assignment gives agents specific responsibilities in multi-agent systems.',
@@ -3104,7 +3103,7 @@ class QuizSeeder extends Seeder
                             'Network protocol',
                             'Rules for agent-to-agent messaging',
                             'User communication',
-                            'API protocol'
+                            'API protocol',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Communication protocols define how agents exchange information.',
@@ -3116,7 +3115,7 @@ class QuizSeeder extends Seeder
                             'Flat agent structure',
                             'Organizing agents in parent-child relationships',
                             'Network hierarchy',
-                            'Layer-based agents'
+                            'Layer-based agents',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Hierarchical design organizes agents in supervisory relationships.',
@@ -3128,7 +3127,7 @@ class QuizSeeder extends Seeder
                             'Breaking goals into smaller tasks',
                             'Combining multiple goals',
                             'Goal prioritization',
-                            'Goal evaluation'
+                            'Goal evaluation',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Goal decomposition breaks complex goals into achievable subgoals.',
@@ -3140,7 +3139,7 @@ class QuizSeeder extends Seeder
                             'Fixing typos',
                             'Agent identifying and fixing own errors',
                             'Code correction',
-                            'Human correction'
+                            'Human correction',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Self-correction allows agents to identify and fix their own mistakes.',
@@ -3152,7 +3151,7 @@ class QuizSeeder extends Seeder
                             'Fast decision making',
                             'Careful reasoning before action',
                             'Automatic processing',
-                            'Random decisions'
+                            'Random decisions',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Deliberation is careful reasoning before taking action.',
@@ -3164,7 +3163,7 @@ class QuizSeeder extends Seeder
                             'Agent shutting down',
                             'Tracking and verifying task execution',
                             'Running agents',
-                            'Agent performance'
+                            'Agent performance',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Monitoring tracks whether tasks are executed correctly.',
@@ -3176,7 +3175,7 @@ class QuizSeeder extends Seeder
                             'Proactive planning',
                             'Responding directly to environment',
                             'Delayed response',
-                            'Inactive state'
+                            'Inactive state',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Reactive behavior responds directly to environmental stimuli.',
@@ -3188,7 +3187,7 @@ class QuizSeeder extends Seeder
                             'Waiting for input',
                             'Anticipating and acting on future needs',
                             'Reactive only',
-                            'Passive processing'
+                            'Passive processing',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Proactive agents anticipate needs and act ahead of time.',
@@ -3200,7 +3199,7 @@ class QuizSeeder extends Seeder
                             'Physical locks',
                             'Rules preventing harmful actions',
                             'User permissions',
-                            'System limits'
+                            'System limits',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Safety constraints prevent agents from taking harmful actions.',
@@ -3212,7 +3211,7 @@ class QuizSeeder extends Seeder
                             'Beach simulation',
                             'Isolated environment for agent execution',
                             'Container technology',
-                            'Security feature only'
+                            'Security feature only',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Sandboxing isolates agents to prevent unintended consequences.',
@@ -3224,7 +3223,7 @@ class QuizSeeder extends Seeder
                             'Agent vision',
                             'Understanding agent decision-making process',
                             'Agent visibility',
-                            'Display features'
+                            'Display features',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Observability means understanding why agents make certain decisions.',
@@ -3236,7 +3235,7 @@ class QuizSeeder extends Seeder
                             'Database rollback',
                             'Reverting agent to previous state',
                             'Error recovery',
-                            'State restoration'
+                            'State restoration',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Rollback reverts agent to a known good previous state.',
@@ -3258,7 +3257,7 @@ class QuizSeeder extends Seeder
                             'Graphics format',
                             'Quantized model format',
                             'Programming language',
-                            'Network protocol'
+                            'Network protocol',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'GGUF is a quantized model format optimized for CPU inference with llama.cpp.',
@@ -3270,7 +3269,7 @@ class QuizSeeder extends Seeder
                             'Model accuracy',
                             'Model size and memory usage',
                             'Training time',
-                            'Dataset size'
+                            'Dataset size',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Quantization reduces model size and memory by using lower-precision numbers.',
@@ -3282,7 +3281,7 @@ class QuizSeeder extends Seeder
                             'Model training',
                             'Running LLMs locally with simple commands',
                             'Data preprocessing',
-                            'Model evaluation'
+                            'Model evaluation',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Ollama enables running LLMs locally with simple command-line interface.',
@@ -3294,7 +3293,7 @@ class QuizSeeder extends Seeder
                             'Easy local setup',
                             'High-throughput LLM serving with PagedAttention',
                             'Model quantization',
-                            'Chat interface'
+                            'Chat interface',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'vLLM provides high-throughput LLM serving using PagedAttention technique.',
@@ -3306,7 +3305,7 @@ class QuizSeeder extends Seeder
                             'Reducing training data',
                             'Compressing attention key/value cache',
                             'Quantizing model weights only',
-                            'Dataset compression'
+                            'Dataset compression',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'KV cache quantization compresses the attention cache to reduce memory usage.',
@@ -3318,7 +3317,7 @@ class QuizSeeder extends Seeder
                             'Llamas in C++',
                             'C++ inference engine for LLMs',
                             'Python library',
-                            'Web framework'
+                            'Web framework',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'llama.cpp is a C++ library for efficient LLM inference.',
@@ -3330,7 +3329,7 @@ class QuizSeeder extends Seeder
                             'GNU General ML',
                             'GPT Generated Model Language',
                             'Machine learning library format',
-                            'Graphics Gateway Markup Language'
+                            'Graphics Gateway Markup Language',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'GGML (now replaced by GGUF) was a tensor library for machine learning.',
@@ -3342,7 +3341,7 @@ class QuizSeeder extends Seeder
                             'Smartphone device',
                             'Multi-dimensional array for computations',
                             'Sensor data',
-                            'Time series'
+                            'Time series',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Tensors are multi-dimensional arrays used for neural network computations.',
@@ -3354,7 +3353,7 @@ class QuizSeeder extends Seeder
                             'Single prediction at a time',
                             'Processing multiple inputs simultaneously',
                             'Batch training',
-                            'Sequential processing'
+                            'Sequential processing',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Batch inference processes multiple inputs together for efficiency.',
@@ -3366,7 +3365,7 @@ class QuizSeeder extends Seeder
                             'Video streaming',
                             'Generating tokens one at a time as they are produced',
                             'Batch processing',
-                            'Offline inference'
+                            'Offline inference',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Streaming outputs tokens as they are generated rather than waiting for complete response.',
@@ -3378,7 +3377,7 @@ class QuizSeeder extends Seeder
                             'Increasing model size',
                             'Converting to lower precision (e.g., 8-bit)',
                             'Model training',
-                            'Data quantization'
+                            'Data quantization',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Quantization converts model weights to lower precision for efficiency.',
@@ -3390,7 +3389,7 @@ class QuizSeeder extends Seeder
                             'Automatic Weight Quantization',
                             'Activation-Aware Weight Quantization',
                             'Adaptive Weight Quality',
-                            'Array Weight Query'
+                            'Array Weight Query',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'AWQ is a quantization method that preserves important weights.',
@@ -3402,7 +3401,7 @@ class QuizSeeder extends Seeder
                             'GPT Protocol',
                             'Post-Training Quantization for GPT models',
                             'General Purpose Training Quantization',
-                            'Gradient-based Precision Training'
+                            'Gradient-based Precision Training',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'GPTQ is a post-training quantization method for efficient inference.',
@@ -3414,7 +3413,7 @@ class QuizSeeder extends Seeder
                             'Extended llama version',
                             'Optimized inference engine for llama models',
                             'LLaMA visual interface',
-                            'LLaMA training tool'
+                            'LLaMA training tool',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'ExLlamaV2 is an optimized inference engine for LLaMA models.',
@@ -3426,7 +3425,7 @@ class QuizSeeder extends Seeder
                             'Tensor processing library',
                             'NVIDIA optimized LLM inference engine',
                             'Neural network trainer',
-                            'Data tensor format'
+                            'Data tensor format',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'TensorRT-LLM is NVIDIA\'s optimized inference engine for LLMs.',
@@ -3438,7 +3437,7 @@ class QuizSeeder extends Seeder
                             'Music production software',
                             'Desktop app for running LLMs locally',
                             'Machine learning studio',
-                            'Language model toolkit'
+                            'Language model toolkit',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'LM Studio is a desktop application for running LLMs locally.',
@@ -3450,7 +3449,7 @@ class QuizSeeder extends Seeder
                             'January releases',
                             'Open-source local AI inference engine',
                             'Java AI framework',
-                            'Neural network library'
+                            'Neural network library',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Jan is an open-source alternative for local AI inference.',
@@ -3462,7 +3461,7 @@ class QuizSeeder extends Seeder
                             'Training continuously',
                             'Dynamic batching of requests during generation',
                             'Permanent storage',
-                            'Sequential processing'
+                            'Sequential processing',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Continuous batching dynamically adds requests to batches during generation.',
@@ -3474,7 +3473,7 @@ class QuizSeeder extends Seeder
                             'Predicting model outputs',
                             'Using small draft model to predict, large model to verify',
                             'Random decoding',
-                            'Sequential prediction'
+                            'Sequential prediction',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Speculative decoding uses draft model predictions for faster inference.',
@@ -3486,7 +3485,7 @@ class QuizSeeder extends Seeder
                             'Removing GPU',
                             'Loading model layers across CPU/GPU dynamically',
                             'Turning off GPU',
-                            'External GPU'
+                            'External GPU',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Offloading distributes model across CPU and GPU memory.',
@@ -3498,7 +3497,7 @@ class QuizSeeder extends Seeder
                             'Llama documentation',
                             'Single-file LLM executable',
                             'LLaMA file format',
-                            'Llama backup'
+                            'Llama backup',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'llamafile packages LLMs as single executable files.',
@@ -3520,7 +3519,7 @@ class QuizSeeder extends Seeder
                             'Human researcher',
                             'The AI system learning and acting',
                             'Environment controller',
-                            'Data processor'
+                            'Data processor',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'The agent is the AI system that learns to make decisions through interaction.',
@@ -3532,7 +3531,7 @@ class QuizSeeder extends Seeder
                             'Training bonus',
                             'Signal for good/bad actions',
                             'Final score',
-                            'Data label'
+                            'Data label',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Reward is a signal that tells the agent how good its action was.',
@@ -3544,7 +3543,7 @@ class QuizSeeder extends Seeder
                             'Training vs inference',
                             'Trying new actions vs using known best',
                             'Model selection',
-                            'Data collection'
+                            'Data collection',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Exploration tries new actions to discover better strategies; exploitation uses known best actions.',
@@ -3556,7 +3555,7 @@ class QuizSeeder extends Seeder
                             'Quality function',
                             'Learning action values',
                             'Question answering',
-                            'Query processing'
+                            'Query processing',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Q-learning learns the value of taking specific actions in specific states.',
@@ -3568,7 +3567,7 @@ class QuizSeeder extends Seeder
                             'Gradient descent optimization',
                             'Learning policy directly',
                             'Computing policy gradients',
-                            'Policy iteration'
+                            'Policy iteration',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Policy gradient methods directly optimize the policy that maps states to actions.',
@@ -3580,7 +3579,7 @@ class QuizSeeder extends Seeder
                             'Physical location',
                             'The world the agent interacts with',
                             'Training setup',
-                            'Hardware configuration'
+                            'Hardware configuration',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Environment is everything the agent interacts with and learns from.',
@@ -3592,7 +3591,7 @@ class QuizSeeder extends Seeder
                             'US state',
                             'Current situation of the environment',
                             'Agent status',
-                            'Training stage'
+                            'Training stage',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'State represents the current situation of the environment.',
@@ -3604,7 +3603,7 @@ class QuizSeeder extends Seeder
                             'Physical movement',
                             'What the agent can do in the environment',
                             'Environment change',
-                            'Training step'
+                            'Training step',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Action is what the agent can do to affect the environment.',
@@ -3616,7 +3615,7 @@ class QuizSeeder extends Seeder
                             'Company policy',
                             'Strategy mapping states to actions',
                             'Training rules',
-                            'Safety guidelines'
+                            'Safety guidelines',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Policy defines how the agent chooses actions given states.',
@@ -3628,7 +3627,7 @@ class QuizSeeder extends Seeder
                             'Net worth',
                             'Expected future rewards from a state',
                             'Current reward',
-                            'Training metric'
+                            'Training metric',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Value function estimates expected cumulative future rewards.',
@@ -3640,7 +3639,7 @@ class QuizSeeder extends Seeder
                             'Quality factor',
                             'Expected rewards for state-action pairs',
                             'Question function',
-                            'Quantization function'
+                            'Quantization function',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Q-function (action-value function) estimates rewards for state-action pairs.',
@@ -3652,7 +3651,7 @@ class QuizSeeder extends Seeder
                             'Price reduction',
                             'Weight for future rewards (usually gamma)',
                             'Training rate',
-                            'Memory factor'
+                            'Memory factor',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Discount factor (gamma) determines how much future rewards matter.',
@@ -3664,7 +3663,7 @@ class QuizSeeder extends Seeder
                             'Time travel',
                             'Learning from differences between predictions',
                             'Time series analysis',
-                            'Delayed learning'
+                            'Delayed learning',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'TD learning combines sampling and bootstrapping to learn from experience.',
@@ -3676,7 +3675,7 @@ class QuizSeeder extends Seeder
                             'Casino AI',
                             'Learning from complete episode returns',
                             'Statistical analysis',
-                            'Random sampling only'
+                            'Random sampling only',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Monte Carlo learns from complete episodes, not partial sequences.',
@@ -3688,7 +3687,7 @@ class QuizSeeder extends Seeder
                             'Police training',
                             'Learning from current policy behavior',
                             'Offline learning',
-                            'Batch learning'
+                            'Batch learning',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'On-policy learns from the policy currently being executed.',
@@ -3700,7 +3699,7 @@ class QuizSeeder extends Seeder
                             'Old policy training',
                             'Learning from different policy behavior',
                             'Online learning',
-                            'Real-time learning'
+                            'Real-time learning',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Off-policy learns from data generated by a different policy.',
@@ -3712,7 +3711,7 @@ class QuizSeeder extends Seeder
                             'Deep Quality Network',
                             'Deep neural network for Q-learning',
                             'Dynamic Q-Network',
-                            'Distributed Q-Learning'
+                            'Distributed Q-Learning',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'DQN combines deep learning with Q-learning for complex environments.',
@@ -3724,7 +3723,7 @@ class QuizSeeder extends Seeder
                             'Playing games again',
                             'Storing and sampling past experiences',
                             'Replay buffer',
-                            'Memory storage'
+                            'Memory storage',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Experience replay stores past experiences for efficient learning.',
@@ -3736,7 +3735,7 @@ class QuizSeeder extends Seeder
                             'Audio memory',
                             'Storage for agent experiences',
                             'Training data',
-                            'Network buffer'
+                            'Network buffer',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Replay buffer stores agent experiences for replay during training.',
@@ -3748,7 +3747,7 @@ class QuizSeeder extends Seeder
                             'Network goal',
                             'Stable Q-value targets for training',
                             'Final network',
-                            'Main network'
+                            'Main network',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Target network provides stable Q-values for training DQN.',
@@ -3760,7 +3759,7 @@ class QuizSeeder extends Seeder
                             'Random exploration with probability epsilon',
                             'Greedy algorithm',
                             'Efficient exploration',
-                            'Maximum exploration'
+                            'Maximum exploration',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Epsilon-greedy explores randomly with probability epsilon.',
@@ -3772,7 +3771,7 @@ class QuizSeeder extends Seeder
                             'Sculpting rewards',
                             'Modifying rewards to guide learning',
                             'Reward calculation',
-                            'Final reward selection'
+                            'Final reward selection',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Reward shaping modifies rewards to help agents learn faster.',
@@ -3794,7 +3793,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Paste your .env file with real API keys to Claude so it can see the configuration',
                             'Share the code with placeholder values (sk_test_xxx) and describe the issue without credentials',
-                            'Don\'t ask Claude - handle it yourself'
+                            'Don\'t ask Claude - handle it yourself',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Never share actual secrets. Use placeholder values instead.',
@@ -3805,7 +3804,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Test locally and merge immediately (it works on my machine)',
                             'Understand the code, test thoroughly, request peer review, wait for approval before merging',
-                            'Have Claude review its own code and approve'
+                            'Have Claude review its own code and approve',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Code review is mandatory. Never skip testing or peer review.',
@@ -3816,7 +3815,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Production database dumps with real customer data',
                             'API keys and secret tokens',
-                            'Both A and B are things you should NEVER share'
+                            'Both A and B are things you should NEVER share',
                         ],
                         'correct_option' => 2,
                         'explanation' => 'Never share secrets OR production data. Both are strictly prohibited.',
@@ -3827,7 +3826,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Don\'t tell anyone - just rotate the key quietly',
                             'Tell your manager and security team immediately, then rotate the key',
-                            'Hope it doesn\'t matter since it\'s just one key'
+                            'Hope it doesn\'t matter since it\'s just one key',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Self-reporting results in lighter consequences. Report immediately.',
@@ -3838,7 +3837,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Missing error handling for API calls',
                             'Database loops without eager loading (N+1 queries)',
-                            'Both A and B are red flags to watch for'
+                            'Both A and B are red flags to watch for',
                         ],
                         'correct_option' => 2,
                         'explanation' => 'Both missing error handling and N+1 queries are common Claude mistakes.',
@@ -3849,7 +3848,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Yes, if the tests pass',
                             'No, a senior developer must review and approve',
-                            'Only if you wrote the code without Claude\'s help'
+                            'Only if you wrote the code without Claude\'s help',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Code review is mandatory for all juniors. Never approve your own code.',
@@ -3860,7 +3859,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Just ask Claude directly - it knows everything',
                             'Provide clear requirements, context, and constraints without secrets',
-                            'Never ask Claude - that\'s cheating'
+                            'Never ask Claude - that\'s cheating',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Good prompts with context get better results. Never share secrets.',
@@ -3871,7 +3870,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Yes, if you\'re just looking at the schema',
                             'No, never. It may contain customer data and violates privacy laws',
-                            'Only with permission from the database owner'
+                            'Only with permission from the database owner',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Never share production data. It violates privacy laws and company policy.',
@@ -3882,7 +3881,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             '.env files with actual secrets/credentials',
                             'node_modules, build artifacts, temporary files',
-                            'Both A and B'
+                            'Both A and B',
                         ],
                         'correct_option' => 2,
                         'explanation' => 'Both .env files with secrets AND build artifacts should be excluded.',
@@ -3893,7 +3892,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Commit it anyway - you\'ll learn as you go',
                             'Ask Claude to explain it, then ask your senior to review',
-                            'Delete it and write it yourself'
+                            'Delete it and write it yourself',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Always understand code before committing. Get senior review.',
@@ -3904,7 +3903,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Claude is responsible - you just copied it',
                             'You are responsible. Claude\'s code may have bugs, security issues, or performance problems',
-                            'Your manager is responsible for reviewing'
+                            'Your manager is responsible for reviewing',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'You own the code you commit. Always validate before committing.',
@@ -3915,7 +3914,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Claude → Commit to main → Deploy',
                             'Claude → Local Test → Branch → PR → Review → CI → Staging → Deploy',
-                            'Claude → Deploy directly to staging'
+                            'Claude → Deploy directly to staging',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'This ensures quality and safety. Never skip the review process.',
@@ -3926,7 +3925,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Missing input validation on server-side',
                             'Missing authorization checks (auth ≠ authz)',
-                            'Both A and B are commonly missed by Claude'
+                            'Both A and B are commonly missed by Claude',
                         ],
                         'correct_option' => 2,
                         'explanation' => 'Always verify security features like input validation and authorization.',
@@ -3937,7 +3936,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Run linter, run tests, test manually, then request peer review',
                             'Just create the PR - reviewers will catch issues',
-                            'Ask Claude if the code is good before PRing'
+                            'Ask Claude if the code is good before PRing',
                         ],
                         'correct_option' => 0,
                         'explanation' => 'You must validate locally before PR. Never rely solely on reviewers.',
@@ -3948,7 +3947,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Real customer emails, names, phone numbers',
                             'Payment card information, transaction details',
-                            'Both A and B (and other PII)'
+                            'Both A and B (and other PII)',
                         ],
                         'correct_option' => 2,
                         'explanation' => 'All PII is prohibited. Customer data, payment info, and personal information cannot be shared.',
@@ -3959,7 +3958,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Commit .env with real values so everyone has the same config',
                             'Commit .env.example with placeholder values, .env in .gitignore with real values local',
-                            'Never use .env files'
+                            'Never use .env files',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Use .env.example and .gitignore to protect secrets while enabling development.',
@@ -3970,7 +3969,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Claude - it should generate perfect code',
                             'The reviewer - they should catch all issues',
-                            'You, the developer - you must validate and test before committing'
+                            'You, the developer - you must validate and test before committing',
                         ],
                         'correct_option' => 2,
                         'explanation' => 'You are accountable for all code you commit, including AI-generated code.',
@@ -3981,7 +3980,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Ignore it - not your problem',
                             'Report it to security team or your manager',
-                            'Tell everyone on Slack to shame them'
+                            'Tell everyone on Slack to shame them',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Report violations through proper channels. Don\'t ignore or publicly shame.',
@@ -3992,7 +3991,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Yes, as long as you don\'t use company code',
                             'No, Claude Code access is for company work only',
-                            'Yes, it doesn\'t matter as long as no secrets are shared'
+                            'Yes, it doesn\'t matter as long as no secrets are shared',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Claude Code is for company work only. Company tools = company work.',
@@ -4003,7 +4002,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Never share secrets or sensitive data with Claude',
                             'Always understand code before committing it',
-                            'Both A and B are equally critical'
+                            'Both A and B are equally critical',
                         ],
                         'correct_option' => 2,
                         'explanation' => 'Both are fundamental to safe usage. Never share secrets AND always understand code.',
@@ -4026,7 +4025,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Only the Security Team',
                             'Everyone - it\'s a shared responsibility',
-                            'Only management'
+                            'Only management',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'ISO 27001 requires information security to be everyone\'s responsibility.',
@@ -4037,7 +4036,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Nothing - Claude is trusted',
                             'Report to security team within 1 hour, rotate key immediately, log incident',
-                            'Just rotate the key quietly'
+                            'Just rotate the key quietly',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Incident reporting and rotation are required for SOC 2 compliance.',
@@ -4048,7 +4047,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Store all application configuration',
                             'Separate secrets from code to prevent accidental exposure',
-                            'It doesn\'t matter where secrets go'
+                            'It doesn\'t matter where secrets go',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Separation prevents exposure. This is an ISO 27001 control (A.14.2.1).',
@@ -4059,7 +4058,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Code structure explanation',
                             'Production database connection string with password',
-                            'Error message description'
+                            'Error message description',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Never share credentials. This is ISO 27001 A.9.2.1.',
@@ -4070,7 +4069,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Any work-related use, including personal projects if no secrets shared',
                             'Company work only, with proper logging and audit trails',
-                            'Any use is acceptable'
+                            'Any use is acceptable',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'SOC 2 requires logged, auditable business use only (CC6.1).',
@@ -4081,7 +4080,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Real customer names, emails, phone numbers',
                             'Payment card information',
-                            'Both A and B (all PII)'
+                            'Both A and B (all PII)',
                         ],
                         'correct_option' => 2,
                         'explanation' => 'Both violate ISO 27001 (A.13.2.2) and SOC 2 data protection.',
@@ -4092,7 +4091,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Only large files',
                             '.env files, build artifacts, node_modules, and any files with credentials',
-                            'Nothing - all files should be committed'
+                            'Nothing - all files should be committed',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Proper .gitignore prevents credential leakage.',
@@ -4103,7 +4102,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Use environment variables only from secure vaults (AWS Secrets Manager, HashiCorp Vault)',
                             'Commit encrypted secrets to git',
-                            'Store in a text file on the server'
+                            'Store in a text file on the server',
                         ],
                         'correct_option' => 0,
                         'explanation' => 'ISO 27001 A.9.1.1 requires secret vaults with access controls.',
@@ -4114,7 +4113,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Attackers could gain unauthorized database access',
                             'GDPR/CCPA violations if customer data accessed',
-                            'Both A and B are risks'
+                            'Both A and B are risks',
                         ],
                         'correct_option' => 2,
                         'explanation' => 'Both risks violate ISO 27001 and SOC 2 controls.',
@@ -4125,7 +4124,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Unusual activity, unauthorized access attempts, security events',
                             'Only things that are obviously breaking',
-                            'Nothing needs to be monitored'
+                            'Nothing needs to be monitored',
                         ],
                         'correct_option' => 0,
                         'explanation' => 'ISO 27001 A.12.4.1 requires logging and monitoring of all security events.',
@@ -4136,7 +4135,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Ignore it - they\'ll figure it out',
                             'Report to security team immediately and document the incident',
-                            'Tell everyone on Slack to shame them'
+                            'Tell everyone on Slack to shame them',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'ISO 27001 A.16.1 requires incident reporting and documentation.',
@@ -4147,7 +4146,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             '30 days',
                             '1 year minimum, with archival for 3+ years',
-                            'Only while needed for active investigation'
+                            'Only while needed for active investigation',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'SOC 2 CC7.2 requires extended log retention for audit trails.',
@@ -4158,7 +4157,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Hope developers don\'t accidentally commit secrets',
                             'GitHub secret scanning + pre-commit hooks + .gitignore + code review',
-                            'Regular git repository audits only'
+                            'Regular git repository audits only',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Defense-in-depth is required by ISO 27001 A.13.1.3.',
@@ -4169,7 +4168,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Developers can self-approve',
                             'Manager approval required + security team verification (A.9.2.2)',
-                            'Security team only'
+                            'Security team only',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'ISO 27001 A.9.2.2 requires authorized access approval.',
@@ -4180,7 +4179,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Just remove their account',
                             'Deactivate account + audit all previous conversations + document reason + log in security system (CC6.2)',
-                            'Delete all history with that user'
+                            'Delete all history with that user',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'SOC 2 CC6.2 requires documented access termination.',
@@ -4192,7 +4191,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Make developers\' lives harder',
                             'Establish Information Security Management System (ISMS) with controls and continuous improvement',
-                            'Only for IT departments'
+                            'Only for IT departments',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'ISO 27001 establishes organization-wide ISMS with risk management.',
@@ -4203,7 +4202,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'How a company operates at a point in time',
                             'Whether security controls work effectively OVER TIME (6+ months)',
-                            'Only password policies'
+                            'Only password policies',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'SOC 2 Type II audits control effectiveness over time.',
@@ -4214,7 +4213,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'CC (Common Criteria) + PO (Process Operations) + PT (Process, Technology) controls',
                             'Just about passwords',
-                            'Only for financial companies'
+                            'Only for financial companies',
                         ],
                         'correct_option' => 0,
                         'explanation' => 'SOC 2 audits against CC, PO, PT criteria for security controls.',
@@ -4225,7 +4224,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Separating development, testing, and production systems',
                             'Only about hiring',
-                            'Password complexity'
+                            'Password complexity',
                         ],
                         'correct_option' => 0,
                         'explanation' => 'Separation of environments is a critical control (A.13.1.3).',
@@ -4236,7 +4235,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Only IT policies',
                             'Set of policies and objectives approved by management',
-                            'Nothing specific needed'
+                            'Nothing specific needed',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'A.6.1.1 requires management-approved information security policies.',
@@ -4247,7 +4246,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'CC6 (Logical and Physical Access Controls)',
                             'Only PO controls',
-                            'Not covered in SOC 2'
+                            'Not covered in SOC 2',
                         ],
                         'correct_option' => 0,
                         'explanation' => 'CC6 covers access control and logical security.',
@@ -4258,7 +4257,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'A (Availability criterion - availability, performance, timeliness)',
                             'S (Security criterion)',
-                            'Only IT operations team responsibility'
+                            'Only IT operations team responsibility',
                         ],
                         'correct_option' => 0,
                         'explanation' => 'The A criterion covers availability and performance requirements.',
@@ -4269,7 +4268,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Just once when implementing',
                             'Continuous monitoring, regular review, and assessment of information security risks',
-                            'Not required if nothing bad has happened'
+                            'Not required if nothing bad has happened',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'A.12.6.1 requires continuous and regular risk assessment.',
@@ -4280,7 +4279,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Keep them secret internally',
                             'Report, assess, respond, recover, and learn (with documented procedures)',
-                            'Incidents don\'t need procedures'
+                            'Incidents don\'t need procedures',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'A.16.1 requires formal incident management procedures.',
@@ -4291,7 +4290,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'No logging needed',
                             'System activity monitoring, logging, retention, and secure review',
-                            'Logs can be deleted after 2 weeks'
+                            'Logs can be deleted after 2 weeks',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'CC7.2 requires monitoring, logging, and retention of system activity.',
@@ -4302,7 +4301,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'No assessment needed',
                             'Identify, select, monitor, and review third-parties\' security practices (applies to Claude/AI providers)',
-                            'Trust all third parties equally'
+                            'Trust all third parties equally',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'CC7.3 requires assessment and monitoring of third-party providers.',
@@ -4313,7 +4312,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Information transfer and confidentiality (preventing unauthorized disclosure)',
                             'Only email security',
-                            'Not relevant to Claude Code'
+                            'Not relevant to Claude Code',
                         ],
                         'correct_option' => 0,
                         'explanation' => 'A.14.2.1 requires controls to prevent unauthorized disclosure.',
@@ -4325,7 +4324,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'A way to extend Claude with custom tools and integrations',
                             'Only for advanced users',
-                            'Not relevant to development'
+                            'Not relevant to development',
                         ],
                         'correct_option' => 0,
                         'explanation' => 'MCP servers extend Claude with custom capabilities.',
@@ -4336,7 +4335,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Agents can access any resource without controls',
                             'Agents must have minimal permissions, audit trails, and cannot access production credentials',
-                            'Security doesn\'t apply to agents'
+                            'Security doesn\'t apply to agents',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Agents must follow ISO 27001 A.13.1.3 principle of least privilege.',
@@ -4347,7 +4346,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Yes, if it\'s faster',
                             'No - agents get read-only access to test/staging data only (ISO 27001 A.13.1.3)',
-                            'Only if the agent is from a trusted vendor'
+                            'Only if the agent is from a trusted vendor',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Agents must never have production database access.',
@@ -4358,7 +4357,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Nothing - it\'s automated',
                             'Who triggered agent, what actions, when, what data accessed (CC7.2)',
-                            'Only failures need to be logged'
+                            'Only failures need to be logged',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'SOC 2 CC7.2 requires comprehensive agent activity logging.',
@@ -4369,7 +4368,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'No special requirements',
                             'Security review, SOC 2 assessment of the server, audit logging, access controls (A.13.1.1, CC6)',
-                            'Only if your company is large'
+                            'Only if your company is large',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'MCP servers require security and SOC 2 controls.',
@@ -4380,7 +4379,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Yes, agents should be able to modify production',
                             'No - only humans with proper approval can modify production (ISO 27001 A.14.2.4)',
-                            'Only on Fridays'
+                            'Only on Fridays',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Only authorized humans can change production systems.',
@@ -4391,7 +4390,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Just point it at production database',
                             'Create anonymized test data, get security review, verify no PII exposure, log all access (A.13.2.2)',
-                            'Agents shouldn\'t access any data'
+                            'Agents shouldn\'t access any data',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Anonymized data required for agent analysis.',
@@ -4402,7 +4401,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Never - set it and forget it',
                             'Quarterly minimum, with continuous monitoring (ISO 27001 A.12.4.1, SOC 2 CC7.2)',
-                            'Only if something goes wrong'
+                            'Only if something goes wrong',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Continuous monitoring and quarterly review required.',
@@ -4413,7 +4412,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Nothing - it\'s automated',
                             'Must be reported as security incident, investigated, and documented (ISO 27001 A.16.1)',
-                            'Only if a human notices it'
+                            'Only if a human notices it',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'All security incidents require formal incident management.',
@@ -4424,7 +4423,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Yes, agents should deploy automatically',
                             'No - only approved humans can authorize production changes (ISO 27001 A.14.2.4, SOC 2 CC7)',
-                            'Only to staging'
+                            'Only to staging',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Humans must approve production changes.',
@@ -4436,7 +4435,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Zero - if the author says it\'s good',
                             'Minimum 1 peer review (2 for critical code), logged and documented',
-                            'Only for new developers'
+                            'Only for new developers',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'ISO 27001 A.14.2.3 requires segregation of duties in code review.',
@@ -4447,7 +4446,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'The junior developer themselves',
                             'Only senior developer or tech lead (segregation of duties - A.14.2.3)',
-                            'Any other developer'
+                            'Any other developer',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Segregation of duties requires different approver.',
@@ -4458,7 +4457,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Just formatting and style',
                             'Security, functionality, performance, maintainability, no secrets, compliance',
-                            'Doesn\'t matter - just rubber stamp'
+                            'Doesn\'t matter - just rubber stamp',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Code review must verify security and quality.',
@@ -4469,7 +4468,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Testing in staging, security testing, performance testing, approval',
                             'Just hope it works',
-                            'Quick test in prod then revert'
+                            'Quick test in prod then revert',
                         ],
                         'correct_option' => 0,
                         'explanation' => 'A.14.2.7 requires testing before production release.',
@@ -4480,7 +4479,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'No tests needed if Claude generated it',
                             'Same or higher than human code - at least 80% unit test coverage (SOC 2 controls)',
-                            '10% is fine'
+                            '10% is fine',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Same standards apply to AI-generated code.',
@@ -4491,7 +4490,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Doesn\'t matter - security is IT\'s job',
                             'SQL injection, XSS, auth bypass, hardcoded secrets, CSRF, insecure defaults (OWASP top 10)',
-                            'Only password policies'
+                            'Only password policies',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Every developer reviews for OWASP vulnerabilities.',
@@ -4502,7 +4501,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Don\'t need to document - just talk verbally',
                             'Permanently in Git/GitHub (audit trail required - CC7.2)',
-                            'Email is fine'
+                            'Email is fine',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Audit trails in version control required by SOC 2.',
@@ -4513,7 +4512,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Nothing extra - Claude code is always correct',
                             'Error handling, edge cases, N+1 queries, missing security checks, assumptions (extra scrutiny)',
-                            'Less review since it\'s AI'
+                            'Less review since it\'s AI',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'AI code requires extra scrutiny for common mistakes.',
@@ -4524,7 +4523,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Author approves their own code and merges it',
                             'Developer and reviewer are different people',
-                            'Tech Lead can do everything'
+                            'Tech Lead can do everything',
                         ],
                         'correct_option' => 0,
                         'explanation' => 'Approving your own code violates segregation of duties.',
@@ -4535,7 +4534,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Don\'t need to track anything',
                             'Version control (git) with meaningful messages showing what/why changed',
-                            'Email notifications only'
+                            'Email notifications only',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'A.14.1.1 requires change tracking in version control.',
@@ -4546,7 +4545,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Notation that Claude generated it (for extra scrutiny)',
                             'Merging without review or testing',
-                            'Both A is good, B is bad'
+                            'Both A is good, B is bad',
                         ],
                         'correct_option' => 2,
                         'explanation' => 'Disclose AI involvement, never skip review/testing.',
@@ -4557,7 +4556,7 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Nothing important',
                             'Enforces consistency, detects issues automatically before human review',
-                            'Fixes all security issues'
+                            'Fixes all security issues',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Linting is first layer of automated quality checks.',
@@ -4568,10 +4567,365 @@ class QuizSeeder extends Seeder
                         'options' => [
                             'Speed is more important than security',
                             'YOU are responsible for understanding, testing, and securing all code you commit (never share secrets or sensitive data)',
-                            'Trust Claude to handle everything'
+                            'Trust Claude to handle everything',
                         ],
                         'correct_option' => 1,
                         'explanation' => 'Developer accountability is fundamental to ISO 27001 and SOC 2.',
+                        'points' => 1,
+                    ],
+                ],
+            ],
+
+            // Claude API Quiz
+            [
+                'title' => 'Claude API Fundamentals',
+                'description' => 'Test your knowledge of Claude\'s Messages API and tool use.',
+                'learning_path' => null,
+                'passing_score' => 70,
+                'max_attempts' => 5,
+                'questions' => [
+                    [
+                        'question' => 'What is the primary endpoint for sending messages to Claude?',
+                        'options' => [
+                            '/v1/chat/completions',
+                            '/v1/messages',
+                            '/api/claude/message',
+                            '/v1/completions',
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'The Messages API endpoint is /v1/messages for the Claude API.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Which parameter specifies the model for Claude API requests?',
+                        'options' => [
+                            'model',
+                            'engine',
+                            'claude_model',
+                            'ai_model',
+                        ],
+                        'correct_option' => 0,
+                        'explanation' => 'The "model" parameter specifies which Claude model to use.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What are tools in the Claude API context?',
+                        'options' => [
+                            'External APIs only',
+                            'Functions Claude can call to perform actions',
+                            ' Claude Code plugins',
+                            'Webhook handlers',
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Tools are functions that Claude can call to perform actions like file operations or web searches.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is the benefit of Message Batches API?',
+                        'options' => [
+                            'Faster response times',
+                            '50% cost savings for large volumes',
+                            'Better accuracy',
+                            'Real-time processing',
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Message Batches offer 50% cost savings when processing large volumes of conversations.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'How do you enable Claude to use tools in API calls?',
+                        'options' => [
+                            'Set use_tools: true',
+                            'Include tools parameter with function definitions',
+                            'Add tool_mode: enabled',
+                            'Use /tools endpoint first',
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Include the tools parameter with function definitions to enable tool use.',
+                        'points' => 1,
+                    ],
+                ],
+            ],
+
+            // Claude Agent SDK Quiz
+            [
+                'title' => 'Claude Agent SDK',
+                'description' => 'Test your knowledge of building agents with Claude Agent SDK.',
+                'learning_path' => null,
+                'passing_score' => 70,
+                'max_attempts' => 5,
+                'questions' => [
+                    [
+                        'question' => 'What is the primary purpose of Claude Agent SDK?',
+                        'options' => [
+                            'Chat interface building',
+                            'Building autonomous agents that can plan and execute tasks',
+                            'Database management',
+                            'Frontend UI development',
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Claude Agent SDK is designed for building autonomous agents that can plan and execute complex tasks.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What are hooks in Claude Agent SDK used for?',
+                        'options' => [
+                            'Creating UI buttons',
+                            'Interception and modification of agent behavior at key points',
+                            'Database connections',
+                            'Logging user inputs',
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Hooks allow you to intercept and modify agent behavior at specific points in execution.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is the benefit of using sub-agents?',
+                        'options' => [
+                            'Lower API costs',
+                            'Parallel task execution for complex workflows',
+                            'Faster response times',
+                            'Better user interface',
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Sub-agents enable parallel task execution, allowing complex workflows to be broken into independent tasks.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is session management in Agent SDK?',
+                        'options' => [
+                            'User authentication',
+                            'Conversation state persistence and history',
+                            'Database caching',
+                            'API rate limiting',
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Session management handles conversation state persistence and history for multi-turn interactions.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Which is NOT a core component of Agent SDK?',
+                        'options' => [
+                            'Hooks',
+                            'Subagents',
+                            'Sessions',
+                            'Database ORM',
+                        ],
+                        'correct_option' => 3,
+                        'explanation' => 'Database ORM is not a core component of Agent SDK. The core components are hooks, subagents, and sessions.',
+                        'points' => 1,
+                    ],
+                ],
+            ],
+
+            // MCP Quiz
+            [
+                'title' => 'Model Context Protocol (MCP)',
+                'description' => 'Test your understanding of MCP for connecting AI to external tools.',
+                'learning_path' => null,
+                'passing_score' => 70,
+                'max_attempts' => 5,
+                'questions' => [
+                    [
+                        'question' => 'What does MCP stand for?',
+                        'options' => [
+                            'Model Code Protocol',
+                            'Model Context Protocol',
+                            'Multiple Connection Points',
+                            'Managed Code Processing',
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'MCP stands for Model Context Protocol.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is the primary purpose of MCP?',
+                        'options' => [
+                            'Database storage',
+                            'Connecting AI assistants to external tools and data sources',
+                            'User authentication',
+                            'API rate limiting',
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'MCP connects AI assistants to external tools and data sources in a standardized way.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What are MCP resources?',
+                        'options' => [
+                            'Executable functions',
+                            'Data that AI can access for context without function calls',
+                            'Server configurations',
+                            'User preferences',
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Resources expose data to AI models for context and retrieval, without requiring function calls.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is an MCP server?',
+                        'options' => [
+                            'A web server',
+                            'A bridge that connects AI models with external systems',
+                            'A database server',
+                            'A caching layer',
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'MCP servers act as bridges connecting AI models with external systems and tools.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is the difference between MCP tools and resources?',
+                        'options' => [
+                            'Tools are read-only, resources can write',
+                            'Tools enable AI to take actions, resources provide data',
+                            'There is no difference',
+                            'Resources are faster than tools',
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Tools allow AI to take actions, while resources provide data for context without side effects.',
+                        'points' => 1,
+                    ],
+                ],
+            ],
+
+            // Prompt Engineering Quiz
+            [
+                'title' => 'Prompt Engineering Advanced',
+                'description' => 'Test your knowledge of advanced prompt engineering techniques.',
+                'learning_path' => null,
+                'passing_score' => 70,
+                'max_attempts' => 5,
+                'questions' => [
+                    [
+                        'question' => 'What is the primary goal of prompt engineering?',
+                        'options' => [
+                            'Making prompts longer',
+                            'Crafting inputs that get the best outputs from AI models',
+                            'Reducing API costs',
+                            'Faster response times',
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Prompt engineering focuses on crafting inputs that maximize the quality of AI outputs.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is Extended Thinking in Claude?',
+                        'options' => [
+                            'Thinking about multiple topics',
+                            'Claude reasoning through complex problems step-by-step',
+                            'Longer context windows',
+                            'Memory of past conversations',
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Extended Thinking enables Claude to reason through complex problems with detailed step-by-step analysis.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Which is NOT a prompt engineering technique?',
+                        'options' => [
+                            'Chain-of-thought',
+                            'Few-shot examples',
+                            'Prompt injection',
+                            'Role playing',
+                        ],
+                        'correct_option' => 2,
+                        'explanation' => 'Prompt injection is a security concern, not a prompting technique. The others are valid techniques.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What are few-shot examples?',
+                        'options' => [
+                            'Providing 1-2 examples in the prompt',
+                            'Training on a small dataset',
+                            'Using few API calls',
+                            'Minimal context windows',
+                        ],
+                        'correct_option' => 0,
+                        'explanation' => 'Few-shot examples provide 1-2 examples in the prompt to guide AI behavior.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is chain-of-thought prompting?',
+                        'options' => [
+                            'Writing long prompts',
+                            'Asking AI to show its reasoning steps',
+                            'Sequential API calls',
+                            'Memory chains',
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Chain-of-thought prompting asks the AI to show its reasoning process before giving the final answer.',
+                        'points' => 1,
+                    ],
+                ],
+            ],
+
+            // Claude Certified Architect Quiz
+            [
+                'title' => 'Claude Certified Architect',
+                'description' => 'Test your knowledge of building production-grade AI systems.',
+                'learning_path' => null,
+                'passing_score' => 70,
+                'max_attempts' => 5,
+                'questions' => [
+                    [
+                        'question' => 'What is the focus of the Claude Certified Architect guide?',
+                        'options' => [
+                            'Basic chat applications',
+                            'Building production-grade AI systems with Claude',
+                            'Training Claude models',
+                            'UI design for AI apps',
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'The guide focuses on building production-grade AI systems with Claude.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'Which is a key consideration for production AI systems?',
+                        'options' => [
+                            'Just accuracy',
+                            'Security, compliance, and monitoring',
+                            'Using the newest models',
+                            'Minimizing costs only',
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Production systems require attention to security, compliance, and monitoring, not just accuracy.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What architecture pattern is recommended for scalable Claude apps?',
+                        'options' => [
+                            'Monolithic single service',
+                            'Agent-based microservices with MCP',
+                            'Serverless functions only',
+                            'Client-side only',
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Agent-based microservices with MCP integration provides scalability and flexibility.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'What is essential for enterprise Claude deployments?',
+                        'options' => [
+                            'Using free tier API',
+                            'Compliance with security standards like SOC 2',
+                            'Maximum context usage',
+                            'Real-time responses only',
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Enterprise deployments require compliance with security standards like SOC 2 and ISO 27001.',
+                        'points' => 1,
+                    ],
+                    [
+                        'question' => 'How should Claude-generated code be handled in production?',
+                        'options' => [
+                            'Deploy directly without review',
+                            'Code review and testing are still required',
+                            'Only for non-critical features',
+                            'Skip testing for speed',
+                        ],
+                        'correct_option' => 1,
+                        'explanation' => 'Claude-generated code must go through proper review and testing - developer accountability remains.',
                         'points' => 1,
                     ],
                 ],
@@ -4580,11 +4934,11 @@ class QuizSeeder extends Seeder
 
         foreach ($quizzes as $quizData) {
             $learningPathId = null;
-            if (!empty($quizData['learning_path'])) {
-                $path = \App\Models\LearningPath::where('slug', $quizData['learning_path'])->first();
+            if (! empty($quizData['learning_path'])) {
+                $path = LearningPath::where('slug', $quizData['learning_path'])->first();
                 $learningPathId = $path?->id;
             }
-            
+
             $quiz = Quiz::updateOrCreate(
                 ['title' => $quizData['title']],
                 [

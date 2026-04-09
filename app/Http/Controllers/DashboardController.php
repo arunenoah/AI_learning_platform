@@ -2,21 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DailyChallenge;
+use App\Models\LearningQuest;
 use App\Models\Resource;
-use App\Models\LearningPath;
-use App\Models\Quiz;
-use App\Services\ProgressService;
 use App\Services\BadgeService;
-use App\Services\StreakService;
 use App\Services\PointsService;
+use App\Services\ProgressService;
+use App\Services\StreakService;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class DashboardController extends Controller
 {
     protected ProgressService $progressService;
+
     protected BadgeService $badgeService;
+
     protected StreakService $streakService;
+
     protected PointsService $pointsService;
 
     public function __construct(
@@ -34,7 +37,7 @@ class DashboardController extends Controller
     public function index(Request $request): View
     {
         $user = $request->user();
-        
+
         $stats = $this->progressService->getUserStats($user);
         $badges = $this->badgeService->getUserBadges($user);
         $unearnedBadges = $this->badgeService->getUnearnedBadges($user);
@@ -44,7 +47,7 @@ class DashboardController extends Controller
             ->latest('completed_at')
             ->limit(5)
             ->get();
-        
+
         $continuePaths = $user->pathProgress()
             ->where('is_started', true)
             ->where('is_completed', false)
@@ -58,13 +61,41 @@ class DashboardController extends Controller
             ->limit(4)
             ->get();
 
+        $dailyChallenge = DailyChallenge::getTodayChallenge();
+        $dailyChallenge->load('resource');
+
+        $isChallengeCompleted = $user->progress()
+            ->where('resource_id', $dailyChallenge->resource_id)
+            ->where('is_completed', true)
+            ->exists();
+
+        $quests = LearningQuest::where('is_active', true)
+            ->orderBy('order')
+            ->limit(6)
+            ->get()
+            ->map(function ($quest) use ($user) {
+                $quest->is_completed = $quest->isCompletedByUser($user->id);
+
+                return $quest;
+            });
+
+        $completedQuests = $quests->where('is_completed', true)->count();
+        $totalQuests = $quests->count();
+        $nextQuest = $quests->firstWhere('is_completed', false);
+
         return view('dashboard', compact(
             'stats',
             'badges',
             'unearnedBadges',
             'recentProgress',
             'continuePaths',
-            'suggestedResources'
+            'suggestedResources',
+            'dailyChallenge',
+            'isChallengeCompleted',
+            'quests',
+            'completedQuests',
+            'totalQuests',
+            'nextQuest'
         ));
     }
 }

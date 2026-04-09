@@ -490,12 +490,91 @@ class LearningPathSeeder extends Seeder
                     'Hands-On ML with Scikit-Learn, Keras & TensorFlow',
                 ],
             ],
+
+            // === NEW PATHS FOR ADDED RESOURCES ===
+            [
+                'title' => 'Claude API Fundamentals',
+                'description' => 'Learn to integrate Claude API into your applications. Master messages, tool use, and batch processing.',
+                'slug' => 'claude-api-fundamentals',
+                'icon' => '🔌',
+                'difficulty' => 'beginner',
+                'estimated_hours' => 8,
+                'order' => 6,
+                'steps' => [
+                    'Claude API — Messages',
+                    'Claude API — Tool Use',
+                    'Claude API — Message Batches',
+                ],
+            ],
+            [
+                'title' => 'Claude Agent SDK Mastery',
+                'description' => 'Build autonomous agents with Claude Agent SDK. Learn hooks, subagents, and session management.',
+                'slug' => 'claude-agent-sdk',
+                'icon' => '🧩',
+                'difficulty' => 'intermediate',
+                'estimated_hours' => 12,
+                'order' => 7,
+                'steps' => [
+                    'Claude Agent SDK — Overview',
+                    'Claude Agent SDK — Hooks',
+                    'Claude Agent SDK — Subagents',
+                    'Claude Agent SDK — Sessions',
+                ],
+            ],
+            [
+                'title' => 'MCP Developer',
+                'description' => 'Master the Model Context Protocol. Build MCP servers and connect Claude to any tool or data source.',
+                'slug' => 'mcp-developer',
+                'icon' => '🔗',
+                'difficulty' => 'intermediate',
+                'estimated_hours' => 10,
+                'order' => 8,
+                'steps' => [
+                    'Model Context Protocol (MCP)',
+                    'MCP — Tools',
+                    'MCP — Resources',
+                    'MCP — Servers',
+                ],
+            ],
+            [
+                'title' => 'Prompt Engineering Pro',
+                'description' => 'Master advanced prompt engineering techniques. Learn extended thinking and build production prompts.',
+                'slug' => 'prompt-engineering-pro',
+                'icon' => '✏️',
+                'difficulty' => 'beginner',
+                'estimated_hours' => 6,
+                'order' => 9,
+                'steps' => [
+                    'Prompt Engineering Guide',
+                    'Extended Thinking',
+                    'Anthropic Cookbook',
+                ],
+            ],
+            [
+                'title' => 'Claude Certified Architect',
+                'description' => 'Build production-grade AI systems following enterprise best practices. Security, compliance, and scaling.',
+                'slug' => 'claude-certified-architect',
+                'icon' => '🎓',
+                'difficulty' => 'advanced',
+                'estimated_hours' => 15,
+                'order' => 10,
+                'steps' => [
+                    'Claude API — Messages',
+                    'Claude API — Tool Use',
+                    'Claude Agent SDK — Overview',
+                    'Claude Agent SDK — Hooks',
+                    'Model Context Protocol (MCP)',
+                    'MCP — Servers',
+                    'Claude Code — GitHub Actions CI/CD',
+                    'Claude Certified Architect Guide',
+                ],
+            ],
         ];
 
         foreach ($paths as $pathData) {
             $steps = $pathData['steps'];
             unset($pathData['steps']);
-            
+
             $path = LearningPath::updateOrCreate(
                 ['slug' => $pathData['slug']],
                 $pathData
@@ -505,7 +584,7 @@ class LearningPathSeeder extends Seeder
 
             foreach ($steps as $order => $resourceTitle) {
                 $resource = Resource::where('title', $resourceTitle)->first();
-                
+
                 if ($resource) {
                     PathStep::create([
                         'learning_path_id' => $path->id,
