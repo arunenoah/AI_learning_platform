@@ -1,57 +1,53 @@
-# LearnHub - Corporate Learning Platform
+# LearnHub - AI/ML Learning Platform
 
-A curated learning platform built with Laravel and Tailwind CSS that aggregates AI/ML resources, learning paths, and quizzes into a single, trackable experience.
+A curated learning platform built with Laravel and Tailwind CSS that aggregates AI/ML resources, learning paths, quizzes, and Claude Code materials into a single, trackable experience.
 
 ## What Problem Does This Solve?
 
 Learning AI/ML is overwhelming. Resources are scattered across YouTube, GitHub, Coursera, blogs, and textbooks. Developers waste time **finding** what to learn instead of **actually learning**. LearnHub solves this by:
 
-- **Curating 73+ vetted resources** across 16 categories (Claude Code, Prompt Engineering, AI Agents, ML Foundations, Deep Learning, RAG, Fine-Tuning, and more)
-- **Explaining why each resource matters** — every resource includes a "Why learn this" section so learners understand the practical value before investing time
+- **Curating 1600+ vetted resources** across categories including Claude Code, Prompt Engineering, AI Agents, ML Foundations, Deep Learning, RAG, Fine-Tuning, and more
+- **Explaining why each resource matters** — every resource includes a "Why learn this" section
 - **Providing structured learning paths** with step-by-step progression from beginner to advanced
-- **Gamifying the experience** with points, badges, streaks, and leaderboards to maintain motivation
+- **Gamifying the experience** with points, badges, and streaks to maintain motivation
 - **Tracking progress** so learners know exactly where they left off
 
 ## Key Features
 
-### Public Resource Browsing
-- Resources page is the **landing page** — no login required to browse
-- All navigation menus visible to everyone (auth-gated pages redirect guests to login)
-- Hover popup on resource cards shows quick preview with metadata and "Why learn this"
-- Side panel with detailed view and embedded iframe for in-page reading
+### Resource Browsing (Public)
+- Blogs page is the **landing page** — no login required to browse
+- Filter by category (horizontal pill tabs), difficulty level, or keyword search
+- Hover popup on cards shows quick preview with metadata and "Why learn this"
+- Slide-in detail pane with embedded iframe for in-page reading
+
+### Claude Code Materials
+- Dedicated section for Claude Code resources: Skills, Agents, Commands, MCPs, Settings, Hooks, Templates, Plugins
+- Sourced from `data.json` and importable via `php artisan import:claude-materials`
 
 ### Authentication & Security
 - **Strong password policy**: Min 8 characters, mixed case, numbers, symbols
-- **Breach detection**: Passwords checked against haveibeenpwned database via Laravel's `uncompromised()` rule
-- **IP-based rate limiting**:
-  - Login: 5 attempts per minute per IP
-  - Signup: 15 attempts per hour per IP
-  - Forgot password: 5 attempts per hour per IP
-- Branded 429 error page when rate limits are hit
-- Modern split-screen login/register UI matching platform branding
+- **Breach detection**: Passwords checked against haveibeenpwned via `Password::uncompromised()`
+- **IP-based rate limiting**: Login (5/min), Signup (15/hr), Forgot password (5/hr)
+- Editorial split-screen login/register UI with dark left panel and orange branding
 
-### Learning Resources
-- 73+ resources across 16 categories
-- Each resource includes: title, description, **learning reason** (why/how it helps), category, type, difficulty level, duration, and external URL
-- Filter by category, difficulty level, or search by keyword
-- Completion tracking with points (+25 per resource)
-
-### Learning Paths
-- Structured multi-step paths with ordered resources
-- Progress tracking per path with step completion
-- Paths span beginner to advanced topics
-
-### Quizzes
-- Multiple-choice quizzes with scoring
-- Retake capability and result review
-- Quiz attempts tracked per user
+### Learning Paths & Quizzes
+- Structured multi-step paths with ordered resources and progress tracking
+- Multiple-choice quizzes with scoring, retake capability, and result review
 
 ### Gamification
 - Points system (resource visits, completions, quiz scores)
-- Badge achievements (Explorer, Collector, Streak Warrior, etc.)
-- Daily streak tracking
-- Global leaderboard
-- User profile with stats
+- Badge achievements, daily streak tracking, user profile with stats
+
+## Design System
+
+| Element | Value |
+|---------|-------|
+| Primary colour | Orange `#ea580c` |
+| Header / left panels | Dark `#18181b` |
+| Canvas background | Off-white `#fafaf8` |
+| Heading font | Playfair Display (serif) |
+| Body font | DM Sans |
+| Mono / numbers | DM Mono |
 
 ## Tech Stack
 
@@ -61,7 +57,7 @@ Learning AI/ML is overwhelming. Resources are scattered across YouTube, GitHub, 
 | Frontend | Blade templates + Tailwind CSS (CDN) |
 | Database | SQLite (default) / MySQL / PostgreSQL |
 | Auth | Laravel Breeze (customized) |
-| Fonts | Plus Jakarta Sans, Inter |
+| Fonts | Playfair Display, DM Sans, DM Mono |
 
 ## Getting Started
 
@@ -74,7 +70,7 @@ Learning AI/ML is overwhelming. Resources are scattered across YouTube, GitHub, 
 
 ```bash
 # Clone the repository
-git clone <repo-url> learning-platform
+git clone https://github.com/arunenoah/AI_learning_platform.git learning-platform
 cd learning-platform
 
 # Install dependencies
@@ -91,12 +87,22 @@ php artisan migrate:fresh --seed
 php artisan serve
 ```
 
-Visit `http://localhost:8000` — you'll land on the Resources page.
+Visit `http://localhost:8000` — you'll land on the Blogs (resources) page.
+
+### Import Claude Code Materials
+
+```bash
+# Preview what would be imported (dry run)
+php artisan import:claude-materials --dry-run
+
+# Import into the resources table
+php artisan import:claude-materials
+```
 
 ### Seeded Data
 
 The `--seed` flag populates:
-- **73 learning resources** across 16 categories with learning reasons
+- **1600+ learning resources** across 16+ categories with learning reasons
 - **25 learning paths** with multi-step progressions
 - **17 quizzes** with questions and scoring
 - **16 badges** for achievements
@@ -105,42 +111,44 @@ The `--seed` flag populates:
 
 ```
 app/
-├── Http/
-│   ├── Controllers/
-│   │   ├── Auth/                    # Authentication (Breeze, customized)
-│   │   ├── DashboardController.php  # User dashboard
-│   │   ├── ResourceController.php   # Resource browsing (public) & completion (auth)
-│   │   ├── LearningPathController.php
-│   │   ├── QuizController.php
-│   │   └── ProgressController.php   # Profile, leaderboard, badges, stats
-│   └── Requests/Auth/
-│       └── LoginRequest.php         # IP-based rate limiting on login
+├── Console/Commands/
+│   └── ImportClaudeCodeMaterials.php   # Artisan command to import data.json
+├── Http/Controllers/
+│   ├── Auth/                           # Authentication (Breeze, customized)
+│   ├── ResourceController.php          # Blogs/resources (public + auth)
+│   ├── ClaudeCodeMaterialsController.php
+│   ├── LearningPathController.php
+│   ├── QuizController.php
+│   ├── QuestController.php
+│   └── ProgressController.php          # Profile, badges, stats
 ├── Models/
-│   ├── Resource.php                 # learning_reason field included
-│   ├── User.php                     # Points, badges, progress relations
-│   └── ...
-├── Providers/
-│   └── AppServiceProvider.php       # Password policy + rate limiters
+│   ├── Resource.php
+│   ├── LearningQuest.php
+│   ├── DailyChallenge.php
+│   └── User.php
 └── Services/
-    ├── ProgressService.php          # Resource visit/completion tracking
-    ├── PointsService.php            # Points calculation
-    └── StreakService.php            # Daily streak tracking
+    ├── ProgressService.php
+    ├── PointsService.php
+    └── StreakService.php
 
 routes/
-├── web.php                          # Public resource routes + auth-gated routes
-└── auth.php                         # Throttled auth routes
+├── web.php                             # Public + auth-gated routes
+├── api.php                             # API endpoints
+└── auth.php                            # Throttled auth routes
 
 resources/views/
 ├── layouts/
-│   ├── app.blade.php                # Main layout (nav visible to all users)
-│   └── guest.blade.php              # Auth layout (split-screen branded)
-├── auth/                            # Login, register, forgot-password, etc.
+│   ├── app.blade.php                   # Main layout — top nav only, orange theme
+│   └── guest.blade.php                 # Auth layout — dark left panel, editorial
+├── auth/                               # Login, register, forgot-password
 ├── resources/
-│   ├── index.blade.php              # Resource grid with hover popup
-│   └── show.blade.php               # Resource detail with "Why learn this"
-├── components/                      # Blade components (branded)
-└── errors/
-    └── 429.blade.php                # Rate limit error page
+│   └── index.blade.php                 # Blogs page — resource grid
+├── claude-code-materials.blade.php     # CC Materials SPA page
+└── components/                         # Branded Blade components
+
+public/
+├── data.json                           # Claude Code materials source data
+└── claude-code-materials/              # Static assets for CC Materials page
 ```
 
 ## Security Measures
@@ -149,7 +157,7 @@ resources/views/
 |---------|---------------|
 | Password strength | Min 8 chars, mixed case, number, symbol |
 | Breach detection | haveibeenpwned API via `Password::uncompromised()` |
-| Login throttling | 5 attempts/min per IP (route middleware + LoginRequest) |
+| Login throttling | 5 attempts/min per IP |
 | Signup throttling | 15 attempts/hour per IP |
 | Forgot password throttling | 5 attempts/hour per IP |
 | CSRF protection | All forms use `@csrf` |
